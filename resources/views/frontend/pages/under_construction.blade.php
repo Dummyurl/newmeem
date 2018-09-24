@@ -106,13 +106,13 @@
         </div>
         <hr>
 
-        <a href="https://www.instagram.com/harayer7/" class="social" style="color: #e4405f" target="_blank">
+        <a href="https://www.instagram.com/meemonoon/" class="social" style="color: #e4405f" target="_blank">
             <img src="{{ asset('images/instagram.png') }}" alt="" class="img-xs">
         </a>
-        <a href="https://www.snapchat.com/add/harayer7" class="social" style="color: #FFFC00" target="_blank">
+        <a href="https://www.snapchat.com/add/meemonoon" class="social" style="color: #FFFC00" target="_blank">
             <img src="{{ asset('images/snap.png') }}" alt="" class="img-xs">
         </a>
-        <a href="https://www.twitter.com/harayer7/" class="social" style="color: #55acee" target="_blank">
+        <a href="https://www.twitter.com/meemonoon/" class="social" style="color: #55acee" target="_blank">
             <img src="{{ asset('images/twitter.png') }}" alt="" class="img-xs">
         </a>
         <a href="https://api.whatsapp.com/send?phone=96596967707" class="social" style="color: #25D366" target="_blank">

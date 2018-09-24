@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function index()
     {
         if(!auth()->check()) {
-            return view('frontend.pages.under_construction');
+            return view('welcome');
         }
         $newArrivals = $this->product->hasProductAttribute()->hasGallery()->active()->onHomePage()->orderBy('created_at', 'desc')->with('gallery.images','favorites')->take(self::take)->get();
         $onSaleProducts = $this->product->hasProductAttribute()->hasGallery()->active()->onSaleOnHomePage()->with('gallery.images','favorites')->take(self::take)->get();
