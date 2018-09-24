@@ -8,9 +8,19 @@
     /*font-style: normal;*/
 /*}*/
 
-/*body, div, a, span, table, p, form, input, h1, h2, h3, h4, input, tr, td, ul, li {*/
-    /*font-family: 'GE SS Unique', 'sans-serif' !important;*/
-/*}*/
+@font-face {
+    font-family: 'Cairo';
+    src: url('fonts/Cairo-SemiBold.ttf') format('truetype'),
+    url('fonts/Cairo-SemiBold.otf') format('otf');
+    /*url('fonts/Cairo-SemiBold.eot'),*/
+    /*url('fonts/Cairo-SemiBold.eot?#iefix') format('embedded-opentype'); !* Super Modern Browsers *!*/
+    font-weight: bolder;
+    font-style: normal;
+}
+
+body, div, a, span, table, p, form, input, h1, h2, h3, h4, input, tr, td, ul, li {
+    font-family: 'Cairo', 'sans-serif' !important;
+}
 .main-menu nav ul li a::after {
     display: none;
 }
