@@ -36,7 +36,7 @@ class Filters extends QueryFilters
     {
         $children = $this->category->whereId(request()->category_id)->with('children')->first()->children->pluck('id');
         return $this->builder->whereHas('categories', function ($q) use ($children) {
-            if($children->isEmpty()) {
+            if ($children->isEmpty()) {
                 return $q->where(['id' => request('category_id')]);
             }
             return $q->whereIn('id', $children);
@@ -89,6 +89,16 @@ class Filters extends QueryFilters
     public function page()
     {
         return $this->builder;
+    }
+
+    public function sort()
+    {
+        switch (request('sort')) {
+            case 'name' :
+                return $this->builder->orderBy('name_en', 'asc');
+            default :
+                return $this->builder->orderBy('price', request('sort'));
+        }
     }
 
 }

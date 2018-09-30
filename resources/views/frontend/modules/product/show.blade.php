@@ -15,7 +15,6 @@
 @section('body')
     <div class="single-page-area shop-product-area">
     @include('frontend.partials._breadcrumbs',['name' => $product->name])
-
     <!-- Single Product details Area -->
         <div class="single-product-details-area">
             <div class="single-product-view-area">
@@ -30,7 +29,6 @@
 
         <!--product-Description-area start-->
     @include('frontend.modules.product.partials.productDescription')
-
     <!--related-products-area start-->
         @if(!$products->isEmpty())
 

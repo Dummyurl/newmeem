@@ -44,43 +44,43 @@
                                 {{--</div>--}}
                             </div>
                         </div>
-                        <div class="left-sidebar-title">
-                            <div class="layout-title bottom-tag">
-                                <h4>Compare Products </h4>
-                            </div>
-                            <p>You have no items to compare.</p>
-                            <div class="layout-title bottom-tag">
-                                <h4>Popular Tags</h4>
-                                <div class="shop-layout">
-                                    <div class="popular-tag">
-                                        <div class="tag-list">
-                                            <ul>
-                                                <li><a href="#">Clothing</a></li>
-                                                <li><a href="#">accessories</a></li>
-                                                <li><a href="#">good</a></li>
-                                                <li><a href="#">footwear</a></li>
-                                                <li><a href="#">fashion</a></li>
-                                                <li><a href="#">kid</a></li>
-                                                <li><a href="#">Men</a></li>
-                                                <li><a href="#">Women</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="tag-action">
-                                            <ul>
-                                                <li><a href="#">View all tags</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div><!-- End Shop Layout -->
-                            </div>
-                        </div>
-                        <div class="banner-left">
-                            <div class="single-banner">
-                                <a href="#">
-                                    <img src="img/banner/banner-left.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
+                        {{--<div class="left-sidebar-title">--}}
+                            {{--<div class="layout-title bottom-tag">--}}
+                                {{--<h4>Compare Products </h4>--}}
+                            {{--</div>--}}
+                            {{--<p>You have no items to compare.</p>--}}
+                            {{--<div class="layout-title bottom-tag">--}}
+                                {{--<h4>Popular Tags</h4>--}}
+                                {{--<div class="shop-layout">--}}
+                                    {{--<div class="popular-tag">--}}
+                                        {{--<div class="tag-list">--}}
+                                            {{--<ul>--}}
+                                                {{--<li><a href="#">Clothing</a></li>--}}
+                                                {{--<li><a href="#">accessories</a></li>--}}
+                                                {{--<li><a href="#">good</a></li>--}}
+                                                {{--<li><a href="#">footwear</a></li>--}}
+                                                {{--<li><a href="#">fashion</a></li>--}}
+                                                {{--<li><a href="#">kid</a></li>--}}
+                                                {{--<li><a href="#">Men</a></li>--}}
+                                                {{--<li><a href="#">Women</a></li>--}}
+                                            {{--</ul>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="tag-action">--}}
+                                            {{--<ul>--}}
+                                                {{--<li><a href="#">View all tags</a></li>--}}
+                                            {{--</ul>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div><!-- End Shop Layout -->--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="banner-left">--}}
+                            {{--<div class="single-banner">--}}
+                                {{--<a href="#">--}}
+                                    {{--<img src="img/banner/banner-left.jpg" alt="">--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
@@ -94,7 +94,6 @@
                     <div class="shop-product-view">
                         <!-- Shop Product Tab Area -->
                         <div class="product-tab-area">
-                        {{--@include('frontend.modules.category.partials._top_toolbar')--}}
                         <!-- Tab Content -->
                             <div class="clearfix"></div>
                             <div class="tab-content">
