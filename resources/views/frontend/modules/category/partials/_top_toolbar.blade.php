@@ -1,10 +1,10 @@
 <div class="tab-bar">
-    <div class="tab-bar-inner">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><a href="#shop-grid" data-toggle="tab"><i class="fa fa-th-large"></i></a></li>
-            <li><a href="#shop-list" data-toggle="tab"><i class="fa fa-th-list"></i></a></li>
-        </ul>
-    </div>
+    {{--<div class="tab-bar-inner">--}}
+        {{--<ul class="nav nav-tabs" role="tablist">--}}
+            {{--<li class="active"><a href="#shop-grid" data-toggle="tab"><i class="fa fa-th-large"></i></a></li>--}}
+            {{--<li><a href="#shop-list" data-toggle="tab"><i class="fa fa-th-list"></i></a></li>--}}
+        {{--</ul>--}}
+    {{--</div>--}}
     <div class="toolbar">
         <div class="sorter">
             <div class="sort-by">
