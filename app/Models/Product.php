@@ -85,6 +85,11 @@ class Product extends PrimaryModel
         return $this->belongsToMany(Tag::class, 'product_tag');
     }
 
+    public function brands()
+    {
+        return $this->belongsToMany(Brand::class,'brand_product');
+    }
+
     /**
      * @param $q
      * @param QueryFilters $filters

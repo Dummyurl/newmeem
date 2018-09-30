@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Size;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,12 +33,15 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('tags', 'gallery.images', 'favorites')->orderBy('id', 'desc')->paginate(20);
-        $tags = $elements->pluck('tags')->flatten()->pluck('name','id')->unique()->sortKeysDesc();
+        $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('sizes', 'categories', 'brands', 'tags', 'sizes', 'gallery.images', 'favorites')->orderBy('id', 'desc')->paginate(20);
+        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $elements->pluck('brands')->flatten()->unique('id')->sortKeysDesc();
+        $categories = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
+        $sizes = $elements->pluck('sizes')->flatten()->unique('id')->sortKeysDesc();
         if (!$elements->isEmpty()) {
-            return view('frontend.modules.product.index', compact('elements', 'tags'));
+            return view('frontend.modules.product.index', compact('elements', 'tags', 'brands', 'categories', 'sizes'));
         } else {
-            return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
+            return redirect()->route('frontend.product.search', ['category_id' => request('category_id')])->with('error', trans('message.no_items_found'));
         }
     }
 
@@ -45,7 +49,7 @@ class ProductController extends Controller
     {
         $product = $this->product->whereId($productId)->with('product_attributes.color', 'gallery.images', 'tags', 'categories')->first();
         // return array of ['size_id', 'color', 'att_id','qty' ] for one product
-        $data = $product->product_attributes->toArray();
+        $data = $product->product_attributes->unique('id')->toArray();
         $products = $this->product->getRelatedProducts($product);
         return view('frontend.modules.product.show', compact('products', 'product', 'data'));
     }

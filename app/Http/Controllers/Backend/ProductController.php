@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\ProductStore;
 use App\Http\Requests\Backend\ProductUpdate;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
@@ -41,7 +42,8 @@ class ProductController extends Controller
     {
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
-        return view('backend.modules.product.create', compact('categories', 'tags'));
+        $brands = Brand::active()->get();
+        return view('backend.modules.product.create', compact('categories', 'tags','brands'));
     }
 
 
@@ -52,9 +54,10 @@ class ProductController extends Controller
      */
     public function store(ProductStore $request)
     {
-        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags']));
+        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags','brands']));
         if ($element) {
             $element->tags()->sync($request->tags);
+            $element->brands()->sync($request->brands);
             $element->categories()->sync($request->categories);
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);
@@ -89,7 +92,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $element = Product::whereId($id)->with('categories', 'tags')->first();
+        $element = Product::whereId($id)->with('categories', 'tags','brands')->first();
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         return view('backend.modules.product.edit', compact('element', 'tags', 'categories'));
@@ -104,7 +107,7 @@ class ProductController extends Controller
     public function update(ProductUpdate $request, $id)
     {
         $element = Product::whereId($id)->first();
-        $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories']));
+        $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories','brands']));
         if ($request->hasFile('image')) {
             $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);
         }
@@ -114,6 +117,7 @@ class ProductController extends Controller
         if ($updated) {
             $element->categories()->sync($request->categories);
             $element->tags()->sync($request->tags);
+            $element->brands()->sync($request->brands);
             return redirect()->route('backend.product.index')->with('success', 'product saved.');
         }
         return redirect()->route('backend.product.edit', $id)->with('error', 'product not saved.');

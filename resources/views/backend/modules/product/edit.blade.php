@@ -294,6 +294,17 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label">Brands</label>
+                                <select multiple="multiple" class="multi-select" id="my_multi_select2"
+                                        name="brands[]">
+                                    @foreach($brands as $brand)
+                                        <option value="{{ $brand->id }}" {{ in_array($brand->id,$element->brands->pluck('id')->toArray()) ? 'selected' : null  }} >{{ $brand->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row">

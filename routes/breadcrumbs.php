@@ -48,6 +48,11 @@ Breadcrumbs::for('backend.tag.index', function ($trail) {
     $trail->push('tags', route('backend.tag.index'));
 });
 
+Breadcrumbs::for('backend.brand.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push('brands', route('backend.brand.index'));
+});
+
 Breadcrumbs::for('backend.color.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('color', route('backend.color.index'));
@@ -206,6 +211,16 @@ Breadcrumbs::for('backend.tag.create', function ($trail) {
 Breadcrumbs::for('backend.tag.edit', function ($trail, $element) {
     $trail->parent('backend.tag.index');
     $trail->push('edit tag', route('backend.tag.edit', $element->id));
+});
+
+Breadcrumbs::for('backend.brand.create', function ($trail) {
+    $trail->parent('backend.brand.index');
+    $trail->push('create brand', route('backend.brand.create'));
+});
+
+Breadcrumbs::for('backend.brand.edit', function ($trail, $element) {
+    $trail->parent('backend.brand.index');
+    $trail->push('edit brand', route('backend.brand.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.user.create', function ($trail) {

@@ -358,6 +358,30 @@
                     </li>
                 </ul>
             </li>
+            {{--brands--}}
+            <li class="nav-item {{ activeItem('brand') }}">
+                <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-brand"></i>
+                    <span class="title">Brands</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item ">
+                        <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
+                            <i class="fa fa-fw fa-times-circle"></i>
+                            <span class="title">All Brands</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="{{ route('backend.brand.create') }}" class="nav-link nav-toggle">
+                            <i class="fa fa-fw fa-plus-square-o"></i>
+                            <span class="title">Create New Brand</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item {{ activeItem('color') }}">
                 <a href="{{ route('backend.color.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-fw fa-paint-brush"></i>

@@ -14,6 +14,8 @@
                         </li>
                         <li>
                             <a href="#product-notes" data-toggle="tab">{{ trans('general.notes') }}</a>
+                        </li><li>
+                            <a href="#product-brand" data-toggle="tab">{{ trans('general.brands') }}</a>
                         </li>
                     </ul>
                     <!-- Tab Content -->
@@ -25,13 +27,24 @@
                             <p>{!! $product->notes !!}</p>
                         </div>
                         <div class="tab-pane" id="product-tag">
-                            <h2>{{ trans('general.product_tags') }}</h2>
                             <div class="popular-tag">
                                 <div class="tag-list">
                                     <ul>
                                         @foreach($product->tags as $tag)
                                             <li><a href="{{ route('frontend.product.search',['tag_id' => $tag->id]) }}"
                                                    style="font-size: {!!rand(12,20)!!}px !important;">{{ $tag->slug }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="product-brand">
+                            <div class="popular-tag">
+                                <div class="tag-list">
+                                    <ul>
+                                        @foreach($product->brands as $brand)
+                                            <li><a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}"
+                                                   style="font-size: {!!rand(12,20)!!}px !important;">{{ $brand->slug }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
