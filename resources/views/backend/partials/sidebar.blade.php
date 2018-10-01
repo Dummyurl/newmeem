@@ -117,7 +117,7 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.country.create') }}" class="nav-link ">
                             <i class="fa fa-fw fa-plus-circle"></i>
-                            <span class="title">Add New Country</span>
+                            <span class="title">Add Country</span>
                         </a>
                     </li>
                 </ul>
@@ -140,7 +140,7 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.currency.create') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-plus-circle"></i>
-                            <span class="title">Create New Currency</span>
+                            <span class="title">Create Currency</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
@@ -157,14 +157,14 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.coupon.index') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-cc-discover"></i>
-                            <span class="title">All Coupons</span>
+                            <span class="title"> Coupons List</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="nav-item ">
                         <a href="{{ route('backend.coupon.create') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-plus-circle"></i>
-                            <span class="title">Create New Coupon</span>
+                            <span class="title">Create Coupon</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
@@ -221,7 +221,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.aboutus.create') }}" class="nav-link">
-                                    <i class="icon-user"></i> Create New Page
+                                    <i class="icon-user"></i> Create Aboutus
                                     <span class="arrow nav-toggle"></span>
                                 </a>
                             </li>
@@ -242,7 +242,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.page.create') }}" class="nav-link">
-                                    <i class="icon-plus"></i> Create New Page
+                                    <i class="icon-plus"></i> Create Page
                                     <span class="arrow nav-toggle"></span>
                                 </a>
                             </li>
@@ -284,7 +284,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.term.create') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-plus"></i> Create New term
+                                    <i class="fa fa-fw fa-plus"></i> Create term
                                     <span class="arrow nav-toggle"></span>
                                 </a>
                             </li>
@@ -305,7 +305,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.faq.create') }}" class="nav-link">
-                                    <i class="icon-plus"></i> Create New Faq
+                                    <i class="icon-plus"></i> Create Faq
                                     <span class="arrow nav-toggle"></span>
                                 </a>
                             </li>
@@ -326,7 +326,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.policy.create') }}" class="nav-link">
-                                    <i class="icon-user"></i> Create New Policy
+                                    <i class="icon-user"></i> Create a Policy
                                     <span class="arrow nav-toggle"></span>
                                 </a>
                             </li>
@@ -352,7 +352,7 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.tag.create') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-plus-square-o"></i>
-                            <span class="title">Create New Tag</span>
+                            <span class="title">Create Tag</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
@@ -361,14 +361,14 @@
             {{--brands--}}
             <li class="nav-item {{ activeItem('brand') }}">
                 <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
-                    <i class="fa fa-fw fa-brand"></i>
+                    <i class="fa fa-fw fa-shopping-bag"></i>
                     <span class="title">Brands</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item ">
                         <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
-                            <i class="fa fa-fw fa-times-circle"></i>
+                            <i class="fa fa-fw fa-shopping-cart"></i>
                             <span class="title">All Brands</span>
                             <span class="arrow"></span>
                         </a>
@@ -376,7 +376,7 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.brand.create') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-plus-square-o"></i>
-                            <span class="title">Create New Brand</span>
+                            <span class="title">Create Brand</span>
                             <span class="arrow"></span>
                         </a>
                     </li>

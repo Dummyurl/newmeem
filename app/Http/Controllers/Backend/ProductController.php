@@ -79,9 +79,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = $this->productRepository->getById($id);
-
-//        var_dump($product);
+        //
     }
 
     /**
@@ -95,7 +93,8 @@ class ProductController extends Controller
         $element = Product::whereId($id)->with('categories', 'tags','brands')->first();
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
-        return view('backend.modules.product.edit', compact('element', 'tags', 'categories'));
+        $brands = Brand::active()->get();
+        return view('backend.modules.product.edit', compact('element', 'tags', 'categories','brands'));
     }
 
     /**

@@ -270,7 +270,7 @@
 
                     <div class="row">
                         <hr>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label">Categories*</label>
                                 <select multiple="multiple" class="multi-select" id="my_multi_select1"
@@ -294,7 +294,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label">Tags</label>
                                 <select multiple="multiple" class="multi-select" id="my_multi_select2"
@@ -305,10 +305,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="control-label">Brands</label>
-                                <select multiple="multiple" class="multi-select" id="my_multi_select2"
+                                <select multiple="multiple" class="multi-select" id="my_multi_select3"
                                         name="brands[]">
                                     @foreach($brands as $brand)
                                         <option value="{{ $brand->id }}">{{ $brand->name }}</option>
