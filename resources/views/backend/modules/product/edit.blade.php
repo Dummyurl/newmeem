@@ -370,6 +370,14 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="check_stock" id="optionsRadios6" {{ !$element->check_stock ? 'checked' : null }}
                                            value="0">not in check_stock</label>
+                                <div class="alert alert-danger text-danger"><ul>
+                                        <li>
+                                            If Not whenever a successful order is made. qty will not be decreased accordingly.
+                                        </li>
+                                        <li>
+                                            if Not Product will be added to cart without checking the current quantity.
+                                        </li>
+                                    </ul></div>
                             </div>
                         </div>
                     </div>
