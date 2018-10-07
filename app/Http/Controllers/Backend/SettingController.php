@@ -81,7 +81,7 @@ class SettingController extends Controller
             if($request->hasFile('size_chart')) {
                 $this->saveMimes($setting, $request, ['size_chart'], ['600', '600'], true);
             }
-            dd($request->all());
+//            dd($request->all());
             return redirect()->route('backend.setting.index')->with('success','setting updated');
         }
         return redirect()->route('backend.setting.index')->with('error','setting error');
