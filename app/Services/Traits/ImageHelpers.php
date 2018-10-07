@@ -80,8 +80,6 @@ trait ImageHelpers
                         $model->update([
                             $inputName => $imagePath,
                         ]);
-                        dump($inputName);
-                        dd($imagePath);
                         Storage::delete('public/uploads/images/' . $imagePath);
                     }
                 } else {

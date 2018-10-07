@@ -107,6 +107,7 @@ class ProductController extends Controller
     {
         $element = Product::whereId($id)->first();
         $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories','brands']));
+        dd($request->all());
         if ($request->hasFile('image')) {
             $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);
         }
