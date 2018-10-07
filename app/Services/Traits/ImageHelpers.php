@@ -77,7 +77,6 @@ trait ImageHelpers
                                 $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                             }
                         }
-                        dd($model);
                         $model->update([
                             $inputName => $imagePath,
                         ]);
