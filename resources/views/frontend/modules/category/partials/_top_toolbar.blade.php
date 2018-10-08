@@ -8,7 +8,7 @@
     <div class="toolbar">
         <div class="sorter">
             <div class="sort-by">
-                <label>Sort By</label>
+                <label>{{ trans('general.sort_by') }}</label>
                 <select id="sort" style="height: auto;">
                     <option value="position">{{ trans('general.position') }}</option>
                     <option value="name">{{ trans('general.alphabetic') }}</option>

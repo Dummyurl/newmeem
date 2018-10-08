@@ -1,7 +1,7 @@
 @if(isset($brands) && !$brands->isEmpty())
     <div class="single-layout">
         <div class="layout-title">
-            <h4>{{ trans('general.brands') }}</h4>
+            <h3>{{ trans('general.brands') }}</h3>
         </div>
         <div class="layout-list">
             <ul>

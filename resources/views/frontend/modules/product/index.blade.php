@@ -10,7 +10,7 @@
                     <!-- Left Sidebar-->
                     <div class="left-sidebar">
                         <div class="left-sidebar-title">
-                            <h3>shopping options</h3>
+                            <h3>{{ trans('general.shopping_options') }}</h3>
                         </div>
                         <div class="left-layout">
                             <div class="price-filter-area single-layout">

@@ -23,7 +23,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::where(['user_id' => auth()->user()->id,'status' => 'success'])->with('order_metas.product')->get();
+        $elements = $orders->pluck('order_metas')->flatten()->pluck('product');
+        return view('frontend.modules.order.index', compact('elements'));
     }
 
     /**

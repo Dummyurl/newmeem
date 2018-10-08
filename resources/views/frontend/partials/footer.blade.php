@@ -88,9 +88,9 @@
                                                         class="fa fa-instagram"></i></a></li>
                                         <li><a href="https://www.twitter.com/{{ $settings->twitter }}/" target="_blank"><i
                                                         class="fa fa-twitter"></i></a></li>
-                                        <li><a href="https://www.snapchat.com/{{ $settings->snapchat }}/"
+                                        <li><a href="https://www.facebook.com/{{ $settings->facebook }}/"
                                                target="_blank"><i
-                                                        class="fa fa-snapchat"></i></a></li>
+                                                        class="fa fa-facebook"></i></a></li>
                                         <li><a href="{{ $settings->youtube }}" target="_blank"><i
                                                         class="fa fa-youtube"></i></a></li>
                                     </ul>
@@ -161,14 +161,14 @@
                         <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
                             <!-- middle-footer-text start-->
                             <div class="middle-footer-text middle-footer-text2">
-                                <h3>{{ strtoupper(trans('general.my_account')) }}</h3>
+{{--                                <h3>{{ strtoupper(trans('general.my_account')) }}</h3>--}}
                                 <div class="footer-menu">
                                     <ul>
-                                        @auth
-                                            <li>
-                                                <a href="{{ route('frontend.user.show', auth()->user()->id) }}">{{ trans('general.my_account') }}</a>
-                                            </li>
-                                        @endauth
+                                        {{--@auth--}}
+                                            {{--<li>--}}
+                                                {{--<a href="{{ route('frontend.user.show', auth()->user()->id) }}">{{ trans('general.my_account') }}</a>--}}
+                                            {{--</li>--}}
+                                        {{--@endauth--}}
                                         <li>
                                             <a href="{{ route('frontend.order.index') }}">{{ trans('general.order_history') }}</a>
                                         </li>

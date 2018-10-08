@@ -35,9 +35,9 @@ class ProductController extends Controller
         }
         $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('sizes', 'categories', 'brands', 'tags', 'sizes', 'gallery.images', 'favorites')->orderBy('id', 'desc')->paginate(20);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $brands = $elements->pluck('brands')->flatten()->unique('id')->sortKeysDesc();
-        $categories = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
-        $sizes = $elements->pluck('sizes')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $elements->pluck('brands')->flatten()->unique('id');
+        $categories = $elements->pluck('categories')->flatten()->unique('id');
+        $sizes = $elements->pluck('sizes')->flatten()->unique('id');
         if (!$elements->isEmpty()) {
             return view('frontend.modules.product.index', compact('elements', 'tags', 'brands', 'categories', 'sizes'));
         } else {

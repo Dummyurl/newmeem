@@ -158,3 +158,11 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
     font-weight: bolder;
     background-color: red !important;
 }
+
+a:hover li:hover, .product-description-tab.custom-tab ul.nav-tabs li.active a , .product-description-tab.custom-tab ul.nav-tabs li.active a {
+    color : #A4D5A6 !important;
+}
+
+.product-description-tab.custom-tab ul.nav-tabs li a:hover::after, .product-description-tab.custom-tab ul.nav-tabs li.active a::after {
+    background-color : #A4D5A6 !important;
+}

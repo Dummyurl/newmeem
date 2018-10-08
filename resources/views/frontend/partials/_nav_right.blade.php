@@ -16,9 +16,9 @@
                                 @if(Auth::id() == 1)
                                     <li><a href="{{ url('/backend') }}">{{ trans('general.dashboard') }}</a></li>
                                 @endif
-                                <li>
-                                    <a href="{{ route('frontend.user.show', auth()->user()->id) }}">{{ trans('general.my_account') }}</a>
-                                </li>
+                                {{--<li>--}}
+                                    {{--<a href="{{ route('frontend.user.show', auth()->user()->id) }}">{{ trans('general.my_account') }}</a>--}}
+                                {{--</li>--}}
                                 <li>
                                     <a href="{{ route('frontend.favorite.index') }}">{{ trans('general.my_wishlist') }}</a>
                                 </li>
