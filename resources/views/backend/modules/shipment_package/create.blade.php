@@ -77,12 +77,11 @@
                             <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
                                 <label for="charge" class="control-label">charge *</label>
                                 <input id="charge"
-                                       type="number"
+                                       type="text"
                                        class="form-control"
                                        name="charge"
                                        value="{{ old('charge') }}"
                                        placeholder="charge"
-                                       maxlength="4"
                                        required autofocus>
                                 @if ($errors->has('charge'))
                                     <span class="help-block">

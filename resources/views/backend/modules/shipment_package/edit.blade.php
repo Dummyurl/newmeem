@@ -78,7 +78,7 @@
                             <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
                                 <label for="charge" class="control-label">charge *</label>
                                 <input id="charge"
-                                       type="number"
+                                       type="text"
                                        class="form-control"
                                        name="charge"
                                        value="{{ $element->charge }}"
