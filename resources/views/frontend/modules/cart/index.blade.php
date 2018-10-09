@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="feature-headline section-heading text-center">
-                        <h2>{{ trans('cart.shopping_cart') }}</h2>
+                        <h2>{{ trans('general.shopping_cart') }}</h2>
                     </div>
                 </div>
             </div>
@@ -118,12 +118,12 @@
                                             @csrf
                                             <div class="col-lg-12">
                                                 <div class="place-headline">
-                                                    <h4>{{ trans('cart.estimate_shipping_and_tax') }}</h4>
+                                                    <h4>{{ trans('general.estimate_shipping_and_tax') }}</h4>
                                                     <div class="col-lg-12">
                                                         <p>
-                                                            <span>{{ trans('cart.enter_ur_destination') }}</span>
+                                                            <span>{{ trans('general.enter_ur_destination') }}</span>
                                                         </p>
-                                                        <p class="{{ app()->isLocale('ar') ? 'pull-right' : 'pull-left' }} ">{{ trans('general.delivery_message') }}</p>
+                                                        <p class="{{ app()->isLocale('ar') ? 'pull-right' : 'pull-left' }} ">{{ trans('message.delivery_message') }}</p>
                                                     </div>
                                                     {{--<div class="col-lg-12">--}}
                                                     {{--<img src="{{ asset('images/aramex.png') }}" alt=""--}}
@@ -244,7 +244,7 @@
                                                 </div>
                                                 <input type="hidden" name="charge" class="charge" value="">
                                                 <button type="submit" id="forward" disabled="disabled"
-                                                        class="col-lg-12 btn custom-button">{{ trans('cart.proceed_to_checkout') }}
+                                                        class="col-lg-12 btn custom-button">{{ trans('general.proceed_to_checkout') }}
                                                 </button>
                                             </div>
                                         </Form>
