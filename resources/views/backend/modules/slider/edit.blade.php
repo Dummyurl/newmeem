@@ -3,7 +3,7 @@
     <div class="clearfix"></div>
     <div class="portlet-body form">
         <div class="col-lg-12 col-lg-push-4">
-            <img class="img-responsive img-thumbnail" src="{{ asset('storage/uploads/images/large/'.$element->image) }}"
+            <img class="img-responsive img-thumbnail img-sm" src="{{ asset('storage/uploads/images/large/'.$element->image) }}"
                  alt="">
         </div>
         <form role="form" method="post" action="{{ route('backend.slider.update',$element->id) }}"
