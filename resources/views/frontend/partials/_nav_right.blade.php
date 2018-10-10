@@ -39,7 +39,7 @@
                             </ul>
                         </li>
                     </ul>
-                </nav>
+                </nav>n
             </div>
         @else
             <a href="{{URL('login')}}" class="golden-link">{{ trans('general.login') }}</a>
