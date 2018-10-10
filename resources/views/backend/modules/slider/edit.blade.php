@@ -42,8 +42,11 @@
             <div class="form-body">
                 <div class="form-group form-md-line-input">
                     <input type="file" class="form-control" name="image" placeholder="...">
-                    <label for="form_control_1">Slide Image*</label>
-                    <span class="help-block">slider Image only JPG / PNG is accepted -best fit ['1905', '750']</span>
+
+                    <label for="form_control_1">Slide Image*
+                    </label>
+                    <span class="label-warning">slider Image only JPG / PNG is accepted -best fit ['1905', '750']</span>
+
                 </div>
             </div>
 
