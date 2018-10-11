@@ -41,7 +41,7 @@ class ShipmentPackageController extends Controller
             'name' => 'required|unique:shipment_packages,name',
             'slug_ar' => 'required',
             'slug_en' => 'required',
-            'charge' => 'required|numeric',
+            'charge' => 'required|between:1,20',
             'active' => 'required|boolean',
             'is_local' => 'required|boolean'
         ]);
@@ -92,7 +92,7 @@ class ShipmentPackageController extends Controller
             'name' => 'required',
             'slug_ar' => 'required',
             'slug_en' => 'required',
-            'charge' => 'required|numeric',
+            'charge' => 'required|between:1,20',
             'active' => 'required|boolean',
             'is_local' => 'required|boolean'
         ]);
