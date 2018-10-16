@@ -77,16 +77,18 @@
                     </div>
                     <div class="col-md-6">
                         <div class="back-to-category">
-                        <span class="link"><i class="fa fa-angle-left"></i> {{ trans('general.back_to') }} <a
-                                    href="{{ route('home') }}">{{ trans('general.home') }}</a></span>
+                            <span class="link">
+                                <i class="fa fa-angle-{{ app()->isLocale('ar') ? 'left' : 'right' }}"></i> {{ trans('general.back_to') }}
+                                <a href="{{ route('home') }}">{{ trans('general.home') }}</a>
+                            </span>
                             @if(!$products->isEmpty())
-                                <div class="pull-right">
+                                <div class="{{ app()->isLocale('ar') ? 'pull-left' : 'pull-right' }}">
                                     <a class="btn btn-theme btn-theme-transparent btn-previous"
                                        href="{{ route('frontend.product.show',$products->first()->id) }}"><i
-                                                class="fa fa-angle-left"></i></a>
+                                                class="fa fa-angle-{{ app()->isLocale('ar') ? 'right' : 'left' }}"></i></a>
                                     <a class="btn btn-theme btn-theme-transparent btn-next"
                                        href="{{ route('frontend.product.show', $products->last()->id) }}"><i
-                                                class="fa fa-angle-right"></i></a>
+                                                class="fa fa-angle-{{ app()->isLocale('ar') ? 'left' : 'right' }}"></i></a>
                                 </div>
                             @endif
                         </div>
