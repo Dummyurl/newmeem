@@ -48,7 +48,7 @@ mix.styles([
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/custom.min.css',
     './node_modules/jquery.minicolors/jquery.minicolors.css',
     './resources/assets/css/backend-custom.css'
-], 'public/css/backend.css').version();
+], 'public/css/backend.css');
 mix.scripts([
         '../metronic_v4.5.6/theme/assets/global/plugins/respond.min.js',
         '../metronic_v4.5.6/theme/assets/global/plugins/excanvas.min.js',
@@ -76,9 +76,9 @@ mix.scripts([
         '../metronic_v4.5.6/theme/assets/layouts/layout2/scripts/demo.min.js',
         '../metronic_v4.5.6/theme/assets/layouts/global/scripts/quick-sidebar.min.js',
     ],
-    'public/js/backend.js').version();
-mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
-mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js').version();
+    'public/js/backend.js');
+mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js');
+mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
 mix.styles([
         '../bella/bella-files/bella/assets/plugins/bootstrap/css/bootstrap.min.css',
         '../bella/bella-files/bella/assets/plugins/bootstrap-select/css/bootstrap-select.min.css',
@@ -88,10 +88,10 @@ mix.styles([
         '../bella/bella-files/bella/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css',
         '../bella/bella-files/bella/assets/plugins/animate/animate.min.css',
         '../bella/bella-files/bella/assets/css/theme.css',
-        '../bella/bella-files/bella/assets/css/theme-green-meemonoon.css',
+        // '../bella/bella-files/bella/assets/css/theme-green-meemonoon.css',
         'resources/assets/css/frontend-custom.css',
     ]
-    , 'public/css/frontend.css').version();
+    , 'public/css/frontend.css');
 mix.styles([
     '../bella/bella-files/bella-rtl/assets/plugins/bootstrap/css/bootstrap.min.css',
     '../bella/bella-files/bella-rtl/assets/plugins/bootstrap/css/bootstrap-rtl.min.css',
@@ -102,11 +102,11 @@ mix.styles([
     '../bella/bella-files/bella-rtl/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css',
     '../bella/bella-files/bella-rtl/assets/plugins/animate/animate.min.css',
     '../bella/bella-files/bella-rtl/assets/css/theme.css',
-    '../bella/bella-files/bella-rtl/assets/css/theme-green-meemonoon.css',
+    // '../bella/bella-files/bella-rtl/assets/css/theme-green-meemonoon.css',
     'resources/assets/css/frontend-custom.css',
     'resources/assets/css/frontend-custom-ar.css',
     'resources/assets/js/cartIndex.js'
-], 'public/css/frontend-rtl.css').version();
+], 'public/css/frontend-rtl.css');
 // mix.styles('resources/assets/css/order-review.css','public/css/order-review.css');
 mix.babel([
         '../bella/bella-files/bella/assets/plugins/modernizr.custom.js',
@@ -128,7 +128,7 @@ mix.babel([
         'resources/assets/js/frontend-custom-en.js',
         'resources/assets/js/cartIndex.js'
     ]
-    , 'public/js/frontend.js').version();
+    , 'public/js/frontend.js');
 
 mix.babel([
         '../bella/bella-files/bella-rtl/assets/plugins/modernizr.custom.js',
@@ -150,8 +150,8 @@ mix.babel([
         'resources/assets/js/frontend-custom-ar.js',
         'resources/assets/js/cartIndex.js'
     ]
-    , 'public/js/frontend-rtl.js').version();
-mix.copy('resources/assets/js/jquery.prettyPhoto.min.js', 'public/js/jquery.prettyPhoto.min.js').version();
+    , 'public/js/frontend-rtl.js');
+mix.copy('resources/assets/js/jquery.prettyPhoto.min.js', 'public/js/jquery.prettyPhoto.min.js');
 mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 mix.copyDirectory('..//metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
 mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/img', 'public/img');
@@ -163,3 +163,6 @@ mix.copyDirectory('./node_modules/tinymce/themes', 'public/js/themes');
 mix.copyDirectory('../bella/bella-files/bella/assets/img', 'public/img');
 mix.copyDirectory('../bella/bella-files/bella/assets/ico', 'public/ico');
 mix.copyDirectory('../bella/bella-files/bella/assets/plugins/prettyphoto/images', 'public/images');
+if (mix.inProduction()) {
+    mix.version();
+}
