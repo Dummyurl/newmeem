@@ -10,10 +10,9 @@ use App\Models\Product;
 class HomeController extends Controller
 {
     public $product;
-    const take = 7;
+    const take = 12;
 
     public function SearchImage(Request $request) {
-//        dd($request->all());
         $element = Image::where(['fileName' => $request->filaName])->first();
         $element->categories()->get();
     }

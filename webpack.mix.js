@@ -88,7 +88,7 @@ mix.styles([
         '../bella/bella-files/bella/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css',
         '../bella/bella-files/bella/assets/plugins/animate/animate.min.css',
         '../bella/bella-files/bella/assets/css/theme.css',
-        // '../bella/bella-files/bella/assets/css/theme-green-meemonoon.css',
+        '../bella/bella-files/bella/assets/css/theme-green-meemonoon.css',
         'resources/assets/css/frontend-custom.css',
     ]
     , 'public/css/frontend.css');
@@ -102,7 +102,7 @@ mix.styles([
     '../bella/bella-files/bella-rtl/assets/plugins/owl-carousel2/assets/owl.theme.default.min.css',
     '../bella/bella-files/bella-rtl/assets/plugins/animate/animate.min.css',
     '../bella/bella-files/bella-rtl/assets/css/theme.css',
-    // '../bella/bella-files/bella-rtl/assets/css/theme-green-meemonoon.css',
+    '../bella/bella-files/bella-rtl/assets/css/theme-green-meemonoon.css',
     'resources/assets/css/frontend-custom.css',
     'resources/assets/css/frontend-custom-ar.css',
     'resources/assets/js/cartIndex.js'
