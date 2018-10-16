@@ -33,16 +33,15 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('colors','sizes', 'categories.products', 'brands', 'tags', 'sizes', 'gallery.images', 'favorites')->orderBy('id', 'desc')->paginate(20);
+        $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('product_attributes.color','product_attributes.size','tags', 'gallery.images', 'favorites','categories.products')->orderBy('id', 'desc')->paginate(20);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
-        $brands = $elements->pluck('brands')->flatten()->unique('id');
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         if (!$elements->isEmpty()) {
-            return view('frontend.modules.product.index', compact('elements', 'tags', 'brands', 'categoriesList', 'sizes','colors'));
+            return view('frontend.modules.product.index', compact('elements','tags','colors','sizes','categoriesList'));
         } else {
-            return redirect()->route('frontend.product.search', ['category_id' => request('category_id')])->with('error', trans('message.no_items_found'));
+            return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
         }
     }
 
