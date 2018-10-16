@@ -5,7 +5,7 @@
 
             <!-- Logo -->
             <div class="logo" style="height : 60px !important; overflow : hidden;">
-                <a href="{{ route('home') }}"><img src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->name }}"/></a>
+                <a href="{{ route('home') }}"><img class="img-sm center-block" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->name }}"/></a>
             </div>
             <!-- /Logo -->
 
