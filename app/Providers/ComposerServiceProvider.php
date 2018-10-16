@@ -19,11 +19,13 @@ class ComposerServiceProvider extends ServiceProvider
         ],
             'App\Services\ViewComposers@getSliders');
         view()->composer([
-            'frontend.partials.header',
+            'frontend.partials.header_one',
+            'frontend.partials.header_four',
             'frontend.partials._pop_up_cart'
         ], 'App\Services\ViewComposers@getCart');
         view()->composer([
-            'frontend.partials.header',
+            'frontend.partials.header_one',
+            'frontend.partials.header_four',
             'frontend.modules.cart.index'
         ], 'App\Services\ViewComposers@getCartCount');
         view()->composer([
@@ -55,7 +57,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.product.show',
             'frontend.modules.favorite.index',
             'frontend.partials._currency_language',
-            'frontend.partials.header',
+            'frontend.partials.header_one',
+            'frontend.partials.header_four',
             'frontend.partials._pop_up_cart',
             'frontend.modules.cart.index'
         ], 'App\Services\ViewComposers@getCurrency');
@@ -63,7 +66,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.partials._currency_language'
         ], 'App\Services\ViewComposers@getCurrencies');
         view()->composer([
-            'frontend.partials.header',
+            'frontend.partials.header_one',
+            'frontend.partials.header_four',
             'frontend.modules.product.index'
         ], 'App\Services\ViewComposers@getCategories');
         view()->composer([

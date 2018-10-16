@@ -157,7 +157,7 @@
                                 <div class="buttons">
                                     <div class="quantity">
                                         <a class="btn qty-decrease btn-qty"><i class="fa fa-minus"></i></a>
-                                        <input class="form-control qty" type="number" step="1" min="1" name="qty"
+                                        <input class="form-control qty" type="text"  name="qty"
                                                value="1"
                                                title="{{ trans('general.quantity') }}"
                                                id="qty">

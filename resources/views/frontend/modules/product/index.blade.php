@@ -8,9 +8,9 @@
         <section class="page-section breadcrumbs">
             <div class="container">
                 <div class="page-header">
-                    <h1>{{ trans('general.products_search_results') }}</h1>
+                    <h1>{{ request()->has('category_id') ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results') }}</h1>
                 </div>
-                @include('frontend.partials._breadcrumbs',['name' => trans('general.products_search_results')])
+                @include('frontend.partials._breadcrumbs',['name' => request()->has('category_id') ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results')])
             </div>
         </section>
         <!-- /BREADCRUMBS -->
@@ -44,27 +44,50 @@
                             <h4 class="widget-title">{{ trans('general.products_search_results') }}</h4>
                             <div class="widget-content">
                                 <ul>
-                                    @if(!$categories->isEmpty())
-                                        @foreach($categories->where('parent_id',0) as $parent)
-                                            <li>
-                                                <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                <a href="{!! request()->fullUrlWithQuery(['category_id' => $parent->id]) !!}">
-                                                    {{ $parent->name }}
-                                                    <span class="count">{{ $parent->children->pluck('products')->flatten()->count() }}</span>
-                                                </a>
-                                                @if(!$parent->children->isEmpty())
-                                                    <ul class="children">
-                                                        @foreach($parent->children as $child)
-                                                            <li>
-                                                                <a href="{!! request()->fullUrlWithQuery(['category_id' => $child->id]) !!}">{{ $child->name }}
-                                                                    <span class="count">{{ $child->products->count() }}</span>
-                                                                </a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                @endif
-                                            </li>
-                                        @endforeach
+                                    @if(!$categoriesList->isEmpty())
+                                        @if(!$categoriesList->where('parent_id',0)->isEmpty())
+                                            @foreach($categoriesList->where('parent_id',0) as $parent)
+                                                <li>
+                                                    <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                                                    <a href="{!! request()->fullUrlWithQuery(['category_id' => $parent->id]) !!}">
+                                                        {{ $parent->name }}
+                                                        <span class="count">{{ $parent->children->pluck('products')->flatten()->count() }}</span>
+                                                    </a>
+                                                    @if(!$parent->children->isEmpty())
+                                                        <ul class="children">
+                                                            @foreach($parent->children as $child)
+                                                                <li>
+                                                                    <a href="{!! request()->fullUrlWithQuery(['category_id' => $child->id]) !!}">{{ $child->name }}
+                                                                        <span class="count">{{ $child->products->count() }}</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            @foreach($categoriesList as $cat)
+                                                <li>
+                                                    <span class="arrow"><i class="fa fa-angle-down"></i></span>
+                                                    <a href="{!! request()->fullUrlWithQuery(['category_id' => $cat->id]) !!}">
+                                                        {{ $cat->name }}
+                                                        <span class="count">{{ $cat->products->count() }}</span>
+                                                    </a>
+                                                    @if(!$cat->children->isEmpty())
+                                                        <ul class="children">
+                                                            @foreach($cat->children as $sub)
+                                                                <li>
+                                                                    <a href="{!! request()->fullUrlWithQuery(['category_id' => $sub->id]) !!}">{{ $sub->name }}
+                                                                        <span class="count">{{ $sub->products->count() }}</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                        @endif
                                     @endif
                                 </ul>
 
@@ -161,7 +184,8 @@
                                                                 class="fa fa-heart"></i></a>
                                                     <a class="btn btn-theme btn-theme-transparent btn-icon-left"
                                                        href="{{ route('frontend.product.show',$element->id) }}"><i
-                                                                class="fa fa-shopping-cart"></i>{{ trans('general.view_product_details') }}</a>
+                                                                class="fa fa-shopping-cart"></i>{{ trans('general.view_product_details') }}
+                                                    </a>
                                                     {{--<a class="btn btn-theme btn-theme-transparent btn-compare"--}}
                                                     {{--href="#"><i class="fa fa-exchange"></i></a>--}}
                                                 </div>
