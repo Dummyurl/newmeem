@@ -89,6 +89,7 @@ PRODUCTS;
             'Content-type: text/xml'
         ));
 
+        dd($postString);
         $soap_do = curl_init();
 
         curl_setopt($soap_do, CURLOPT_URL, env('MYFATOORAH_PAYMENT_URL'));
@@ -116,8 +117,6 @@ PRODUCTS;
             $result = curl_exec($soap_do);
 
             $file_contents = htmlspecialchars($result);
-
-            dd($file_contents);
 
             $doc = new \DOMDocument();
 
