@@ -10,9 +10,9 @@
                         <li class="megamenu">
                             <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">{{ $category->name }}</a>
                             @if(!$category->children->where('is_home', true)->isEmpty())
-                                @foreach($category->children->sortBy('order') as $child)
-                                    <ul>
-                                        <li class="row">
+                                <ul>
+                                    <li class="row">
+                                        @foreach($category->children->where('is_home',true)->sortBy('order') as $child)
                                             <div class="col-md-2">
                                                 <h4 class="block-title"><span><a
                                                                 href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}"><strong>{{ $child->name }}</strong></a></span>
@@ -27,9 +27,9 @@
                                                     </ul>
                                                 @endif
                                             </div>
-                                        </li>
-                                    </ul>
-                                @endforeach
+                                        @endforeach
+                                    </li>
+                                </ul>
                             @endif
                         </li>
                     @endforeach
