@@ -129,7 +129,6 @@ PRODUCTS;
 
             $ResponseMessage = $ResponseMessage->item(0)->nodeValue;
 
-            dd($ResponseMessage);
             try {
                 if ($ResponseCode == 0) {
 
@@ -160,6 +159,7 @@ PRODUCTS;
             echo curl_error($soap_do);
             $err = curl_error($soap_do);
             curl_close($soap_do);
+            echo 'case 0';
             return ($e->getMessage() . '+' . $err);
         }
     }
