@@ -3,14 +3,13 @@
 @section('body')
     <!-- CONTENT AREA -->
     <div class="content-area">
-
         <!-- BREADCRUMBS -->
         <section class="page-section breadcrumbs">
             <div class="container">
                 <div class="page-header">
-                    <h1>{{ request()->has('category_id') ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results') }}</h1>
+                    <h1>{{ request()->has('category_id') && $categoriesList->where('id',request('category_id'))->first() ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results') }}</h1>
                 </div>
-                @include('frontend.partials._breadcrumbs',['name' => request()->has('category_id') ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results')])
+                @include('frontend.partials._breadcrumbs',['name' => request()->has('category_id')  && $categoriesList->where('id',request('category_id'))->first() ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results')])
             </div>
         </section>
         <!-- /BREADCRUMBS -->
