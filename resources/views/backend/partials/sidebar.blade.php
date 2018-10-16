@@ -206,27 +206,27 @@
                             <span class="arrow"></span>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="{{ route('backend.aboutus.index') }}" class="nav-link ">
-                            <i class="fa fa-fw fa-plus-square-o"></i>
-                            <span class="title">Aboutus</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('backend.aboutus.index') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-list-alt"></i> Aboutus
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('backend.aboutus.create') }}" class="nav-link">
-                                    <i class="icon-user"></i> Create Aboutus
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    {{--<li class="nav-item ">--}}
+                        {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link ">--}}
+                            {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
+                            {{--<span class="title">Aboutus</span>--}}
+                            {{--<span class="arrow"></span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="sub-menu">--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link">--}}
+                                    {{--<i class="fa fa-fw fa-list-alt"></i> Aboutus--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.aboutus.create') }}" class="nav-link">--}}
+                                    {{--<i class="icon-user"></i> Create Aboutus--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                     <li class="nav-item ">
                         <a href="{{ route('backend.page.index') }}" class="nav-link ">
                             <i class="fa fa-fw fa-book"></i>
@@ -269,69 +269,69 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="{{ route('backend.term.index') }}" class="nav-link ">
-                            <i class="fa fa-fw fa-hand-paper-o"></i>
-                            <span class="title">terms</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('backend.term.index') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-list-alt"></i> All Terms
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('backend.term.create') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-plus"></i> Create term
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{ route('backend.faq.index') }}" class="nav-link ">
-                            <i class="fa fa-fw fa-question-circle"></i>
-                            <span class="title">faqs</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('backend.faq.index') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-list-alt"></i> All Faqs
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('backend.faq.create') }}" class="nav-link">
-                                    <i class="icon-plus"></i> Create Faq
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{ route('backend.policy.index') }}" class="nav-link ">
-                            <i class="fa fa-fw fa-plus-square-o"></i>
-                            <span class="title">polices</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('backend.policy.index') }}" class="nav-link">
-                                    <i class="fa fa-fw fa-list-alt"></i> All Policies
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('backend.policy.create') }}" class="nav-link">
-                                    <i class="icon-user"></i> Create a Policy
-                                    <span class="arrow nav-toggle"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    {{--<li class="nav-item ">--}}
+                        {{--<a href="{{ route('backend.term.index') }}" class="nav-link ">--}}
+                            {{--<i class="fa fa-fw fa-hand-paper-o"></i>--}}
+                            {{--<span class="title">terms</span>--}}
+                            {{--<span class="arrow"></span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="sub-menu">--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.term.index') }}" class="nav-link">--}}
+                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Terms--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.term.create') }}" class="nav-link">--}}
+                                    {{--<i class="fa fa-fw fa-plus"></i> Create term--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item ">--}}
+                        {{--<a href="{{ route('backend.faq.index') }}" class="nav-link ">--}}
+                            {{--<i class="fa fa-fw fa-question-circle"></i>--}}
+                            {{--<span class="title">faqs</span>--}}
+                            {{--<span class="arrow"></span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="sub-menu">--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.faq.index') }}" class="nav-link">--}}
+                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Faqs--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.faq.create') }}" class="nav-link">--}}
+                                    {{--<i class="icon-plus"></i> Create Faq--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item ">--}}
+                        {{--<a href="{{ route('backend.policy.index') }}" class="nav-link ">--}}
+                            {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
+                            {{--<span class="title">polices</span>--}}
+                            {{--<span class="arrow"></span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="sub-menu">--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.policy.index') }}" class="nav-link">--}}
+                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Policies--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a href="{{ route('backend.policy.create') }}" class="nav-link">--}}
+                                    {{--<i class="icon-user"></i> Create a Policy--}}
+                                    {{--<span class="arrow nav-toggle"></span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                 </ul>
             </li>
             {{--tags--}}
