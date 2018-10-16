@@ -41,7 +41,7 @@
                         </div>
                         <!-- widget shop categories -->
                         <div class="widget shop-categories">
-                            <h4 class="widget-title">{{ trans('general.products_search_results') }}</h4>
+                            <h4 class="widget-title">{{ trans('general.categories') }}</h4>
                             <div class="widget-content">
                                 <ul>
                                     @if(!$categoriesList->isEmpty())
