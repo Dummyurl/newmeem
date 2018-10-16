@@ -73,7 +73,7 @@
                 <div class="col-md-3">
                     <div class="widget widget-tag-cloud">
                         <h4 class="widget-title">{{ $settings->company }}</h4>
-                        <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" class="img-sm"
+                        <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" class="img-sm center-block"
                              alt="{{ $settings->company_ar .''. $settings->company_en}}">
                     </div>
                 </div>
