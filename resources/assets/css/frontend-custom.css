@@ -209,3 +209,7 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
     padding: 0px;
     padding-top: 10px;
 }
+
+.logo {
+    min-height: 120px; !important;
+}
