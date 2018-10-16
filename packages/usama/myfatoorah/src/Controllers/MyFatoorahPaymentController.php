@@ -129,6 +129,7 @@ PRODUCTS;
 
             $ResponseMessage = $ResponseMessage->item(0)->nodeValue;
 
+            dd($ResponseMessage);
             try {
                 if ($ResponseCode == 0) {
 
