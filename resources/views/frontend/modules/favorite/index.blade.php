@@ -1,31 +1,24 @@
 @extends('frontend.layouts.app')
-
 @section('body')
-
-        <!--Products start-->
-<!-- shop page area start -->
-<div class="shop-product-area">
-    <div class="container">
-        <div class="row">
-            <!--Filters start-->
-            {{--<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">--}}
-
-{{--                @include('frontend.modules.category.partials._filters')--}}
-                        <!--Filters end-->
-            {{--</div>--}}
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <!--breadcrumbs start-->
-                {{--@include('frontend.modules.category.partials._breadcrumbs')--}}
-                        <!--breadcrumbs end-->
-                <div class="shop-product-view">
-                    <!-- Shop Product Tab Area -->
-                    @include('frontend.modules.product.partials.product_category',['products' => $elements ,'cols' => 'col-lg-3 col-md-3 col-sm-3'])
-                </div>
+    <!-- BREADCRUMBS -->
+    <section class="page-section breadcrumbs">
+        <div class="container">
+            <div class="page-header">
+                <h1>{{ trans('general.favorites') }}</h1>
             </div>
+            @include('frontend.partials._breadcrumbs',['name' => trans('general.favorites')])
         </div>
-    </div>
-</div>
-<!-- shop page area end -->
-<!--Products end-->
+    </section>
+    <!-- /BREADCRUMBS -->
+
+    <!-- PAGE -->
+    <section class="page-section">
+        <div class="container">
+
+            @include('frontend.partials._product_carousel_lg',['elements' => $elements , 'title' => trans('general.favorites')])
+        </div>
+    </section>
+    <!-- /PAGE -->
 @endsection
+
 
