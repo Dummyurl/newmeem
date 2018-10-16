@@ -14,11 +14,11 @@
     </ul>
 </li>
 <li class="dropdown flags">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ app()->isLocale('ar') ? asset('img/flags/sa.png') : asset('images/flags/us.png') }}" alt="{{ app()->getLocale() }}"/> {{ strtoupper(app()->getLocale()) }}<i class="fa fa-angle-down"></i></a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ app()->isLocale('ar') ? asset('img/flags/kw.png') : asset('images/flags/us.png') }}" alt="{{ app()->getLocale() }}"/> {{ strtoupper(app()->getLocale()) }}<i class="fa fa-angle-down"></i></a>
     <ul role="menu" class="dropdown-menu">
         <li>
             <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">
-                <img src="{{ asset('img/flags/sa.png') }}" alt=""/>
+                <img src="{{ asset('img/flags/kw.png') }}" alt=""/>
                 {{ trans('general.arabic') }}
             </a>
         </li>
