@@ -1,30 +1,26 @@
 @extends('frontend.layouts.app')
 @section('body')
-
-    <!-- CONTENT AREA -->
-    <div class="content-area">
-        <section class="page-section with-sidebar">
-            <div class="container">
-                <div class="row" style="min-height: 400px;">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    @include('frontend.partials._breadcrumbs',['name' => $element->slug])
-
-                    <!--about-body-area start-->
-                        <div class="row">
-                            <!-- About info -->
-                            <div class="col-lg-12">
-                                <div class="contact-info">
-                                    <h3>{{$element->slug}}</h3>
-                                    <p>{!! $element->content !!}</p>
-                                </div>
-                            </div><!-- End About info -->
-
-                        </div>
-                        <!--about-body-area end-->
-                    </div>
-                </div>
+    <!-- BREADCRUMBS -->
+    <section class="page-section breadcrumbs">
+        <div class="container">
+            <div class="page-header">
+                <h1>{{ $element->slug }}</h1>
             </div>
-        </section>
-    </div>
-    <!-- About page body end -->
+            @include('frontend.partials._breadcrumbs',['name' => $element->slug])
+        </div>
+    </section>
+    <!-- /BREADCRUMBS -->
+
+    <!-- PAGE -->
+    <section class="page-section">
+        <div class="container">
+
+            <h2 class="section-title"><span>{{ $element->slug }}</span></h2>
+            <div style="min-height: 400px;">
+                {!! $element->content !!}
+            </div>
+            <hr class="page-divider small"/>
+        </div>
+    </section>
+    <!-- /PAGE -->
 @endsection

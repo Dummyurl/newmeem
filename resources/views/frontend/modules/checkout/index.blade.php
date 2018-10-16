@@ -111,9 +111,9 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                        href="#collapse3" aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="dot"></span> {{ trans("general.tap_payment") }}
+                                        <span class="dot"></span> {{ trans("general.my_fatorrah") }}
                                     </a>
-                                    <input type="hidden" name="payment_method" value="tap">
+                                    <input type="hidden" name="payment_method" value="myfatoorah">
                                     <span class="overflowed {{ app()->isLocale('ar') ? 'pull-left' : 'pull-right' }}">
                                             <img src="{{ asset('img/preview/payments/visa.jpg') }}" alt=""/>
                                             <img src="{{ asset('img/preview/payments/mastercard.jpg') }}" alt=""/>

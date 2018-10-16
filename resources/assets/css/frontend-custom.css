@@ -146,11 +146,11 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 .grandTotal {
     font-size: large;
     color: black;
-    font-weight : bold;
+    font-weight: bold;
 }
 
 .label {
-    color : #b7af15;
+    color: #b7af15;
     font-size: large;
 }
 
@@ -160,7 +160,7 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 }
 
 .middle-text ul.footer-icon li a {
-    border : none !important;
+    border: none !important;
 }
 
 .top-menu nav ul li ul {
@@ -168,7 +168,11 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 }
 
 .size-menu {
-    height : 40px; background-color: white; border: 2px solid lightgrey; width : 100%; color : black
+    height: 40px;
+    background-color: white;
+    border: 2px solid lightgrey;
+    width: 100%;
+    color: black
 }
 
 .btn-theme {
@@ -191,4 +195,17 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 
 .cart-padding {
     padding: 10px;
+}
+
+.top-bar {
+    background-color: black !important;
+}
+
+.header .header-wrapper > .container {
+    min-height: 100px;
+}
+
+.header .header-wrapper {
+    padding: 0px;
+    padding-top: 10px;
 }

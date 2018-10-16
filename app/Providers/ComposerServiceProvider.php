@@ -23,7 +23,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.partials._pop_up_cart'
         ], 'App\Services\ViewComposers@getCart');
         view()->composer([
-            'frontend.partials.header'
+            'frontend.partials.header',
+            'frontend.modules.cart.index'
         ], 'App\Services\ViewComposers@getCartCount');
         view()->composer([
             'frontend.modules.checkout.index',
@@ -39,6 +40,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.modules.checkout.index',
+            'auth.register'
         ], 'App\Services\ViewComposers@getCountriesWorld');
 
         view()->composer([
