@@ -129,7 +129,7 @@
                     @endforeach
                     <tr>
                         <td>
-                            <form action="{{ route('web.payment.create') }}" method="post">
+                            <form action="{{ route('myfatoorah.web.payment.create') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $order->id }}">
                                 <button type="submit" class="btn btn-theme btn-theme-dark">{{ trans('general.go_to_payment') }}</button>

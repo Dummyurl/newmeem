@@ -44,7 +44,7 @@
                             <span id="grossTotal" value=""><b>{{ $shipment['grossTotal'] }}</b></span>
                             <b>{{ trans('general.kd') }}</b>
                             {{--<input type="hidden" name="grossTotal" class="grossTotal"--}}
-                                   {{--value="{{ $shipment['grossTotal'] }}">--}}
+                            {{--value="{{ $shipment['grossTotal'] }}">--}}
                         </p>
                     </td>
                 </tr>
