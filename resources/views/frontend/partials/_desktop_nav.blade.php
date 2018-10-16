@@ -1,49 +1,46 @@
-<div class="header-bottom hidden-xs">
+<div class="navigation-wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <!-- main-menu start -->
-                <div class="main-menu">
-                    <nav>
-                        <ul>
-                            <li><a class="no-child" href="{{URL('/')}}">{{ trans('general.home') }}</a></li>
-                            @if(!$categories->isEmpty())
-                                @foreach($categories->where('is_home',true)->sortBy('order') as $category)
-                                    <li>
-                                        <a href="{{ route('frontend.product.search',['category_id' => $category->id]) }}">{{ $category->name }}</a>
-                                        <!-- mega menu start -->
-                                        @if(count($category->children->where('is_home', true)) > 0)
-                                            <div class="mega-menu mega-menu3">
-                                                @foreach($category->children->where('is_home', true)->sortBy('order') as $child)
-                                                    <span>
-                                                                <a class="mega-headline"
-                                                                   href="{{ route('frontend.product.search',['category_id' => $child->id]) }}">{{ $child->name }}</a>
-                                                        @if(count($child->children->where('is_home', true)) > 0)
-                                                            @foreach($child->children->where('is_home',true)->sortBy('order') as $subChild)
-                                                                <a href="{{ route('frontend.product.search',['category_id' => $subChild->id]) }}">{{ $subChild->name }}</a>
-                                                            @endforeach
-                                                        @endif
-                                                            </span>
-
-                                                @endforeach
+        <!-- Navigation -->
+        <nav class="navigation closed clearfix">
+            <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+            <ul class="nav sf-menu">
+                <li><a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>
+                @if(!$categories->isEmpty())
+                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)
+                        <li class="megamenu">
+                            <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">{{ $category->name }}</a>
+                            @if(!$category->children->where('is_home', true)->isEmpty())
+                                @foreach($category->children->sortBy('order') as $child)
+                                    <ul>
+                                        <li class="row">
+                                            <div class="col-md-2">
+                                                <h4 class="block-title"><span><a
+                                                                href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}"><strong>{{ $child->name }}</strong></a></span>
+                                                </h4>
+                                                @if(!$child->children->where('is_home', true)->isEmpty())
+                                                    <ul>
+                                                        @foreach($child->children->where('is_home', true) as $subChild)
+                                                            <li>
+                                                                <a href="{{ route('frontend.product.search', ['category_id' => $subChild->id]) }}">{{ $subChild->name }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                             </div>
-                                        @endif
-                                    </li>
+                                        </li>
+                                    </ul>
                                 @endforeach
                             @endif
-                            @if(!$pages->where('on_menu_desktop', true)->isEmpty())
-                                @foreach($pages->where('on_menu_desktop', true) as $page)
-                                    <li>
-                                        <a class="no-child"
-                                           href="{{ $page->url }}">{{ $page->slug }}</a>
-                                    </li>
-                                @endforeach
-                            @endif
-                        </ul>
-                    </nav>
-                </div>
-                <!-- main-menu end -->
-            </div>
-        </div>
+                        </li>
+                    @endforeach
+                @endif
+                @if(!$pages->where('on_menu_desktop', true)->isEmpty())
+                    @foreach($pages->where('on_menu_desktop', true) as $page)
+                        <li><a href="{{ $page->url }}">{{ $page->title }}</a></li>
+                    @endforeach
+                @endif
+            </ul>
+        </nav>
+        <!-- /Navigation -->
     </div>
 </div>

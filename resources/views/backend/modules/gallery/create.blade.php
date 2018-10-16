@@ -17,7 +17,7 @@
                 <input type="hidden" name="element_id" value="{{ request()->element_id }}">
                 <h3 class="form-section">Create Gallery</h3>
                 @if(request('type') === 'product')
-                    @include('frontend.partials._product_steps')
+                    @include('____frontend.partials._product_steps')
                 @endif
                 <div class="form-body">
                     <div class="row">

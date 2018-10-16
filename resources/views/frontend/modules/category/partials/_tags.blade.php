@@ -5,13 +5,12 @@
             <div class="popular-tag">
                 <div class="tag-list">
                     <ul>
-                        @foreach($tags as $tag)
+                        @foreach($tags as $key => $value)
                             {{--<li><a href="{{ route('product.tags',[$tag->name]) }}"--}}
                             {{--style="font-size: {!!rand(6,20)!!}px !important;">{{ $tag->name }}</a></li>--}}
                             <li>
-                                <a style="color: green;"
-                                   href="{!! request()->fullUrlWithQuery(['tag_id' => $tag->id]) !!}">
-                                    {{ $tag->slug }}
+                                <a style="color: green;" href="{{ route('frontend.product.search',['tag_id' => $key]) }}" >
+                                    {{ $value }}
                                 </a>
                             </li>
                         @endforeach
@@ -19,5 +18,10 @@
                 </div>
             </div>
         </div><!-- End Shop Layout -->
+    </div>
+@else
+    <div class="alert alert-warning">
+        <i class="fa fa-exclamation-triangle"></i>
+        {{ trans('general.message.warning.no_tags') }}
     </div>
 @endif

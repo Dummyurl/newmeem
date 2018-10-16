@@ -9,7 +9,7 @@
                 @csrf
                 <div class="form-body">
                     <h3 class="form-section">Create Product</h3>
-                    @include('frontend.partials._product_steps')
+                    @include('____frontend.partials._product_steps')
                     {{--name arabic / name english --}}
                     <div class="row">
                         <div class="col-md-4">

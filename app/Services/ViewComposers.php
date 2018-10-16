@@ -45,7 +45,7 @@ class ViewComposers
 
     public function getCurrencies(View $view)
     {
-        $currencies = Currency::active()->get();
+        $currencies = Currency::active()->with('country')->get();
         return $view->with(compact('currencies'));
     }
 

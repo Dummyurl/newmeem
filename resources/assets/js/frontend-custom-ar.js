@@ -1,19 +1,21 @@
 $(document).ready(function() {
-    $('.owl-carousel').owlCarousel({
+    $('*[class^="productCarousel"]').owlCarousel({
         rtl: true,
+        autoplay: false,
         loop: true,
-        margin: 10,
+        margin: 30,
+        dots: false,
         nav: true,
+        navText: [
+            "<i class='fa fa-angle-left'></i>",
+            "<i class='fa fa-angle-right'></i>"
+        ],
         responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 5
-            }
+            0: {items: 1},
+            479: {items: 1},
+            768: {items: 2},
+            991: {items: 3},
+            1024: {items: 4}
         }
-    })
+    });
 });

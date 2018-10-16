@@ -12,22 +12,22 @@ $(document).ready(function() {
 
     var language = $('#language').val();
     var name = 'name_' + language;
-    console.log('the language', language);
-    $(document).on('show.bs.modal', function(event) {
-        $('.old-price-ql').show();
-        var product = $(event.relatedTarget) // Button that triggered the modal
-        $('.old-price-ql').html(product.data('price'));
-        $('.new-price-ql').html(product.data('saleprice'));
-        $('.product-heading').html(product.data('name'));
-        $('.view-details').attr('href', product.data('link'));
-        $('.product-image').attr('src', product.data('image'));
-        $('.quick-desc').html(product.data('description'));
-
-        // hide the on sale node if the product is not on sale
-        if (product.data('price') == product.data('saleprice')) {
-            $('.old-price-ql').hide();
-        }
-    });
+    console.log('the language is :', language);
+    // $(document).on('show.bs.modal', function(event) {
+    //     $('.old-price-ql').show();
+    //     var product = $(event.relatedTarget) // Button that triggered the modal
+    //     $('.old-price-ql').html(product.data('price'));
+    //     $('.new-price-ql').html(product.data('saleprice'));
+    //     $('.product-heading').html(product.data('name'));
+    //     $('.view-details').attr('href', product.data('link'));
+    //     $('.product-image').attr('src', product.data('image'));
+    //     $('.quick-desc').html(product.data('description'));
+    //
+    //     // hide the on sale node if the product is not on sale
+    //     if (product.data('price') == product.data('saleprice')) {
+    //         $('.old-price-ql').hide();
+    //     }
+    // });
     // when the color changes .. fetch all sizes related according to the product attribute.
     $('#color').on('change', function(e) {
         var product_id = $('#product_id').val();
@@ -39,11 +39,11 @@ $(document).ready(function() {
             r.data.map(s => {
                 console.log('the size', `${s.size[name]}`);
                 return $('#size').append(`<option value="${s.size.id}">${s.size[name]}</option>`)
-            })
-        ).catch(e => console.log(e));
+            })).catch(e => console.log(e));
     })
     // when the size changes .. should fetch the qty of the current attribute and inject it in max qty.
     $('#size').on('change', function(e) {
+        console.log('the size id ', e.target.value);
         var size_id = e.target.value;
         var color_id = $('#color').val();
         var product_id = $('#product_id').val();
@@ -74,4 +74,4 @@ $(document).ready(function() {
     $('.nav-tabs').on('click', function() {
         $('.tab-pane').removeClass('show');
     });
-})
+});

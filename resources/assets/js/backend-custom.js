@@ -31,8 +31,6 @@ $(document).ready(function() {
             $('#' + formId).submit();
         });
     });
-    $("#my_multi_select3").multiSelect();
-    $("#my_multi_select4").multiSelect();
 });
 tinymce.init({
     selector: '.tinymce',

@@ -1,17 +1,13 @@
 <!doctype html>
-<html class="no-js"
-      lang="{{ app()->getLocale() }}"
-      dir="{{ app()->isLocale('ar') ? 'rtl' : 'ltr'}}"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#"
->
+<html lang="{{ app()->getLocale() }}">
 <head>
     @section('head')
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="{{ config('app.name') }}" content="E-commerce">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('frontend.partials.head')
     @show
     @section('styles')
@@ -19,14 +15,20 @@
     @show
 </head>
 
-<body>
+<body id="home" class="wide">
+@include('frontend.partials._preloader')
+<div class="wrapper">
 @section('header')
+    @include('frontend.partials._top_bar')
     @include('frontend.partials.header')
     @include('frontend.partials._notification')
-    @include('frontend.modules.product.partials.quick-view')
 @show
 @section('content')
-    @yield('body')
+    <!-- CONTENT AREA -->
+        <div class="content-area">
+            @yield('body')
+        </div>
+        <!-- /CONTENT AREA -->
 @show
 
 <!--footer start-->
@@ -34,10 +36,11 @@
     @include('frontend.partials.footer')
 @show
 <!--footer end-->
-
+</div>
 <!--script for this page-->
 @section('scripts')
     @include('frontend.partials.scripts')
 @show
+@include('frontend.partials._pop_up_cart')
 </body>
 </html>

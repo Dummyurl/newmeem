@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="feature-headline section-heading text-center">
-                        <h2>My Wishlist</h2>
+                        <h2>{{ trans('general.my_wishlist') }}</h2>
                     </div>
                 </div>
             </div>

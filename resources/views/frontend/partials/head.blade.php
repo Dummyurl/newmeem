@@ -6,4 +6,6 @@
 <title>{{ config('app.name') }}</title>
 <!-- favicon -->
 <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('images/logo.jpg') }}">
+<link rel="shortcut icon" href="assets/ico/favicon.ico">
 <link href="{{ asset('images/logo.jpg') }}" rel="shortcut icon" type="image/jpg">
