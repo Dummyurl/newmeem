@@ -99,11 +99,25 @@
                         </div>
                         <hr class="page-divider small"/>
 
-                        <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
-                        @if($product->isOnSale)
-                            <del>{{ $product->convertedPrice }}
-                                <span><strong>{{ $currency->symbol }}</strong></span>
-                            </del>
+                        <div class="col-md-6">
+                            <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
+                            @if($product->isOnSale)
+                                <del>{{ $product->convertedPrice }}
+                                    <span><strong>{{ $currency->symbol }}</strong></span>
+                                </del>
+                            @endif
+                        </div>
+                        @if($currency->symbol_en != 'kwd')
+                            <div class="col-md-6">
+                                <div class="product-price"><span
+                                            style="font-size: 14px;">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
+                                </div>
+                                @if($product->isOnSale)
+                                    <del>{{ $product->price }}
+                                        <span><strong>{{ trans('general.kwd') }}</strong></span>
+                                    </del>
+                                @endif
+                            </div>
                         @endif
                         <hr class="page-divider"/>
 
