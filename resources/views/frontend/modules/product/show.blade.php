@@ -94,7 +94,7 @@
                         </div>
                         <h2 class="product-title">{{ $product->name }}</h2>
                         <hr class="page-divider"/>
-                        <div class="product-availability">{{ trans('general.s§tatus') }}:
+                        <div class="product-availability">{{ trans('general.status') }}:
                             <strong>{{ $product->totalQty > 0 ? trans('general.in_stock')  : trans('general.out_of_stock') }}</strong> {{ $product->totalQty }} {{ trans('general.items') }}
                         </div>
                         <hr class="page-divider small"/>
