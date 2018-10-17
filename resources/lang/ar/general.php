@@ -1,5 +1,8 @@
 <?php
 
 return array (
-  'home' => 'my home',
+  'pages' => 'الصفحات',
+  'kwd' => 'د.ك',
+  'status' => 'الحالة',
+  'new_arrival' => 'أحد المنتجات'
 );
