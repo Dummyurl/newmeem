@@ -22,6 +22,7 @@
                     <th>slug_ar</th>
                     <th>slug_en</th>
                     <th>active</th>
+                    <th>is_home</th>
                     <th>action</th>
                 </tr>
                 </thead>
@@ -32,6 +33,7 @@
                     <th>slug_ar</th>
                     <th>slug_en</th>
                     <th>active</th>
+                    <th>is_home</th>
                     <th>action</th>
                 </tr>
                 </tfoot>
@@ -44,6 +46,9 @@
                         <td> {{$element->slug_en}} </td>
                         <td>
                             <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                        </td>
+                        <td>
+                            <span class="label {{ activeLabel($element->is_home) }}">{{ activeText($element->is_home) }}</span>
                         </td>
                         <td>
                             <div class="btn-group">

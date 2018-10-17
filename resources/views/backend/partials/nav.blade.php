@@ -61,14 +61,14 @@
                         <a href="{{ route('backend.page.create') }}">
                             <i class="icon-paper-clip"></i> Create New page</a>
                     </li>
-                    <li>
-                        <a href="{{ route('backend.term.create') }}">
-                            <i class="icon-book-open"></i> Create New term</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.policy.create') }}">
-                            <i class="fa fa-fw fa-sticky-note-o"></i> Create New Policy</a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="{{ route('backend.term.create') }}">--}}
+                            {{--<i class="icon-book-open"></i> Create New term</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="{{ route('backend.policy.create') }}">--}}
+                            {{--<i class="fa fa-fw fa-sticky-note-o"></i> Create New Policy</a>--}}
+                    {{--</li>--}}
                     <li>
                         <a href="{{ route('backend.slider.create') }}">
                             <i class="fa fa-fw fa-plus"></i> Create New Slider</a>
