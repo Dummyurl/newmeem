@@ -12,7 +12,7 @@ class FavoriteController extends Controller
 
     public function index()
     {
-        $elements = User::whereId(auth()->user()->id)->first()->favorites()->with('gallery.images','favorites')->paginate(12);
+        $elements = User::whereId(auth()->user()->id)->first()->favorites()->with('gallery.images', 'favorites')->paginate(12);
         return view('frontend.modules.favorite.index', compact('elements'));
     }
 
@@ -22,7 +22,7 @@ class FavoriteController extends Controller
      */
     public function add($id)
     {
-        $element = Favorite::create(['user_id' => auth()->user()->id, 'product_id' => $id]);
+        $element = Product::whereId($id)->first()->favorites()->sync(auth()->user()->id);
         return redirect()->back()->with('success', trans('message.favorite_saved'));
     }
 

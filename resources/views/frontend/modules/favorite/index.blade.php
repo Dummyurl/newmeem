@@ -49,6 +49,11 @@
                                         <ins>{{ $element->convertedPrice }} <span>{{ $currency->symbol }}</span></ins>
                                     @endif
                                 </div>
+                                <div class="buttons">
+                                    <a class="btn btn-theme btn-theme-transparent btn-wish-list"
+                                       href="{{ route('frontend.favorite.remove', $element->id) }}"><i
+                                                class="fa fa-heart-o"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
