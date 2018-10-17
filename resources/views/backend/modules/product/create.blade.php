@@ -381,7 +381,7 @@
                         {{--<button type="button" class="btn default">Cancel</button>--}}
                         <a href="{!! url()->previous() !!}" class="btn default">Cancel</a>
                         {{--<button type="submit" class="btn btn-warning">--}}
-                            {{--<i class="fa fa-check"></i> Save & Go Back--}}
+                        {{--<i class="fa fa-check"></i> Save & Go Back--}}
                         {{--</button>--}}
                         <button type="submit" class="btn btn-info">
                             <i class="fa fa-save"></i> Next

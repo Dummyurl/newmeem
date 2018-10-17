@@ -294,17 +294,19 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label class="control-label">Brands</label>
-                                <select multiple="multiple" class="multi-select" id="my_multi_select3"
-                                        name="brands[]">
-                                    @foreach($brands as $brand)
-                                        <option value="{{ $brand->id }}" {{ in_array($brand->id,$element->brands->pluck('id')->toArray()) ? 'selected' : null  }} >{{ $brand->name }}</option>
-                                    @endforeach
-                                </select>
+                        @if(!$brands->isEmpty())
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="control-label">Brands</label>
+                                    <select multiple="multiple" class="multi-select" id="my_multi_select3"
+                                            name="brands[]">
+                                        @foreach($brands as $brand)
+                                            <option value="{{ $brand->id }}" {{ in_array($brand->id,$element->brands->pluck('id')->toArray()) ? 'selected' : null  }} >{{ $brand->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
 
                     <div class="row">
@@ -365,19 +367,24 @@
                             <div class="form-group">
                                 <label class="control-label sbold">check_stock</label></br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="check_stock" id="optionsRadios5" {{ $element->check_stock ? 'checked' : null }}
+                                    <input type="radio" name="check_stock" id="optionsRadios5"
+                                           {{ $element->check_stock ? 'checked' : null }}
                                            value="1"> check_stock</label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="check_stock" id="optionsRadios6" {{ !$element->check_stock ? 'checked' : null }}
+                                    <input type="radio" name="check_stock" id="optionsRadios6"
+                                           {{ !$element->check_stock ? 'checked' : null }}
                                            value="0">not in check_stock</label>
-                                <div class="alert alert-danger text-danger"><ul>
+                                <div class="alert alert-danger text-danger">
+                                    <ul>
                                         <li>
-                                            If Not whenever a successful order is made. qty will not be decreased accordingly.
+                                            If Not whenever a successful order is made. qty will not be decreased
+                                            accordingly.
                                         </li>
                                         <li>
                                             if Not Product will be added to cart without checking the current quantity.
                                         </li>
-                                    </ul></div>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

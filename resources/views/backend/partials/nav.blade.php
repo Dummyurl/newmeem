@@ -38,6 +38,10 @@
                         <a href="{{ route('backend.tag.create') }}">
                             <i class="icon-tag"></i> Create New Tag</a>
                     </li>
+                    <li>
+                        <a href="{{ route('backend.brand.create') }}">
+                            <i class="icon-tag"></i> Create New Brand</a>
+                    </li>
                     <li class="divider"></li>
                     <li>
                         <a href="{{ route('backend.size.create') }}">

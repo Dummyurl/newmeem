@@ -213,6 +213,18 @@
                                     </td>
                                 </tr>
                             @endif
+                            @if(!$product->brands->isEmpty())
+                                <tr>
+                                    <td class="title">{{ trans("general.brands") }}:</td>
+                                    <td>
+                                        @foreach($product->brands as $brand)
+                                            <a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
+                                                {{ $brand->slug }},
+                                            </a>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endif
                         </table>
                         <hr class="page-divider small"/>
                         @include('frontend.partials._social_btns')

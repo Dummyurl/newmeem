@@ -42,12 +42,17 @@ class BrandController extends Controller
             'name' => 'required|alpha|min:3|unique:Brands,name',
             'slug_ar' => 'required|min:3',
             'slug_en' => 'required|min:3',
+            'is_home' => 'required|boolean',
+            'image' => 'required|image'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput(Input::all());
         }
         $element = Brand::create($request->all());
         if ($element) {
+            if ($request->hasFile('image')) {
+                $this->saveMimes($element, $request, ['image'], ['1362', '716'], true);
+            }
             return redirect()->route('backend.brand.index')->with('sucess', 'created successfully!!');
         }
         return redirect()->back()->with('error', 'not created !!');
@@ -90,12 +95,17 @@ class BrandController extends Controller
             'name' => 'required|alpha|min:3|unique:Brands,name,'.$id,
             'slug_ar' => 'required|min:3',
             'slug_en' => 'required|min:3',
+            'is_home' => 'required|boolean',
+            'image' => 'image'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput(Input::all());
         }
         $element = Brand::whereId($id)->first()->update($request->all());
         if ($element) {
+            if ($request->hasFile('image')) {
+                $this->saveMimes($element, $request, ['image'], ['1362', '716'], true);
+            }
             return redirect()->route('backend.brand.index')->with('success', 'created successfully!!');
         }
         return redirect()->back()->with('error', 'not created !!');

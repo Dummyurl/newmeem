@@ -136,8 +136,21 @@
                                     @endforeach
                                 </ul>
                             </div>
-                    @endif
-                    <!-- /widget tag cloud -->
+                        @endif
+
+                    <!-- widget brands cloud -->
+                        @if(!$brands->isEmpty())
+                            <div class="widget widget-tag-cloud">
+                                <h4 class="widget-title"><span>{{ trans('general.brands') }}</span></h4>
+                                <ul>
+                                    @foreach($brands as $brand)
+                                        <li style="background-color:{{ request()->has('brand_id') && request('brand_id') == $brand->id ? 'darkgoldenrod' : null}} ">
+                                            <a href="{!! request()->fullUrlWithQuery(['brand_id' => $brand->id]) !!}">{{ $brand->slug }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
 
                     </aside>
@@ -165,7 +178,8 @@
                                                 </a>
                                             </div>
                                             <div class="caption text-center">
-                                                <h4 class="caption-title">{{ $element->name }}</h4>
+                                                <h4 class="caption-title"><a
+                                                            href="{{ route('frontend.product.show', $element->id) }}">{{ $element->name }}</a></h4>
                                                 <div class="price">
                                                     @if($element->isOnSale)
                                                         <ins>{{ $element->convertedSalePrice}}

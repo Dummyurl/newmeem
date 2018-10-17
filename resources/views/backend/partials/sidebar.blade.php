@@ -207,25 +207,25 @@
                         </a>
                     </li>
                     {{--<li class="nav-item ">--}}
-                        {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link ">--}}
-                            {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
-                            {{--<span class="title">Aboutus</span>--}}
-                            {{--<span class="arrow"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link">--}}
-                                    {{--<i class="fa fa-fw fa-list-alt"></i> Aboutus--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.aboutus.create') }}" class="nav-link">--}}
-                                    {{--<i class="icon-user"></i> Create Aboutus--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
+                    {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link ">--}}
+                    {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
+                    {{--<span class="title">Aboutus</span>--}}
+                    {{--<span class="arrow"></span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="sub-menu">--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link">--}}
+                    {{--<i class="fa fa-fw fa-list-alt"></i> Aboutus--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.aboutus.create') }}" class="nav-link">--}}
+                    {{--<i class="icon-user"></i> Create Aboutus--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
                     {{--</li>--}}
                     <li class="nav-item ">
                         <a href="{{ route('backend.page.index') }}" class="nav-link ">
@@ -270,67 +270,67 @@
                         </ul>
                     </li>
                     {{--<li class="nav-item ">--}}
-                        {{--<a href="{{ route('backend.term.index') }}" class="nav-link ">--}}
-                            {{--<i class="fa fa-fw fa-hand-paper-o"></i>--}}
-                            {{--<span class="title">terms</span>--}}
-                            {{--<span class="arrow"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.term.index') }}" class="nav-link">--}}
-                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Terms--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.term.create') }}" class="nav-link">--}}
-                                    {{--<i class="fa fa-fw fa-plus"></i> Create term--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
+                    {{--<a href="{{ route('backend.term.index') }}" class="nav-link ">--}}
+                    {{--<i class="fa fa-fw fa-hand-paper-o"></i>--}}
+                    {{--<span class="title">terms</span>--}}
+                    {{--<span class="arrow"></span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="sub-menu">--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.term.index') }}" class="nav-link">--}}
+                    {{--<i class="fa fa-fw fa-list-alt"></i> All Terms--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.term.create') }}" class="nav-link">--}}
+                    {{--<i class="fa fa-fw fa-plus"></i> Create term--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
                     {{--</li>--}}
                     {{--<li class="nav-item ">--}}
-                        {{--<a href="{{ route('backend.faq.index') }}" class="nav-link ">--}}
-                            {{--<i class="fa fa-fw fa-question-circle"></i>--}}
-                            {{--<span class="title">faqs</span>--}}
-                            {{--<span class="arrow"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.faq.index') }}" class="nav-link">--}}
-                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Faqs--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.faq.create') }}" class="nav-link">--}}
-                                    {{--<i class="icon-plus"></i> Create Faq--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
+                    {{--<a href="{{ route('backend.faq.index') }}" class="nav-link ">--}}
+                    {{--<i class="fa fa-fw fa-question-circle"></i>--}}
+                    {{--<span class="title">faqs</span>--}}
+                    {{--<span class="arrow"></span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="sub-menu">--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.faq.index') }}" class="nav-link">--}}
+                    {{--<i class="fa fa-fw fa-list-alt"></i> All Faqs--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.faq.create') }}" class="nav-link">--}}
+                    {{--<i class="icon-plus"></i> Create Faq--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
                     {{--</li>--}}
                     {{--<li class="nav-item ">--}}
-                        {{--<a href="{{ route('backend.policy.index') }}" class="nav-link ">--}}
-                            {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
-                            {{--<span class="title">polices</span>--}}
-                            {{--<span class="arrow"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.policy.index') }}" class="nav-link">--}}
-                                    {{--<i class="fa fa-fw fa-list-alt"></i> All Policies--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="{{ route('backend.policy.create') }}" class="nav-link">--}}
-                                    {{--<i class="icon-user"></i> Create a Policy--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
+                    {{--<a href="{{ route('backend.policy.index') }}" class="nav-link ">--}}
+                    {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
+                    {{--<span class="title">polices</span>--}}
+                    {{--<span class="arrow"></span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="sub-menu">--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.policy.index') }}" class="nav-link">--}}
+                    {{--<i class="fa fa-fw fa-list-alt"></i> All Policies--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                    {{--<a href="{{ route('backend.policy.create') }}" class="nav-link">--}}
+                    {{--<i class="icon-user"></i> Create a Policy--}}
+                    {{--<span class="arrow nav-toggle"></span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
                     {{--</li>--}}
                 </ul>
             </li>
@@ -368,7 +368,7 @@
                 <ul class="sub-menu">
                     <li class="nav-item ">
                         <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
-                            <i class="fa fa-fw fa-shopping-cart"></i>
+                            <i class="fa fa-fw fa-shopping-bag"></i>
                             <span class="title">All Brands</span>
                             <span class="arrow"></span>
                         </a>
@@ -376,7 +376,7 @@
                     <li class="nav-item ">
                         <a href="{{ route('backend.brand.create') }}" class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-plus-square-o"></i>
-                            <span class="title">Create Brand</span>
+                            <span class="title">New Brand</span>
                             <span class="arrow"></span>
                         </a>
                     </li>
@@ -462,77 +462,77 @@
 
 
             {{--<li class="nav-item">--}}
-                {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
-                    {{--<i class="icon-folder"></i>--}}
-                    {{--<span class="title">Multi Level Menu</span>--}}
-                    {{--<span class="arrow "></span>--}}
-                {{--</a>--}}
-                {{--<ul class="sub-menu">--}}
-                    {{--<li class="nav-item">--}}
-                        {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
-                            {{--<i class="icon-settings"></i> Item 1--}}
-                            {{--<span class="arrow"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="?p=dashboard-2" class="nav-link">--}}
-                                    {{--<i class="icon-user"></i> Arrow Toggle--}}
-                                    {{--<span class="arrow nav-toggle"></span>--}}
-                                {{--</a>--}}
-                                {{--<ul class="sub-menu">--}}
-                                    {{--<li class="nav-item">--}}
-                                        {{--<a href="#" class="nav-link">--}}
-                                            {{--<i class="icon-power"></i> Sample Link 1</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-item">--}}
-                                        {{--<a href="#" class="nav-link">--}}
-                                            {{--<i class="icon-paper-plane"></i> Sample Link 1</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-item">--}}
-                                        {{--<a href="#" class="nav-link">--}}
-                                            {{--<i class="icon-star"></i> Sample Link 1</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-camera"></i> Sample Link 1</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-link"></i> Sample Link 2</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-pointer"></i> Sample Link 3</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="nav-item">--}}
-                        {{--<a href="?p=dashboard-2" class="nav-link">--}}
-                            {{--<i class="icon-globe"></i> Arrow Toggle--}}
-                            {{--<span class="arrow nav-toggle"></span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="sub-menu">--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-tag"></i> Sample Link 1</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-pencil"></i> Sample Link 1</a>--}}
-                            {{--</li>--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a href="#" class="nav-link">--}}
-                                    {{--<i class="icon-graph"></i> Sample Link 1</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="nav-item">--}}
-                        {{--<a href="#" class="nav-link">--}}
-                            {{--<i class="icon-bar-chart"></i> Item 3 </a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
+            {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
+            {{--<i class="icon-folder"></i>--}}
+            {{--<span class="title">Multi Level Menu</span>--}}
+            {{--<span class="arrow "></span>--}}
+            {{--</a>--}}
+            {{--<ul class="sub-menu">--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
+            {{--<i class="icon-settings"></i> Item 1--}}
+            {{--<span class="arrow"></span>--}}
+            {{--</a>--}}
+            {{--<ul class="sub-menu">--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="?p=dashboard-2" class="nav-link">--}}
+            {{--<i class="icon-user"></i> Arrow Toggle--}}
+            {{--<span class="arrow nav-toggle"></span>--}}
+            {{--</a>--}}
+            {{--<ul class="sub-menu">--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-power"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-paper-plane"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-star"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-camera"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-link"></i> Sample Link 2</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-pointer"></i> Sample Link 3</a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="?p=dashboard-2" class="nav-link">--}}
+            {{--<i class="icon-globe"></i> Arrow Toggle--}}
+            {{--<span class="arrow nav-toggle"></span>--}}
+            {{--</a>--}}
+            {{--<ul class="sub-menu">--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-tag"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-pencil"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-graph"></i> Sample Link 1</a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+            {{--</li>--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="#" class="nav-link">--}}
+            {{--<i class="icon-bar-chart"></i> Item 3 </a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
             {{--</li>--}}
         </ul>
         <!-- END SIDEBAR MENU -->

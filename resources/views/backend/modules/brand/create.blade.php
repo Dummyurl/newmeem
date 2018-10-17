@@ -67,6 +67,57 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
+                                <label for="order" class="control-label">order *</label>
+                                <input id="order"
+                                       type="number"
+                                       class="form-control"
+                                       name="order"
+                                       value="{{ old('order') }}"
+                                       placeholder="order"
+                                       maxlength="2"
+                                       autofocus>
+                                @if ($errors->has('order'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('order') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="form_control_1">Main Image*</label>
+                                <input type="file" class="form-control" name="image" placeholder="image" required>
+                                <div class="help-block text-left">
+                                    W * H - Best fit [1362 × 716] pixels
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">is_home</label></br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_home" id="optionsRadios3"
+                                           value="1"> is_home</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_home" id="optionsRadios4" checked
+                                           value="0">not is_home</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label sbold">active</label></br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="active" id="optionsRadios3" checked
+                                           value="1"> active</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="active" id="optionsRadios4"
+                                           value="0">not active</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @include('backend.partials.forms._btn-group')
