@@ -21,6 +21,10 @@
                                 <li><a href="{{ $settings->youtube }}" class="twitter"><i
                                                 class="fa fa-fw fa-youtube"></i></a></li>
                             @endif
+                            @if($settings->instagram)
+                                <li><a href="{{ $settings->instagram}}" class="twitter"><i
+                                                class="fa fa-fw fa-instagram"></i></a></li>
+                            @endif
                             @if($settings->whatsapp)
                                 <li><a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}"
                                        class="instagram">
@@ -33,7 +37,7 @@
                             @if($settings->snapchat)
                                 <li><a href="{{ $settings->snapchat }}" class="snapchat">
                                         <img class="img-grey" src="{{ asset('images/snap.png') }}"
-                                                style="width: 15px; color : black;"></a></li>
+                                             style="width: 15px; color : black;"></a></li>
                             @endif
                         </ul>
                     </div>
@@ -54,7 +58,7 @@
                             @if($settings->whatsapp)
                                 <li><i class="fa fa-whatsapp"></i> &nbsp; {{ $settings->whatsapp }}</li>
                             @endif
-                                @if($settings->address)
+                            @if($settings->address)
                                 <li><i class="fa fa-address-book"></i> &nbsp; {{ $settings->address }}</li>
                             @endif
                         </ul>
@@ -94,8 +98,10 @@
                             @if($currency->currency_symbol_en === 'KWD')
                                 <li><img class="img-grey" src="{{ asset('img/k-net-icon.png') }}" alt="knet"/></li>
                             @endif
-                            <li><img src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/></li>
-                            <li><img src="{{ asset('assets/img/preview/payments/mastercard.jpg') }}" alt="{{ $settings->company }}"/></li>
+                            <li><img src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/>
+                            </li>
+                            <li><img src="{{ asset('assets/img/preview/payments/mastercard.jpg') }}"
+                                     alt="{{ $settings->company }}"/></li>
                         </ul>
                     </div>
                 </div>

@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.category.create') }}" class="nav-link ">
+                        <a href="{{ route('backend.category.create',['parent_id' => 0]) }}" class="nav-link ">
                             <i class="fa fa-fw fa-plus-square"></i>
                             <span class="title">Create Category</span>
                             <span class="arrow"></span>
