@@ -17,7 +17,7 @@ class BrandController extends Controller
     public function index()
     {
         $elements = Brand::all();
-        return view('backend.modules.Brand.index', compact('elements'));
+        return view('backend.modules.branch.index', compact('elements'));
     }
 
     /**
@@ -27,7 +27,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.Brand.create');
+        return view('backend.modules.brand.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|alpha|min:3|unique:Brands,name',
+            'name' => 'required|alpha|min:3|unique:brands,name',
             'slug_ar' => 'required|min:3',
             'slug_en' => 'required|min:3',
             'is_home' => 'required|boolean',
@@ -79,7 +79,7 @@ class BrandController extends Controller
     {
         $element = Brand::whereId($id)->first();
 
-        return view('backend.modules.Brand.edit', compact('element'));
+        return view('backend.modules.brand.edit', compact('element'));
     }
 
     /**
@@ -92,7 +92,7 @@ class BrandController extends Controller
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|alpha|min:3|unique:Brands,name,'.$id,
+            'name' => 'required|alpha|min:3|unique:brands,name,'.$id,
             'slug_ar' => 'required|min:3',
             'slug_en' => 'required|min:3',
             'is_home' => 'required|boolean',

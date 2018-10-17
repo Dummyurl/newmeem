@@ -23,9 +23,8 @@
                             <th>id</th>
                             <th>name_ar</th>
                             <th>name_en</th>
-                            <th>address_ar</th>
-                            <th>address_en</th>
-                            <th>phone</th>
+                            <th>active</th>
+                            <th>is_home</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -34,9 +33,8 @@
                             <th>id</th>
                             <th>name_ar</th>
                             <th>name_en</th>
-                            <th>address_ar</th>
-                            <th>address_en</th>
-                            <th>phone</th>
+                            <th>active</th>
+                            <th>is_home</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
@@ -44,13 +42,13 @@
                         @foreach($elements as $element)
                             <tr>
                                 <td>{{ $element->id }}</td>
-                                <td>{{ $element->name_ar }}</td>
-                                <td>{{ $element->name_en }}</td>
-                                <td>{{ $element->address_ar }}</td>
-                                <td>{{ $element->address_en }}</td>
-                                <td>{{ $element->phone }}</td>
+                                <td>{{ $element->slug_ar }}</td>
+                                <td>{{ $element->slug_en }}</td>
                                 <td>
                                     <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
+                                </td>
+                                <td>
+                                    <span class="label {{ activeLabel($element->is_hoem) }}">{{ activeText($element->is_home) }}</span>
                                 </td>
                                 <td>
                                     <div class="btn-group pull-right">
@@ -60,16 +58,16 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.branch.edit',$element->id) }}">
+                                                <a href="{{ route('backend.brand.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i>edit</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.activate',['model' => 'branch','id' => $element->id]) }}">
+                                                <a href="{{ route('backend.activate',['model' => 'brand','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                             </li>
                                             <li>
                                                 <form method="post"
-                                                      action="{{ route('backend.branch.destroy',$element->id) }}">
+                                                      action="{{ route('backend.brand.destroy',$element->id) }}">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="_method" value="delete"/>
                                                     <button type="submit" class="btn btn-outline btn-sm red">
