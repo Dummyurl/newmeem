@@ -37,13 +37,14 @@
                             @foreach($cart as $item)
                                 <tr>
                                     <td class="image">
-                                        <a class="media-link" href="{{ route('frontend.product.show',$item->options->product->id) }}">
-                                            <img class="img-sm"
-                                                 src="{{ asset(env('THUMBNAIL').$item->options->product->image) }}"
-                                                 alt="{{ $item->name }}"/></a></td>
+                                        <img class="img-sm"
+                                             src="{{ asset(env('THUMBNAIL').$item->options->product->image) }}"
+                                             alt="{{ $item->name }}"/></td>
                                     <td class="quantity">{{ $item->options->colorName }}</td>
                                     <td class="quantity">{{ $item->options->sizeName }}</td>
-                                    <td class="quantity"><a href="{{ route('frontend.product.show',$item->options->product->id) }}">{{ $item->name }}</a></td>
+                                    <td class="quantity"><a
+                                                href="{{ route('frontend.product.show',$item->options->product->id) }}">{{ $item->name }}</a>
+                                    </td>
                                     <td class="quantity">{{ $item->price }}</td>
                                     <td class="quantity">{{ $item->qty }}</td>
                                     <td class="total">{{ number_format($item->price * $item->qty,'2','.',',') }} {{ trans('general.kwd') }}
