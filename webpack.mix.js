@@ -152,6 +152,7 @@ mix.babel([
     ]
     , 'public/js/frontend-rtl.js');
 mix.copy('resources/assets/js/jquery.prettyPhoto.min.js', 'public/js/jquery.prettyPhoto.min.js');
+mix.css('resources/assets/css/order-review.css', 'public/css/order-review');
 mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 mix.copyDirectory('..//metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
 mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/img', 'public/img');
