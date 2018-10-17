@@ -93,7 +93,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="file" class="form-control" name="image" placeholder="image" required>
+                                <input type="file" class="form-control" name="image" placeholder="image">
                                 <label for="form_control_1">Main Image</label>
                                 <div class="help-block text-left">
                                     W * H - Best fit 1024 x 350 pixels
