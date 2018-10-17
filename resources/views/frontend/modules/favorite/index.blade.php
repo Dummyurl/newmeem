@@ -31,15 +31,6 @@
                                 <h4 class="caption-title"><a
                                             href="{{ route('frontend.product.show', $element->id) }}">{{ $element->name }}</a>
                                 </h4>
-                                <div class="rating">
-                                    {{--<span class="star"></span>--}}
-                                    {{----><span class="star active"></span><!----}}
-                                    {{----><span class="star active"></span><!----}}
-                                    {{----><span class="star active"></span><!----}}
-                                    {{----><span class="star active"></span>--}}
-                                    {{--<strong><i class="fa fa-heart"></i></strong>--}}
-                                </div>
-
                                 <div class="price">
                                     @if($element->isOnSale)
                                         <ins>{{ $element->convertedSalePrice}} <span>{{ $currency->symbol }}</span>
@@ -58,6 +49,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="col-lg-12">
+                @include('frontend.partials.pagination')
             </div>
         </div>
     </section>
