@@ -108,7 +108,7 @@ trait ProductHelpers
 
     public function getIsFavoritedAttribute()
     {
-        return in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray());
+        return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : null;
     }
 
 }
