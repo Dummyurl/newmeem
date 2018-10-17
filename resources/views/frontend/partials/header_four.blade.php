@@ -24,7 +24,7 @@
                     <a href="{{ route('frontend.cart.index') }}" class="btn btn-theme-transparent" data-toggle="modal" data-target="#popup-cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs"> {{ $cartCount }} {{ trans('general.items') }} - {{ $cart->pluck('price')->sum() }} {{ $currency->symbol }} </span>
                         <i class="fa fa-angle-down"></i></a>
                     <!-- Mobile menu toggle button -->
-                    <a href="{{ route('frontend.cart.index') }}" class="menu-toggle btn btn-theme-transparent"><i class="fa fa-bars"></i></a>
+                    <a href="#" class="menu-toggle btn btn-theme-transparent"><i class="fa fa-bars"></i></a>
                     <!-- /Mobile menu toggle button -->
                 </div>
             </div>
