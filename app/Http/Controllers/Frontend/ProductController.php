@@ -41,7 +41,6 @@ class ProductController extends Controller
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
         $brands = $elements->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
-        dd($elements);
         if (!$elements->isEmpty()) {
             return view('frontend.modules.product.index', compact('elements', 'tags', 'colors', 'sizes', 'categoriesList','brands'));
         } else {
