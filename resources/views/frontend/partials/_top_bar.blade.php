@@ -52,12 +52,12 @@
                     <a href="{{ route('frontend.favorite.index') }}">{{ trans('general.my_wishlist') }}
                     </a>
                 </li>
-                @foreach($pages->where('on_footer', true) as $page)
-                    <li class="hidden-xs">
-                        <a href="{{ $page->url }}">{{ $page->title }}
-                        </a>
-                    </li>
-                @endforeach
+                {{--@foreach($pages->where('on_footer', true) as $page)--}}
+                    {{--<li class="hidden-xs">--}}
+                        {{--<a href="{{ $page->url }}">{{ $page->title }}--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                {{--@endforeach--}}
                 @include('frontend.partials._currency_language')
             </ul>
         </div>
