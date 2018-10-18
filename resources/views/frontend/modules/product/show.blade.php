@@ -2,14 +2,18 @@
 
 @section('head')
     @parent
-    <title>{{ $product->name }}</title>
-    <!-- You can use Open Graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url" content="{{ request()->fullUrl() }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="{{ $product->name }}"/>
-    <meta property="og:description" content="{!! strip_tags($product->description) !!}"/>
-    <meta property="og:image" content="{{asset(env('THUMBNAIL').$product->image)}}"/>
+    @section('title')
+        <title>{{ $product->name_ar .' ' . $product->name_en}}</title>
+    @endsection
+    <meta name="description" content="{!! $product->description_ar .' '. $product->description_en !!}">
+    <meta name="keywords" content="{{ $product->notes . config('app.name')  }}"/>
+<!-- You can use Open Graph tags to customize link previews.
+Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+<meta property="og:url" content="{{ request()->fullUrl() }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="{{ $product->name }}"/>
+<meta property="og:description" content="{!! strip_tags($product->description) !!}"/>
+<meta property="og:image" content="{{asset(env('THUMBNAIL').$product->image)}}"/>
 @endsection
 
 @section('body')
@@ -171,7 +175,7 @@
                                 <div class="buttons">
                                     <div class="quantity">
                                         <a class="btn qty-decrease btn-qty"><i class="fa fa-minus"></i></a>
-                                        <input class="form-control qty" type="text"  name="qty"
+                                        <input class="form-control qty" type="text" name="qty"
                                                value="1"
                                                title="{{ trans('general.quantity') }}"
                                                id="qty">
