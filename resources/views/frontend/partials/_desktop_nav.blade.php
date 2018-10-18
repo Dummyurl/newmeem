@@ -36,7 +36,7 @@
                 @endif
                 @if(!$pages->where('on_menu_desktop', true)->isEmpty())
                     @foreach($pages->where('on_menu_desktop', true) as $page)
-                        <li><a href="{{ $page->url }}">{{ $page->title }}</a></li>
+                        <li><a href="{{ $page->url }}">{{ $page->slug }}</a></li>
                     @endforeach
                 @endif
             </ul>
