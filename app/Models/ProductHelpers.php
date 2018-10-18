@@ -94,14 +94,12 @@ trait ProductHelpers
 
     public function scopeHasProductAttribute($q)
     {
-        return $q->whereHas('product_attributes', function ($q) {
-            return $q;
-        }, '>', 0);
+        return $q->has('product_attributes', '>', 0);
     }
 
     public function scopeHasGallery($q)
     {
-        return $this->has('gallery','>',0);
+        return $q->has('gallery', '>', 0);
     }
 
     public function getIsFavoritedAttribute()
