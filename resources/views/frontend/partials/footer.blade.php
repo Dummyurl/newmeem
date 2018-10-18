@@ -96,11 +96,11 @@
                     <div class="payments">
                         <ul>
                             @if($currency->currency_symbol_en === 'KWD')
-                                <li><img class="img-grey" src="{{ asset('img/k-net.png') }}" alt="knet"/></li>
+                                <li><img class="img-grey img-xs" src="{{ asset('img/k-net.png') }}" alt="knet"/></li>
                             @endif
-                            <li><img src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/>
+                            <li><img class="img-xs" src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/>
                             </li>
-                            <li><img src="{{ asset('assets/img/preview/payments/mastercard.jpg') }}"
+                            <li><img class="img-xs" src="{{ asset('assets/img/preview/payments/mastercard.jpg') }}"
                                      alt="{{ $settings->company }}"/></li>
                         </ul>
                     </div>
