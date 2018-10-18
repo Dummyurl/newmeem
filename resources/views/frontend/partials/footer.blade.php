@@ -31,7 +31,7 @@
                                         <img
                                                 class="img-grey img-xxs"
                                                 src="{{ asset('images/whatsapp.png') }}"
-                                                >
+                                        >
                                     </a></li>
                             @endif
                             @if($settings->snapchat)
@@ -55,10 +55,8 @@
                                 <li><i class="fa fa-mobile-phone"></i> &nbsp; {{ $settings->mobile }}</li>
                             @endif
                             @if($settings->whatsapp)
-                                <li><img
-                                            class="img-grey img-xxs"
-                                            src="{{ asset('images/whatsapp.png') }}"
-                                            > &nbsp; {{ $settings->whatsapp }}</li>
+                                <li><img class="img-grey img-xxs" src="{{ asset('images/whatsapp.png') }}"/>
+                                    &nbsp; {{ $settings->whatsapp }}</li>
                             @endif
                             @if($settings->address)
                                 <li><i class="fa fa-location-arrow"></i> &nbsp; {{ $settings->address }}</li>
@@ -100,7 +98,8 @@
                             @if($currency->currency_symbol_en === 'KWD')
                                 <li><img class="img-grey img-xs" src="{{ asset('img/k-net.png') }}" alt="knet"/></li>
                             @endif
-                            <li><img class="img-xs" src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/>
+                            <li><img class="img-xs" src="{{ asset('img/preview/payments/visa.jpg') }}"
+                                     alt="{{ $settings->company }}"/>
                             </li>
                             <li><img class="img-xs" src="{{ asset('assets/img/preview/payments/mastercard.jpg') }}"
                                      alt="{{ $settings->company }}"/></li>
