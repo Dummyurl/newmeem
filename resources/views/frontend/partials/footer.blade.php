@@ -29,15 +29,14 @@
                                 <li><a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}"
                                        class="instagram">
                                         <img
-                                                class="img-grey"
+                                                class="img-grey img-xxs"
                                                 src="{{ asset('images/whatsapp.png') }}"
-                                                style="width: 15px; color : black;">
+                                                >
                                     </a></li>
                             @endif
                             @if($settings->snapchat)
                                 <li><a href="{{ $settings->snapchat }}" class="snapchat">
-                                        <img class="img-grey" src="{{ asset('images/snap.png') }}"
-                                             style="width: 15px; color : black;"></a></li>
+                                        <img class="img-grey img-xxs" src="{{ asset('images/snap.png') }}"/></a></li>
                             @endif
                         </ul>
                     </div>
@@ -56,10 +55,13 @@
                                 <li><i class="fa fa-mobile-phone"></i> &nbsp; {{ $settings->mobile }}</li>
                             @endif
                             @if($settings->whatsapp)
-                                <li><i class="fa fa-whatsapp"></i> &nbsp; {{ $settings->whatsapp }}</li>
+                                <li><img
+                                            class="img-grey img-xxs"
+                                            src="{{ asset('images/whatsapp.png') }}"
+                                            > &nbsp; {{ $settings->whatsapp }}</li>
                             @endif
                             @if($settings->address)
-                                <li><i class="fa fa-address-book"></i> &nbsp; {{ $settings->address }}</li>
+                                <li><i class="fa fa-location-arrow"></i> &nbsp; {{ $settings->address }}</li>
                             @endif
                         </ul>
                     </div>
