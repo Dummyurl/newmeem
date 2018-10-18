@@ -34,19 +34,18 @@ class Filters extends QueryFilters
 
     public function category_id()
     {
-        dd('here');
-        $children = $this->category->whereId(request()->category_id)->with('children.products')->first()->children->pluck('id');
-        if ($children->isNotEmpty() && $children->pluck('products')->isNotEmpty()) {
-            return $this->builder->whereHas('categories', function ($q) use ($children) {
-                if ($children->isEmpty()) {
-                    return $q->where('id',request('category_id'));
+        $parent = $this->category->whereId(request()->category_id)->with('children.products')->first();
+        if ($parent->children->isNotEmpty() && $parent->children->pluck('products')->isNotEmpty()) {
+            $children = $parent->children->pluck('id');
+            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
+                if ($parent->children->isEmpty()) {
+                    return $q->where('id', request('category_id'));
                 }
                 return $q->whereIn('id', $children);
             });
         }
-        dd('this case 1');
-        return $this->builder->whereHas('categories' ,function ($q) {
-            return $q->where('id', parseInt(request()->category_id));
+        return $this->builder->whereHas('categories', function ($q) {
+            return $q->where('id', request()->category_id);
         });
     }
 
