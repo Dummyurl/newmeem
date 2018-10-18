@@ -1,15 +1,28 @@
 <?php
 
 return array (
+  'address' => 'العنوان',
+  'name' => 'الاسم',
   'information' => 'معلومات',
   'pages' => 'الصفحات',
+  'all_rights_reserved' => 'جميع الحقوق محفوظه',
   'add_to_cart' => 'اضافة الى السله',
+  'welcome' => 'هلا',
+  'dashboard' => 'لوحة التحكم',
   'my_wishlist' => 'المفضلة',
+  'shopping_cart' => 'عربة التسوق',
+  'logout' => 'تسجيل الخروج',
+  'brands' => 'الماركات',
   'home' => 'الرئيسية',
   'add_to_favorite' => 'ااضافة للمفضل',
+  'sku' => 'الرقم التعريفي',
   'kwd' => 'د.ك',
+  'sizes' => 'المقاسات',
+  'tags' => 'كلمات افتتاحية',
   'status' => 'الحالة',
   'new_arrival' => 'أحد المنتجات',
+  'on_sale_products' => 'عروض المنتجات',
   'aboutus' => 'عن',
+  'on_sale' => 'يوجد خصم',
   'best_sale_products' => 'الاكثر مبيعا',
 );
