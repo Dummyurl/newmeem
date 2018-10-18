@@ -59,7 +59,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::post('cart/store', 'CartController@checkout')->name('cart.store');
     // checkout.review is order.show
     Route::resource('category', 'CategoryController');
-    Route::resource('page', 'PageController');
+    Route::resource('page', 'PageController')->only(['show']);
     Route::resource('user', 'UserController');
     Route::resource('newsletter', 'NewsletterController');
     Route::get('search', 'ProductController@search')->name('product.search');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class PageController extends Controller
 {
@@ -37,6 +38,18 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
+        $validate = validator($request->request->all(), [
+            'title_ar' => 'required|alpha',
+            'title_en' => 'required|alpha',
+            'slug_ar' => 'required',
+            'slug_en' => 'required',
+            'url' => 'required|url',
+            'content_ar' => 'required|min:100',
+            'content_en' => 'required|min:100',
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput(Input::all());
+        }
         $element = Page::create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
@@ -79,6 +92,18 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validate = validator($request->request->all(), [
+            'title_ar' => 'required|alpha',
+            'title_en' => 'required|alpha',
+            'slug_ar' => 'required',
+            'slug_en' => 'required',
+            'url' => 'required',
+            'content_ar' => 'required|min:100',
+            'content_en' => 'required|min:100',
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate);
+        }
         $element = Page::whereId($id)->first();
         $updated = $element->update($request->request->all());
         if ($updated) {
