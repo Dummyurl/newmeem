@@ -34,16 +34,16 @@ class Filters extends QueryFilters
 
     public function category_id()
     {
-        $children = $this->category->whereId(request()->category_id)->with('products','children')->first()->children->pluck('id');
+        $children = $this->category->whereId(request()->category_id)->with('children.products')->first()->children->pluck('id');
         if ($children->isNotEmpty() && $children->pluck('products')->isNotEmpty()) {
             return $this->builder->whereHas('categories', function ($q) use ($children) {
                 if ($children->isEmpty()) {
-                    return $q->where(['id' => request('category_id')]);
+                    return $q->where('id',request('category_id'));
                 }
                 return $q->whereIn('id', $children);
             });
         }
-        dd('this case');
+        dd('this case 1');
         return $this->builder->whereHas('categories' ,function ($q) {
             return $q->where('id', parseInt(request()->category_id));
         });
