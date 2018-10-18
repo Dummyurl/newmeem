@@ -90,13 +90,13 @@
             <div class="row">
 
                 <div class="col-sm-6">
-                    <div class="copyright">{{ trans("mesage.copy_right") }}</div>
+                    <div class="copyright">{{ trans("message.copy_right") }}</div>
                 </div>
                 <div class="col-sm-6">
                     <div class="payments">
                         <ul>
                             @if($currency->currency_symbol_en === 'KWD')
-                                <li><img class="img-grey" src="{{ asset('img/k-net-icon.png') }}" alt="knet"/></li>
+                                <li><img class="img-grey" src="{{ asset('img/k-net.png') }}" alt="knet"/></li>
                             @endif
                             <li><img src="{{ asset('img/preview/payments/visa.jpg') }}" alt="{{ $settings->company }}"/>
                             </li>
