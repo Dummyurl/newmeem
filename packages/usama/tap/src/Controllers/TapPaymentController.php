@@ -85,7 +85,6 @@ class TapPaymentController extends Controller
             'MerMastDC' => $this->getMerchant($order->net_price),
         ];
         $curl = curl_init();
-
         curl_setopt_array($curl, array(
             CURLOPT_URL => config('tap.paymentUrl'),
             CURLOPT_RETURNTRANSFER => true,
@@ -102,9 +101,7 @@ class TapPaymentController extends Controller
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
         curl_close($curl);
-
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
@@ -135,34 +132,34 @@ class TapPaymentController extends Controller
     public function result(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
-        $order = Order::where(['reference_id' => $request->ref])->with('order_metas.product', 'user', 'order_metas.product_attribute.size','order_metas.product_attribute.color')->first();
+        $order = Order::where(['reference_id' => $request->ref])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
         $order->order_metas->each(function ($orderMeta) use ($order) {
             $orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->decrement('qty', 1) : null;
         });
         $done = $order->update(['status' => 'success']);
         $coupon = session('coupon');
-        if($coupon && $done) {
+        if ($coupon && $done) {
             $coupon->update(['consumed' => true]);
         }
         $contactus = Setting::first();
         Mail::to($order->email)->cc($contactus->email)->send(new OrderComplete($order, $order->user));
         $this->clearCart();
         $markdown = new Markdown(view(), config('mail.markdown'));
-        return $markdown->render('emails.order-complete', ['order' => $order,'user' => $order->user]);
+        return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
     }
 
     public function error(Request $request)
     {
         $order = Order::withoutGlobalScopes()->where(['reference_id' => $request->ref])->first();
         $order->update(['status' => 'failed']);
-        abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
+        return abort('404', 'Your payment process is unsuccessful .. your deal is not created please try again or contact us.');
     }
 
     public function getProducts($order)
     {
         $productsList = [];
-        foreach($order->order_metas as $orderMeta) {
-             array_push($productsList, [
+        foreach ($order->order_metas as $orderMeta) {
+            array_push($productsList, [
                 'CurrencyCode' => env('TAP_CURRENCY_CODE'),
                 'ImgUrl' => asset(env('LARGE')) . $orderMeta->product->image,
                 'Quantity' => $orderMeta->qty,
@@ -174,10 +171,24 @@ class TapPaymentController extends Controller
                 'VndID' => '',
             ]);
         }
+        if ($order->shipping_cost > 0) {
+            array_push($productsList, [
+                'CurrencyCode' => env('TAP_CURRENCY_CODE'),
+                'ImgUrl' => asset(env('LARGE')) . Setting::first()->logo,
+                'Quantity' => 1,
+                'TotalPrice' => $order->shipping_cost,
+                'UnitID' => $order->id,
+                'UnitName' => 'Shipping Cost',
+                'UnitPrice' => $order->shipping_cost,
+                'UnitDesc' => 'Shipping Cost',
+                'VndID' => '',
+            ]);
+        }
         return $productsList;
     }
 
-    public function clearCart() {
+    public function clearCart()
+    {
         session()->forget('cart');
     }
 }

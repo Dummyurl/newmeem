@@ -41,7 +41,7 @@ class MyFatoorahPaymentController extends Controller
         ';
     }
 
-    public function createXMLPaymentDetails($user, $orderMetas)
+    public function createXMLPaymentDetails($user, $order)
     {
         return $this->postString = '<?xml version="1.0" encoding="windows-1256"?>
 <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
@@ -51,7 +51,7 @@ class MyFatoorahPaymentController extends Controller
     ' . $this->getCustomer($user) . '
     ' . $this->getMerchant() . '
     <lstProductDC>
-        ' . $this->createProductsList($orderMetas) . '
+        ' . $this->createProductsList($order) . '
     </lstProductDC>
     </req>
     </PaymentRequest>
@@ -59,10 +59,10 @@ class MyFatoorahPaymentController extends Controller
 </soap12:Envelope>';
     }
 
-    public function createProductsList($orderMetas)
+    public function createProductsList($order)
     {
         $products = '';
-        foreach ($orderMetas as $orderMeta) {
+        foreach ($order->order_metas as $orderMeta) {
             $price = $orderMeta->product->on_sale ? $orderMeta->product->sale_price : $orderMeta->product->price;
             $products .= <<<PRODUCTS
         <ProductDC>
@@ -72,6 +72,16 @@ class MyFatoorahPaymentController extends Controller
         </ProductDC>'
 PRODUCTS;
         }
+        if ($order->shipping_cost > 0) {
+            $products .= <<<PRODUCTS
+        <ProductDC>
+            <product_name>Shipping Cost</product_name>
+            <unitPrice>{$order->shipping_cost}</unitPrice>
+            <qty>1</qty>
+        </ProductDC>'
+PRODUCTS;
+        }
+
         return $products;
     }
 
@@ -81,7 +91,7 @@ PRODUCTS;
         $order = new $className();
         $order = $order->whereId($request->id)->with('order_metas.product', 'order_metas.product_attribute')->first();
         $user = auth()->user();
-        $postString = $this->createXMLPaymentDetails($user, $order->order_metas);
+        $postString = $this->createXMLPaymentDetails($user, $order);
         $soap_do = curl_init();
 
 // User Name, Password To be provided by Myfatoorah
@@ -203,6 +213,19 @@ PRODUCTS;
                 'UnitName' => $orderMeta->product->name_en,
                 'UnitPrice' => $orderMeta->product->price,
                 'UnitDesc' => $orderMeta->product->description,
+                'VndID' => '',
+            ]);
+        }
+        if ($order->shipping_cost > 0) {
+            array_push($productsList, [
+                'CurrencyCode' => env('TAP_CURRENCY_CODE'),
+                'ImgUrl' => asset(env('LARGE')) . Setting::first()->logo,
+                'Quantity' => 1,
+                'TotalPrice' => $order->shipping_cost,
+                'UnitID' => $order->id,
+                'UnitName' => 'Shipping Cost',
+                'UnitPrice' => $order->shipping_cost,
+                'UnitDesc' => 'Shipping Cost',
                 'VndID' => '',
             ]);
         }
