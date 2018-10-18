@@ -39,8 +39,8 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $validate = validator($request->request->all(), [
-            'title_ar' => 'required|alpha',
-            'title_en' => 'required|alpha',
+            'title_ar' => 'required|alpha_dash',
+            'title_en' => 'required|alpha_dash',
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'url' => 'required|url',
@@ -93,8 +93,8 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $validate = validator($request->request->all(), [
-            'title_ar' => 'required|alpha',
-            'title_en' => 'required|alpha',
+            'title_ar' => 'required|alpha_dash',
+            'title_en' => 'required|alpha_dash',
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'url' => 'required',
