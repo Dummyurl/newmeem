@@ -43,9 +43,9 @@ class Filters extends QueryFilters
                 return $q->whereIn('id', $children);
             });
         }
-        return $this->builder->where(['categories' => function ($q) {
+        return $this->builder->whereHas('categories' ,function ($q) {
             return $q->where('id', request()->category_id);
-        }]);
+        });
     }
 
     public function tag_id()
