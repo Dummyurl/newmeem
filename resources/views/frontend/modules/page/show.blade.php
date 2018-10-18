@@ -1,4 +1,12 @@
 @extends('frontend.layouts.app')
+
+@section('title')
+    <title>{{ $element->slug }}</title>
+    <meta name="description" content="{!! $element->slug_ar .' '. $element->slug_en !!}">
+    <meta name="keywords" content="{{ $element->slug . config('app.name')  }}"/>
+@endsection
+
+
 @section('body')
     <!-- BREADCRUMBS -->
     <section class="page-section breadcrumbs">
