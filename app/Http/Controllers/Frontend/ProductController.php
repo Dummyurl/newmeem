@@ -33,7 +33,6 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-//        $newArrivals = $this->product->hasProductAttribute()->hasGallery()->active()->onHomePage()->orderBy('created_at', 'desc')->with('gallery.images','favorites')->take(self::take)->get();
         $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('brands',
             'product_attributes.color', 'product_attributes.size', 'tags', 'gallery.images',
             'favorites', 'categories.products')->orderBy('id', 'desc')->paginate(20);
@@ -42,6 +41,7 @@ class ProductController extends Controller
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
         $brands = $elements->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
+        dd($elements);
         if (!$elements->isEmpty()) {
             return view('frontend.modules.product.index', compact('elements', 'tags', 'colors', 'sizes', 'categoriesList','brands'));
         } else {
