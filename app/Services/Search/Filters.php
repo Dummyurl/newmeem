@@ -43,8 +43,9 @@ class Filters extends QueryFilters
                 return $q->whereIn('id', $children);
             });
         }
+        dd('this case');
         return $this->builder->whereHas('categories' ,function ($q) {
-            return $q->where('id', request()->category_id);
+            return $q->where('id', parseInt(request()->category_id));
         });
     }
 
