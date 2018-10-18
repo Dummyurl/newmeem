@@ -35,12 +35,17 @@ class Filters extends QueryFilters
     public function category_id()
     {
         $children = $this->category->whereId(request()->category_id)->with('children')->first()->children->pluck('id');
-        return $this->builder->whereHas('categories', function ($q) use ($children) {
-            if ($children->isEmpty()) {
-                return $q->where(['id' => request('category_id')]);
-            }
-            return $q->whereIn('id', $children);
-        });
+        if (!$children->isEmpty()) {
+            return $this->builder->whereHas('categories', function ($q) use ($children) {
+                if ($children->isEmpty()) {
+                    return $q->where(['id' => request('category_id')]);
+                }
+                return $q->whereIn('id', $children);
+            });
+        }
+        return $this->builder->where(['categories' => function ($q) {
+            return $q->where('id', request()->category_id);
+        }]);
     }
 
     public function tag_id()

@@ -33,6 +33,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
+//        $newArrivals = $this->product->hasProductAttribute()->hasGallery()->active()->onHomePage()->orderBy('created_at', 'desc')->with('gallery.images','favorites')->take(self::take)->get();
         $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('brands',
             'product_attributes.color', 'product_attributes.size', 'tags', 'gallery.images',
             'favorites', 'categories.products')->orderBy('id', 'desc')->paginate(20);
