@@ -24,8 +24,8 @@ class CategoryStore extends FormRequest
     public function rules()
     {
         return [
-            'name_ar' => 'required|min:3|unique:categories,name_ar',
-            'name_en' => 'required|min:3|unique:categories,name_en',
+            'name_ar' => 'required|min:3',
+            'name_en' => 'required|min:3',
             'description_en' => 'min:3|nullable',
             'description_ar' => 'min:3|nullable',
             'image' => 'image|nullable',

@@ -24,8 +24,8 @@ class CategoryUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name_ar' => 'required|min:3|unique:categories,name_ar,' . request('id'),
-            'name_en' => 'required|min:3|unique:categories,name_en,' . request('id'),
+            'name_ar' => 'required|min:3',
+            'name_en' => 'required|min:3',
             'parent_id' => 'required|integer',
             'description_en' => 'min:3|nullable',
             'description_ar' => 'min:3|nullable',
