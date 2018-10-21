@@ -61,6 +61,7 @@
                     <div class="col-md-6">
                         <label for="area">{{ trans('general.area') }}</label>
                         <div class="form-group"><input name="area" value="{{ auth()->user()->area }}"
+                                                       disabled
                                                        class="form-control" type="text"
                                                        placeholder="{{ trans('general.email') }}">
                         </div>
@@ -100,10 +101,10 @@
                             @foreach($order->order_metas as $item)
                                 <tr>
                                     <td class="image">
-                                        <a class="media-link" href="#"><i class="fa fa-plus"></i>
+
                                             <img class="img-sm"
                                                  src="{{ asset(env('THUMBNAIL').$item->product->image) }}"
-                                                 alt="{{ $item->name }}"/></a></td>
+                                                 alt="{{ $item->name }}"/></td>
                                     <td class="quantity">{{ $item->product_attribute->color->name }}</td>
                                     <td class="quantity">{{ $item->product_attribute->size->name }}</td>
                                     <td class="quantity">{{ $item->product->name }}</td>
