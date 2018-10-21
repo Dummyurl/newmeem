@@ -75,6 +75,7 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.layouts.app',
             'backend.layouts.app',
             'frontend.modules.product.show',
+            'welcome'
         ], 'App\Services\ViewComposers@getSettings');
         view()->composer([
             'frontend.layouts.app',

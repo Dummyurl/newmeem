@@ -82,7 +82,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <div><img src="{{ asset('images/mainlogo.jpg') }}" alt="{{ config('app.name') }}"></div>
+            <div><img src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ config('app.name') }}"></div>
         </div>
         <div class="title m-b-md">
             Coming Soon !
