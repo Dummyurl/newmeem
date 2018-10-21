@@ -52,6 +52,7 @@
                                     </span>
                                     @else
                                         <span class="label label-warning">Product No longer exists</span>
+                                    @endif
                                 </li>
                             @endforeach
                         @endif
