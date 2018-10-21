@@ -106,7 +106,7 @@ class OrderController extends Controller
     {
         $order = Order::whereId($id)->with('order_metas.product', 'order_metas.product_attribute.color','order_metas.product_attribute.size')->first();
         $coupon = session('coupon') ? session('coupon') : null;
-        return view('frontend.modules.checkout.invoice_review', compact('order', 'coupon'));
+        return view('frontend.modules.order.show', compact('order', 'coupon'));
     }
 
     /**

@@ -42,6 +42,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.modules.checkout.index',
+            'frontend.modules.order.show',
             'auth.register'
         ], 'App\Services\ViewComposers@getCountriesWorld');
 
