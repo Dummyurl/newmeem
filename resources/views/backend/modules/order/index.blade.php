@@ -45,10 +45,13 @@
                         @if(!$element->order_metas->isEmpty())
                             @foreach($element->order_metas as $meta)
                                 <li>
-                                    <span class="label label-sm label-info">
+                                    @if($meta->product)
+                                        <span class="label label-sm label-info">
                                     {{ $meta->product->name_ar}} - {{ $meta->product_attribute->size->name_ar }}
-                                        - {{ $meta->qty }}
+                                            - {{ $meta->qty }}
                                     </span>
+                                    @else
+                                        <span class="label label-warning">Product No longer exists</span>
                                 </li>
                             @endforeach
                         @endif
@@ -57,7 +60,9 @@
                     <td>{{ $element->discount}}</td>
                     <td>{{ $element->price}}</td>
                     <td>{{ $element->reference_id}}</td>
-                    <td><span class="label label-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</span></td>
+                    <td>
+                        <span class="label label-{{ $element->status === 'success' ? 'success' : 'info' }}">{{ $element->status }}</span>
+                    </td>
                     <td>{{ $element->address }}</td>
                     <td><span class="label label-info">{{ $element->mobile }}</span></td>
                     <td><span class="label label-info">{{ $element->created_at->diffForHumans()}}</span></td>
