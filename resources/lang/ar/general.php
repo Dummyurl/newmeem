@@ -73,6 +73,7 @@ return array (
   'apartment' => 'شقة',
   'delivery_within_4_days' => 'التوصيل خلال 4 أيام',
   'delivery_inside_kuwait' => 'داخل الكويت',
+  'already_registered' => 'موجود بالفعل',
   'billing_information' => 'معلومات الفواتير',
   'payment_information' => 'بيانات الدفع',
   'order_review' => 'مراجعة الطلب',

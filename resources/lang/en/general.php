@@ -197,4 +197,5 @@ meemonoon meemonoon',
   'delivery_inside_kuwait' => 'inside kuwait',
   'delivery_branch_location' => 'Delivery btanch',
   'alphabetic' => 'Alphabetic',
+  'already_registered' => 'Already exists',
 );
