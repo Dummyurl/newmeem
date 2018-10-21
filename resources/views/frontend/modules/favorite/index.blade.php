@@ -14,6 +14,7 @@
     <section class="page-section">
         <div class="container">
             <div class="col-lg-12">
+                @if($elements->isNotEmpty())
                 @foreach($elements as $element)
                     <div class="col-lg-3" style="margin-bottom: 15px;">
                         <div class="thumbnail bordered no-padding">
@@ -49,6 +50,11 @@
                         </div>
                     </div>
                 @endforeach
+                    @else
+                    <div class="alert alert-warning alert-block" role="alert">
+                        {{ trans('general.no_favorites') }}
+                    </div>
+                @endif
             </div>
             <div class="col-lg-12">
                 @include('frontend.partials.pagination')
