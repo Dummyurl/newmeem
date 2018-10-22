@@ -36,7 +36,7 @@
                 @else
                     <div class="cart-items-inner">
                         <div class="media">
-                            <div class="label label-default">
+                            <div class="btn btn-warning">
                                 {{ trans('general.empty') }}
                             </div>
                         </div>

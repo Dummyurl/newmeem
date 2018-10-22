@@ -8,53 +8,71 @@
                 @csrf
                 <input type="hidden" name="api_token" value="{{ str_random(rand(10,99)) }}">
                 <div class="form-body">
-                    <h3 class="form-section">Create Company</h3>
+                    <h3 class="form-section">Create User</h3>
                     {{--name arabic / name english --}}
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
-                                <label for="name_ar" class="control-label">Name Arabic*</label>
+                        <div class="col-md-4">
+                            <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name_ar" class="control-label">Name*</label>
                                 <input id="name_ar"
                                        type="text"
                                        class="form-control"
-                                       name="name_ar"
-                                       value="{{ old('name_ar') }}"
+                                       name="name"
+                                       value="{{ old('name') }}"
                                        placeholder="name in arabic"
                                        required autofocus>
-                                @if ($errors->has('name_ar'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('name_ar') }}
+                                            {{ $errors->first('name') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
-                                <label for="name_en" class="control-label">Name English*</label>
-                                <input id="name_en"
+                        <div class="col-md-4">
+                            <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="control-label">password *</label>
+                                <input id="password"
+                                       type="password"
+                                       class="form-control"
+                                       name="password"
+                                       value=""
+                                       placeholder="password in arabic"
+                                       required autofocus>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('password') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                <label for="password_confirmation" class="control-label">password_confirmation *</label>
+                                <input id="password_confirmation"
                                        type="text"
                                        class="form-control"
-                                       name="name_en"
-                                       value="{{ old('name_en') }}"
-                                       placeholder="name in english"
+                                       name="password_confirmation"
+                                       value=""
+                                       placeholder="password_confirmation in arabic"
                                        required autofocus>
-                                @if ($errors->has('name_en'))
+                                @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('name_en') }}
+                                            {{ $errors->first('password_confirmation') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                    </div>
 
 
-                    {{-- email + mobile --}}
-                    <div class="row">
-                        <div class="col-md-6">
+                        {{-- email + mobile --}}
+
+                        <div class="col-md-4">
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="control-label">email *</label>
                                 <input id="email"
@@ -73,7 +91,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                 <label for="mobile" class="control-label">mobile *</label>
                                 <input id="mobile"
@@ -92,51 +110,10 @@
                                 @endif
                             </div>
                         </div>
-                    </div>
-
-                    {{-- password + confirm password --}}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="control-label">password *</label>
-                                <input id="password"
-                                       type="password"
-                                       class="form-control"
-                                       name="password"
-                                       placeholder="password"
-                                       required autofocus>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('password') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label for="password_confirmation" class="control-label">password_confirmation *</label>
-                                <input id="password_confirmation"
-                                       type="password"
-                                       class="form-control"
-                                       name="password_confirmation"
-                                       placeholder="password_confirmation"
-                                       required autofocus>
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('password_confirmation') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
 
 
-                    {{-- phone + fax --}}
-                    <div class="row">
+                        {{-- password + confirm password --}}
+
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                 <label for="phone" class="control-label">phone</label>
@@ -144,9 +121,9 @@
                                        type="text"
                                        class="form-control"
                                        name="phone"
-                                       value="{{ old('phone') }}"
                                        placeholder="phone"
-                                        autofocus>
+                                       value="{{ old('phone') }}"
+                                       autofocus>
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
                                         <strong>
@@ -157,258 +134,159 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group{{ $errors->has('fax') ? ' has-error' : '' }}">
-                                <label for="fax" class="control-label">fax </label>
-                                <input id="fax"
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="address" class="control-label">address</label>
+                                <input id="address"
                                        type="text"
                                        class="form-control"
-                                       name="fax"
-                                       value="{{ old('fax') }}"
-                                       placeholder="fax"
-                                        autofocus>
-                                @if ($errors->has('fax'))
+                                       name="address"
+                                       placeholder="address"
+                                       value="{{ old('address') }}"
+                                       autofocus>
+                                @if ($errors->has('address'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('fax') }}
+                                            {{ $errors->first('address') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
-                                <label for="whatsapp" class="control-label">whatsapp </label>
-                                <input id="whatsapp"
+                            <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
+                                <label for="area" class="control-label">area</label>
+                                <input id="area"
                                        type="text"
                                        class="form-control"
-                                       name="whatsapp"
-                                       value="{{ old('whatsapp') }}"
-                                       placeholder="whatsapp"
+                                       name="area"
+                                       placeholder="area"
+                                       value="{{ old('area') }}"
                                        autofocus>
-                                @if ($errors->has('whatsapp'))
+                                @if ($errors->has('area'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('whatsapp') }}
+                                            {{ $errors->first('area') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                    </div>
-
-                    {{-- whatapp --}}
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
-                                <label for="longitude" class="control-label">longitude </label>
-                                <input id="longitude"
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('block') ? ' has-error' : '' }}">
+                                <label for="block" class="control-label">block</label>
+                                <input id="block"
                                        type="text"
                                        class="form-control"
-                                       name="longitude"
-                                       value="{{ old('longitude') }}"
-                                       placeholder="longitude"
+                                       name="block"
+                                       placeholder="block"
+                                       value="{{ old('block') }}"
                                        autofocus>
-                                @if ($errors->has('longitude'))
+                                @if ($errors->has('block'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('longitude') }}
+                                            {{ $errors->first('block') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
-                                <label for="latitude" class="control-label">latitude </label>
-                                <input id="latitude"
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
+                                <label for="street" class="control-label">street</label>
+                                <input id="street"
                                        type="text"
                                        class="form-control"
-                                       name="latitude"
-                                       value="{{ old('latitude') }}"
-                                       placeholder="latitude"
-                                        autofocus>
-                                @if ($errors->has('latitude'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('latitude') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
-                                <label for="keywords" class="control-label">keywords </label>
-                                <input id="keywords"
-                                       type="text"
-                                       class="form-control"
-                                       name="keywords"
-                                       value="{{ old('keywords') }}"
-                                       placeholder="keywords"
-                                        autofocus>
-                                @if ($errors->has('keywords'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('keywords') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('address_ar') ? ' has-error' : '' }}">
-                                <label for="address_ar" class="control-label">address_ar Arabic</label>
-                                <input id="address_ar"
-                                       type="text"
-                                       class="form-control"
-                                       name="address_ar"
-                                       value="{{ old('address_ar') }}"
-                                       placeholder="name in arabic"
-                                        autofocus>
-                                @if ($errors->has('address_ar'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('address_ar') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('address_en') ? ' has-error' : '' }}">
-                                <label for="address_en" class="control-label">address_en English</label>
-                                <input id="address_en"
-                                       type="text"
-                                       class="form-control"
-                                       name="address_en"
-                                       value="{{ old('address_en') }}"
-                                       placeholder="name in english"
-                                        autofocus>
-                                @if ($errors->has('address_en'))
-                                    <span class="help-block">
-                                        <strong>
-                                            {{ $errors->first('address_en') }}
-                                        </strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="duration" class="control-label">role *</label>
-                                <select class="form-control input-xlarge" name="role_id" id="role" required>
-                                    @foreach($roles as $role)
-                                        <option value="{{ $role->id }}" {{ request()->role == $role->name ? 'selected' : null  }}>{{ $role->name }}
-                                            - {{ $role->slug_ar }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="duration" class="control-label">category *</label>
-                            <select class="form-control input-xlarge" name="category_id" id="category" required>
-                                @foreach($categories->where('role_id', $roles->where('name',request()->role)->first()->id) as $cat)
-                                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="country_id" class="control-label">country *</label>
-                            <select class="form-control input-xlarge" name="country_id" id="country" required>
-                                @foreach($countries as $country)
-                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="governate_id" class="control-label">governate *</label>
-                            <select class="form-control input-medium" name="governate_id" id="governate" required>
-                                <option value="">Select Governate</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="area_id" class="control-label">area *</label>
-                            <select class="form-control input-medium" name="area_id" id="area" required>
-                                <option value="">Select Area</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('services_ar') ? ' has-error' : '' }}">
-                                <label for="services_ar" class="control-label">services_ar arabic</label>
-                                <input id="services_ar"
-                                       type="text"
-                                       class="form-control"
-                                       name="services_ar"
-                                       placeholder="services_ar arabic"
+                                       name="street"
+                                       placeholder="street"
+                                       value="{{ old('street') }}"
                                        autofocus>
-                                @if ($errors->has('services_ar'))
+                                @if ($errors->has('street'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('services_ar') }}
+                                            {{ $errors->first('street') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('services_en') ? ' has-error' : '' }}">
-                                <label for="services_en" class="control-label">services_en english</label>
-                                <input id="services_en"
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
+                                <label for="building" class="control-label">building</label>
+                                <input id="building"
                                        type="text"
                                        class="form-control"
-                                       name="services_en"
-                                       placeholder="services_en arabic"
+                                       name="building"
+                                       placeholder="building"
+                                       value="{{ old('building') }}"
                                        autofocus>
-                                @if ($errors->has('services_en'))
+                                @if ($errors->has('building'))
                                     <span class="help-block">
                                         <strong>
-                                            {{ $errors->first('services_en') }}
+                                            {{ $errors->first('building') }}
                                         </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="description" class="control-label">description arabic</label>
-                                <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                          aria-multiline="true"
-                                          maxlength="500">
-                                </textarea>
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('floor') ? ' has-error' : '' }}">
+                                <label for="floor" class="control-label">floor</label>
+                                <input id="floor"
+                                       type="text"
+                                       class="form-control"
+                                       name="floor"
+                                       placeholder="floor"
+                                       value="{{ old('floor') }}"
+                                       autofocus>
+                                @if ($errors->has('floor'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('floor') }}
+                                        </strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="description" class="control-label">description english</label>
-                                <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                          aria-multiline="true"
-                                          maxlength="500">
-                                </textarea>
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('apartment') ? ' has-error' : '' }}">
+                                <label for="apartment" class="control-label">apartment</label>
+                                <input id="apartment"
+                                       type="text"
+                                       class="form-control"
+                                       name="apartment"
+                                       placeholder="apartment"
+                                       value="{{ old('apartment') }}"
+                                       autofocus>
+                                @if ($errors->has('apartment'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('apartment') }}
+                                        </strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                    </div>
+                        <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                                <label for="country" class="control-label">country *</label>
+                                <input id="country"
+                                       type="text"
+                                       class="form-control"
+                                       name="country"
+                                       value="{{ old('country') }}"
+                                       placeholder="country"
+                                       required autofocus>
+                                @if ($errors->has('country'))
+                                    <span class="help-block">
+                                        <strong>
+                                            {{ $errors->first('country') }}
+                                        </strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
 
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label sbold">active</label></br>
@@ -417,54 +295,15 @@
                                            value="1"> active </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="active" id="optionsRadios2"
-                                    value="0"> not_Active</label>
+                                           value="0"> not_Active</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label sbold">verified</label></br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="verified" id="optionsRadios3" checked
-                                           value="1"> verified</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="verified" id="optionsRadios4"
-                                    value="0">not verified</label>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="control-label sbold">show_offer</label></br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="show_offer" id="optionsRadios5" checked
-                                           value="1" > show_offer </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="show_offer" id="optionsRadios6"
-                                    value="0"> not_show_offer</label>
-                            </div>
+                        <div class="col-lg-12">
+                            @include('backend.partials.forms._btn-group')
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="file" class="form-control" name="logo" placeholder="logo">
-                                <label for="form_control_1">logo Image - ['500', '500']</label>
-                                <div class="help-block text-left">
-                                    W * H - Best fit 500 x 500 pixels
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="file" class="form-control" name="gallery[]" placeholder="gallery" multiple>
-                                <label for="form_control_1">gallery Image - ['1334', '750']</label>
-                                <div class="help-block text-left">
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
-                    @include('backend.partials.forms._btn-group')
-                </div>
             </form>
         </div>
     </div>

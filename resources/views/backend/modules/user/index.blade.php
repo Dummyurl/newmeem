@@ -75,6 +75,12 @@
                                                 <a href="{{ route('backend.reset.password',['email' => $element->email]) }}">
                                                     <i class="fa fa-fw fa-edit"></i> Reset Password</a>
                                             </li>
+                                            @if(auth()->user()->isAdmin)
+                                                <li>
+                                                    <a href="{{ route('backend.user.edit',$element->id) }}">
+                                                        <i class="fa fa-fw fa-check-circle"></i> edit</a>
+                                                </li>
+                                            @endif
                                             <li>
                                                 <a href="{{ route('backend.activate',['model' => 'user','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>

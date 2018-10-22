@@ -223,6 +223,10 @@ Breadcrumbs::for('backend.brand.edit', function ($trail, $element) {
     $trail->push('edit brand', route('backend.brand.edit', $element->id));
 });
 
+Breadcrumbs::for('backend.reset.password', function ($trail) {
+    $trail->parent('backend.user.index');
+});
+
 Breadcrumbs::for('backend.user.create', function ($trail) {
     $trail->parent('backend.user.index');
     $trail->push('create user', route('backend.user.create'));
