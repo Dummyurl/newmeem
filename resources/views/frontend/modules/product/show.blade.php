@@ -2,11 +2,11 @@
 
 @section('head')
     @parent
-    @section('title')
-        <title>{{ $product->name_ar .' ' . $product->name_en}}</title>
-    @endsection
-    <meta name="description" content="{!! $product->description_ar .' '. $product->description_en !!}">
-    <meta name="keywords" content="{{ $product->notes . config('app.name')  }}"/>
+@section('title')
+    <title>{{ $product->name_ar .' ' . $product->name_en}}</title>
+@endsection
+<meta name="description" content="{!! $product->description_ar .' '. $product->description_en !!}">
+<meta name="keywords" content="{{ $product->notes . config('app.name')  }}"/>
 <!-- You can use Open Graph tags to customize link previews.
 Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 <meta property="og:url" content="{{ request()->fullUrl() }}"/>
@@ -101,28 +101,47 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <div class="product-availability">{{ trans('general.status') }}:
                             <strong>{{ $product->totalQty > 0 ? trans('general.in_stock')  : trans('general.out_of_stock') }}</strong> {{ $product->totalQty }} {{ trans('general.items') }}
                         </div>
-                        <hr class="page-divider small"/>
 
-                        <div class="col-md-6">
-                            <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
-                            @if($product->isOnSale)
-                                <del>{{ $product->convertedPrice }}
-                                    <span><strong>{{ $currency->symbol }}</strong></span>
-                                </del>
-                            @endif
+                        <hr class="page-divider"/>
+                        
+                        <div class="product-text">
+                            <h4>{{ trans('general.price') }}</h4>
                         </div>
                         @if($currency->symbol_en != 'kwd')
-                            <div class="col-md-6">
-                                <div class="product-price"><span
-                                            style="font-size: 14px;">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
-                                </div>
-                                @if($product->isOnSale)
-                                    <del>{{ $product->price }}
-                                        <span><strong>{{ trans('general.kwd') }}</strong></span>
-                                    </del>
-                                @endif
+                            <div class="pull-{{ app()->isLocale('ar') ? 'left' : 'right' }} hidden-xs">
+                                @include('frontend.partials._top_bar_currencies')
                             </div>
                         @endif
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
+                                </td>
+                                <td>
+                                    @if($product->isOnSale)
+                                        <del>{{ $product->convertedPrice }}
+                                            <span><strong>{{ $currency->symbol }}</strong></span>
+                                        </del>
+                                    @endif
+                                </td>
+                            </tr>
+                            @if($currency->symbol_en != 'kwd')
+                                <tr>
+                                    <td>
+                                        <div class="product-price"><span
+                                                    style="font-size: 14px;">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if($product->isOnSale)
+                                            <del>{{ $product->price }}
+                                                <span><strong>{{ trans('general.kwd') }}</strong></span>
+                                            </del>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
                         <hr class="page-divider"/>
 
                         <div class="product-text">
