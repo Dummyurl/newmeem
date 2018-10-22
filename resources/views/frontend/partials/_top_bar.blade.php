@@ -64,7 +64,8 @@
                         {{--</a>--}}
                     {{--</li>--}}
                 {{--@endforeach--}}
-                @include('frontend.partials._currency_language')
+                @include('frontend.partials._top_bar_currencies')
+                @include('frontend.partials._top_bar_language')
             </ul>
         </div>
     </div>
