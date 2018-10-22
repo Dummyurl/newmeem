@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log('grandTotal', grandTotal);
     $('.grossTotal').attr('value', grandTotal);
     $('#grossTotal').html(grandTotal);
-    $('#forward').attr('disabled','disabled');
+    $('#forward').attr('disabled', 'disabled');
     $('#shipment_package').on('change', function(e) {
         var shipmentPackageId = e.target.value;
         var charge = $(this).find(':selected').data("charge");
@@ -16,8 +16,8 @@ $(document).ready(function() {
         if (is_local) {
             $('#free_shipment').toggleClass('hidden');
             $('.free_shipment').toggleClass('hidden');
-            $('#free_shipment').click(function () {
-                if($(this).is(':checked')) {
+            $('#free_shipment').click(function() {
+                if ($(this).is(':checked')) {
                     $('.branches').toggleClass('hidden');
                     $('#branch').toggleClass('hidden');
                     $('#branch_address').toggleClass('hidden');
@@ -27,6 +27,7 @@ $(document).ready(function() {
                         });
                     }).catch(e => console.log(e));
                     var grandTotal = $('.grandTotal').attr('value');
+                    $('#chargeVal').html('0');
                     $('.grossTotal').attr('value', grandTotal);
                     $('.grandTotal').attr('value', grandTotal);
                     $('#grossTotal').html(`<p>${grandTotal}</p>`);
@@ -36,6 +37,7 @@ $(document).ready(function() {
                     $('#branch').toggleClass('hidden');
                     $('#branch_address').toggleClass('hidden');
                     $('.charge').attr('value', charge);
+                    $('#chargeVal').html(charge);
                     var grandTotal = $('.grandTotal').attr('value');
                     var grossTotal = parseFloat(grandTotal) + parseFloat(charge);
                     $('.grossTotal').attr('value', grossTotal);
@@ -45,27 +47,28 @@ $(document).ready(function() {
                 }
             });
             $('.charge').attr('value', charge);
+            $('#chargeVal').html(parseFloat(!isNaN(charge) ? charge : 0));
             var grandTotal = $('.grandTotal').attr('value');
             var grossTotal = parseFloat(grandTotal) + parseFloat(charge);
             $('.grossTotal').attr('value', grossTotal);
             $('.grandTotal').attr('value', grandTotal);
-            $('#grossTotal').html(`<p>${grossTotal}</p>`);
+            $('#grossTotal').html(`${grossTotal}`);
             $('#forward').removeAttr('disabled');
         } else {
             $('.charge').attr('value', charge);
             var grandTotal = $('.grandTotal').attr('value');
             console.log('isnull', isNaN(charge));
+            $('#chargeVal').html(parseFloat(!isNaN(charge) ? charge : 0));
             var grossTotal = parseFloat(grandTotal) + parseFloat(!isNaN(charge) ? charge : 0);
             $('.grossTotal').attr('value', grossTotal);
             $('.grandTotal').attr('value', grandTotal);
-            $('#grossTotal').html(`<p>${grossTotal}</p>`);
+            $('#grossTotal').html(`${grossTotal}`);
             $('#forward').removeAttr('disabled');
         }
         console.log('charge', charge);
-        console.log('grossTotal',grossTotal);
-        console.log('grandTotal',grandTotal);
+        console.log('grossTotal', grossTotal);
+        console.log('grandTotal', grandTotal);
     });
-
     $('#branch').on('change', function(e) {
         $('#branch_address').html('');
         var branchAddress = $(this).find(':selected').data('address');
