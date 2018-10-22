@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\OrderStore;
 use App\Models\Order;
 use App\Models\OrderMeta;
+use App\Models\Product;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::where(['user_id' => auth()->user()->id,'status' => 'success'])->with('order_metas.product')->get();
-        $elements = $orders->pluck('order_metas')->flatten()->pluck('product');
-        return view('frontend.modules.order.index', compact('elements'));
+        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
+        $elements = Product::whereIn('id',$ids)->paginate(12);
+        return view('frontend.modules.order.index', compact('elements', 'orders'));
     }
 
     /**
