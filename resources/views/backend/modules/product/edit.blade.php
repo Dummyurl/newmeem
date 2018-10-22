@@ -209,6 +209,7 @@
                                        class="form-control"
                                        name="notes_ar"
                                        placeholder="notes_ar arabic"
+                                       value="{{ $element->notes_ar }}"
                                        autofocus>
                                 @if ($errors->has('notes_ar'))
                                     <span class="help-block">
@@ -226,7 +227,8 @@
                                        type="text"
                                        class="form-control"
                                        name="notes_en"
-                                       placeholder="notes_en arabic"
+                                       placeholder="notes_en"
+                                       value="{{ $element->notes_en }}"
                                        autofocus>
                                 @if ($errors->has('notes_en'))
                                     <span class="help-block">
@@ -245,14 +247,14 @@
                             <div class="form-group">
                                 <label for="description" class="control-label">description arabic</label>
                                 <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                          aria-multiline="true" maxlength="500"></textarea>
+                                          aria-multiline="true" maxlength="500">{{ $element->description_ar }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="description" class="control-label">description english</label>
                                 <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                          aria-multiline="true" maxlength="500"></textarea>
+                                          aria-multiline="true" maxlength="500">{{ $element->description_en }}</textarea>
                             </div>
                         </div>
                     </div>

@@ -103,7 +103,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         </div>
 
                         <hr class="page-divider"/>
-                        
+
                         <div class="product-text">
                             <h4>{{ trans('general.price') }}</h4>
                         </div>
