@@ -197,4 +197,5 @@ return array (
   'zip_code' => 'رمز المنطقة',
   'size_select' => 'القياس',
   'terms_and_policy' => 'الشروط و الاحكام',
+  'no_favorites' => 'لا توجد منتجات بالمفضلة.',
 );

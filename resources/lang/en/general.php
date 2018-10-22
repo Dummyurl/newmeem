@@ -198,4 +198,5 @@ meemonoon meemonoon',
   'delivery_branch_location' => 'Delivery btanch',
   'alphabetic' => 'Alphabetic',
   'already_registered' => 'Already exists',
+  'no_favorites' => 'No Products in your Wish List.',
 );
