@@ -57,14 +57,14 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.product.index',
             'frontend.modules.product.show',
             'frontend.modules.favorite.index',
-            'frontend.partials._currency_language',
+            'frontend.partials._top_bar_currencies',
             'frontend.partials.header_one',
             'frontend.partials.header_four',
             'frontend.partials._pop_up_cart',
             'frontend.modules.cart.index'
         ], 'App\Services\ViewComposers@getCurrency');
         view()->composer([
-            'frontend.partials._currency_language'
+            'frontend.partials._top_bar_currencies',
         ], 'App\Services\ViewComposers@getCurrencies');
         view()->composer([
             'frontend.partials.header_one',
