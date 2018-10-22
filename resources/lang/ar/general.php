@@ -1,7 +1,6 @@
 <?php
 
 return array (
-  'home' => 'my home',
   'date' => 'التاريخ',
   'address' => 'العنوان',
   'product_name' => 'أسم المنتج',
@@ -133,6 +132,7 @@ return array (
   'items' => 'قطع',
   'aboutus' => 'عن',
   'checkout' => 'الدفع',
+  'clear' => 'ازالة',
   'shippment' => 'الشحنة',
   'my_fatorrah' => 'ماي فاتورة',
   'colors' => 'الألوان',
