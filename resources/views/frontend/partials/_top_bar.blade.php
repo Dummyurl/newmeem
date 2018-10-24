@@ -11,34 +11,45 @@
                     </li>
                 @endguest
                 @auth
-                    @if(auth()->user()->isAdmin)
-                        <li class="dropdown currency">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown">{{ trans('general.welcome') }} {{ auth()->user()->name }}<i
-                                        class="fa fa-angle-down"></i></a>
-                            <ul role="menu" class="dropdown-menu">
+                    <li class="dropdown currency">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">{{ trans('general.welcome') }}
+                            <small>{{ auth()->user()->name }}</small>
+                            <i class="fa fa-angle-down"></i></a>
+                        <ul role="menu" class="dropdown-menu">
+                            @if(auth()->user()->isAdmin)
                                 <li class="icon-form"><a href="{{ route('backend.home') }}">
                                         <i class="fa fa-fw fa-key"></i>
                                         {{ trans('general.dashboard') }}
                                     </a>
                                 </li>
-                                <li class="icon-form">
-                                    <a href="{{ url('/logout') }}"
-                                       onclick="event.preventDefault();
+                            @endif
+                            <li class="icon-form"><a href="{{ route('frontend.order.index') }}">
+                                    <i class="fa fa-fw fa-shopping-cart"></i>
+                                    {{ trans('general.order_history') }}
+                                </a>
+                            </li>
+                            <li class="icon-form"><a href="{{ route('frontend.favorite.index') }}">
+                                    <i class="fa fa-fw fa-heart-o"></i>
+                                    {{ trans('general.favorites') }}
+                                </a>
+                            </li>
+                            <li class="icon-form">
+                                <a href="{{ url('/logout') }}"
+                                   onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-fw fa-sign-out"></i>
-                                        {{ trans('general.logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-                                          style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
+                                    <i class="fa fa-fw fa-sign-out"></i>
+                                    {{ trans('general.logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 @endauth
-                <li><a href="mailto:{{ $settings->email }}"><i class="fa fa-envelope"></i>
+                <li class="hidden-xs"><a href="mailto:{{ $settings->email }}"><i class="fa fa-envelope"></i>
                         <span>{{ $settings->email }}</span></a></li>
             </ul>
         </div>
@@ -53,16 +64,16 @@
                     </a>
                 </li>
                 @auth
-                    <li>
+                    <li class="hidden-xs">
                         <a href="{{ route('frontend.order.index') }}">{{ trans('general.order_history') }}
                         </a>
                     </li>
                 @endauth
                 {{--@foreach($pages->where('on_footer', true) as $page)--}}
-                    {{--<li class="hidden-xs">--}}
-                        {{--<a href="{{ $page->url }}">{{ $page->title }}--}}
-                        {{--</a>--}}
-                    {{--</li>--}}
+                {{--<li class="hidden-xs">--}}
+                {{--<a href="{{ $page->url }}">{{ $page->title }}--}}
+                {{--</a>--}}
+                {{--</li>--}}
                 {{--@endforeach--}}
                 @include('frontend.partials._top_bar_currencies')
                 @include('frontend.partials._top_bar_language')
