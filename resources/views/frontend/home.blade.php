@@ -419,18 +419,26 @@
     <!-- /PAGE -->
 
     <!-- Newest -->
-    @include('frontend.partials._product_carousel_lg', ['elements' => $newArrivals, 'title' => trans('general.new_arrival')])
+    @if($newArrivals->isNotEmpty())
+        @include('frontend.partials._product_carousel_lg', ['elements' => $newArrivals, 'title' => trans('general.new_arrival')])
+    @endif
     <!-- /PAGE -->
 
     <!-- On Sales  -->
-    @include('frontend.partials._product_carousel_lg', ['elements' => $onSaleProducts , 'title' => trans('general.on_sale_products')])
+    @if($onSaleProducts->isNotEmpty())
+        @include('frontend.partials._product_carousel_lg', ['elements' => $onSaleProducts , 'title' => trans('general.on_sale_products')])
+    @endif
     <!-- /PAGE -->
 
     <!-- Best Sales  -->
-    @include('frontend.partials._product_carousel_lg',['elements' => $bestSalesProducts, 'title' => trans('general.best_sale_products')])
-    <!-- /PAGE -->
+    @if($bestSalesProducts->isNotEmpty())
+        @include('frontend.partials._product_carousel_lg',['elements' => $bestSalesProducts, 'title' => trans('general.best_sale_products')])
+    @endif
 
-    @include('frontend.partials._brands_carousel',['bands' => $brands])
+    @if($brands->isNotEmpty())
+        @include('frontend.partials._brands_carousel',['bands' => $brands])
+    @endif
+    <!-- /PAGE -->
     <!-- PAGE -->
     {{--<section class="page-section">--}}
     {{--<div class="container">--}}
