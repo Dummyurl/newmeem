@@ -78,7 +78,7 @@
                             <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                 <label for="price" class="control-label">price *</label>
                                 <input id="price"
-                                       type="number"
+                                       type="text"
                                        class="form-control"
                                        name="price"
                                        value="{{ $element->price }}"

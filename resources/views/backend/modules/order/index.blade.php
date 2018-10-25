@@ -58,7 +58,9 @@
                         @endif
                     </td>
                     <td>{{ $element->net_price}}</td>
-                    <td>{{ $element->discount}}</td>
+                    <td>
+                        <span class="label label-{{ $element->discount ?  'warning' : null }}">{{ $element->discount }}</span>
+                    </td>
                     <td>{{ $element->price}}</td>
                     <td>{{ $element->reference_id}}</td>
                     <td>
