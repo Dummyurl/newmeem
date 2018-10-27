@@ -35,9 +35,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(!auth()->check()) {
-            return view('welcome');
-        }
+//        if(!auth()->check()) {
+//            return view('welcome');
+//        }
         $newArrivals = $this->product->hasProductAttribute()->hasGallery()->active()->onHomePage()->orderBy('created_at', 'desc')->with('gallery.images','favorites')->take(self::take)->get();
         $onSaleProducts = $this->product->hasProductAttribute()->hasGallery()->active()->onSaleOnHomePage()->with('gallery.images','favorites')->take(self::take)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->hasProductAttribute()->hasGallery()->active()->bestSalesProducts())->with('gallery.images','favorites')->get();
