@@ -1,7 +1,6 @@
 <?php
 
 return array (
-  'no_favorites' => 'No products in your Wish List.',
   'pages' => 'Pages',
   'new_arrival' => 'New Arrivals',
   'kwd' => 'KWD',
@@ -200,4 +199,5 @@ meemonoon meemonoon',
   'alphabetic' => 'Alphabetic',
   'already_registered' => 'Already exists',
   'no_favorites' => 'No Products in your Wish List.',
+  'clear' => 'clear',
 );
