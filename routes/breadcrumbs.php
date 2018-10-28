@@ -108,6 +108,11 @@ Breadcrumbs::for('backend.faq.index', function ($trail) {
     $trail->push('faq', route('backend.faq.index'));
 });
 
+Breadcrumbs::for('backend.notification.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push('notification', route('backend.notification.index'));
+});
+
 Breadcrumbs::for('backend.policy.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('policy', route('backend.policy.index'));
@@ -312,6 +317,17 @@ Breadcrumbs::for('backend.faq.create', function ($trail) {
 Breadcrumbs::for('backend.faq.edit', function ($trail, $element) {
     $trail->parent('backend.faq.index');
     $trail->push('edit faq', route('backend.faq.edit', $element->id));
+});
+
+
+Breadcrumbs::for('backend.notification.create', function ($trail) {
+    $trail->parent('backend.notification.index');
+    $trail->push('create Notification', route('backend.notification.create'));
+});
+
+Breadcrumbs::for('backend.notification.edit', function ($trail, $element) {
+    $trail->parent('backend.notification.index');
+    $trail->push('edit notification', route('backend.notification.edit', $element->id));
 });
 
 

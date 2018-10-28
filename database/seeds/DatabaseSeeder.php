@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
          $this->call(FavoritesTableSeeder::class);
          $this->call(TagsTableSeeder::class);
          $this->call(BrandsTableSeeder::class);
+         $this->call(NotificationsTableSeeder::class);
          $this->call(AboutusTableSeeder::class);
 
 

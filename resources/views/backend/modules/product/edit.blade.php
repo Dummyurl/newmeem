@@ -83,7 +83,7 @@
                                        name="price"
                                        value="{{ $element->price }}"
                                        placeholder="price"
-                                       maxlength="4"
+                                       maxlength="5"
                                        required autofocus>
                                 @if ($errors->has('price'))
                                     <span class="help-block">
@@ -101,7 +101,7 @@
                                        type="text"
                                        class="form-control"
                                        name="sale_price"
-                                       maxlength="4"
+                                       maxlength="5"
                                        value="{{ $element->sale_price }}"
                                        placeholder="sale_price"
                                        autofocus>

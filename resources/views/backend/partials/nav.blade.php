@@ -81,6 +81,12 @@
                         <a href="{{ route('backend.package.create') }}">
                             <i class="fa fa-fw fa-plus-circle"></i> Create New ShipmentPackage</a>
                     </li>
+                    @if(app()->environment('local'))
+                        <li>
+                            <a href="{{ route('backend.notification.create') }}">
+                                <i class="fa fa-fw fa-plus-circle"></i> Create New Notification</a>
+                        </li>
+                    @endif
                     <li>
                         <a href="{{ route('backend.setting.index') }}">
                             <i class="icon-settings"></i> Settings

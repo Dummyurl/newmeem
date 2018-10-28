@@ -38,6 +38,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('policy', 'PolicyController');
     Route::resource('faq', 'FaqController');
     Route::resource('aboutus', 'AboutusController');
+    Route::resource('notification', 'NotificationController');
     Route::resource('branch', 'BranchController');
     Route::resource('package', 'ShipmentPackageController');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
