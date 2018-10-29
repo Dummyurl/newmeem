@@ -225,3 +225,7 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 .header {
     border : 1px solid black;
 }
+
+.header .navigation-wrapper {
+    border-top : 1px solid black;
+}
