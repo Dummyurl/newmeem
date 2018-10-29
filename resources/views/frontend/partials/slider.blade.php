@@ -1,5 +1,5 @@
 <div class="main-slider">
-    <div class="owl-carousel" id="main-slider">
+    <div class="owl-carousel" id="main-slider-{{ app()->getLocale() }}">
         @foreach($sliders as $slider)
             <div class="item slide1">
                 <img class="slide-img"  src="{{ asset(env('LARGE').$slider->image) }}" alt="{{ $slider->caption }}"/>
