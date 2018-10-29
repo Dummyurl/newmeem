@@ -29,7 +29,7 @@
 
                             <div class="price">
                                 @if($element->isOnSale)
-                                    <ins>{{ $element->convertedSalePrice}} <span>{{ $currency->symbol }}</span></ins>
+                                    <ins><span style="color : red">{{ $element->convertedSalePrice}} </span><span>{{ $currency->symbol }}</span></ins>
                                     <del>{{ $element->convertedPrice }} <span>{{ $currency->symbol }}</span></del>
                                 @else
                                     <ins>{{ $element->convertedPrice }} <span>{{ $currency->symbol }}</span></ins>

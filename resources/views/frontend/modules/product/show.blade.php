@@ -115,12 +115,16 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <table>
                             <tr>
                                 <td>
-                                    <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
+                                    <div class="product-price">
+                                        <span style="color : {{ $product->isOnSale ? 'red' : null }}">
+                                        {{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}
+                                        </span>
+                                    </div>
                                 </td>
                                 <td>
                                     @if($product->isOnSale)
                                         <del>{{ $product->convertedPrice }}
-                                            <span><strong>{{ $currency->symbol }}</strong></span>
+                                            <span style="color : {{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}"><strong>{{ $currency->symbol }}</strong></span>
                                         </del>
                                     @endif
                                 </td>
@@ -129,7 +133,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 <tr>
                                     <td>
                                         <div class="product-price"><span
-                                                    style="font-size: 14px;">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
+                                                    style="font-size: 14px; color : {{ $product->isOnSale ? 'red' : null }}">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
                                         </div>
                                     </td>
                                     <td>
