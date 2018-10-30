@@ -12,6 +12,7 @@
 <meta name="address" content="{{ $settings->address }}">
 <meta name="name" content="{{ $settings->company }}">
 <meta name="lang" content="{{ app()->getLocale() }}">
+<meta name="google-site-verification" content="hk7_iuTCtc_EiXLSBSoMzQs-K7-Ru-MuIB9DYHVlnbk" />
 <!-- favicon -->
 <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('images/logo.jpg') }}">
