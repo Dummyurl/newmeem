@@ -39,7 +39,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                    href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto"><i
                                             class="fa fa-plus"></i></a>
                                 <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
-                                    <img class="img-responsive" src="{{ asset(env('LARGE').$product->image) }}"
+                                    <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$product->image) }}"
                                          alt=""{{ $product->name }}/>
                                 </a>
                             </div>
@@ -47,11 +47,11 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 @foreach($product->gallery->images as $img)
                                     <div class="item">
                                         <a class="btn btn-theme btn-theme-transparent btn-zoom"
-                                           href="{{ asset(env('THUMBNAIL').$img->path) }}" data-gal="prettyPhoto">
+                                           href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
                                             <i class="fa fa-plus"></i>
                                         </a>
                                         <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
-                                            <img class="img-responsive" src="{{ asset(env('LARGE').$img->path) }}"
+                                            <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$img->path) }}"
                                                  alt="{{ $img->caption }}"/>
                                         </a>
                                     </div>
@@ -63,15 +63,15 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             <div class="row product-thumbnails">
                                 <div class="col-xs-2 col-sm-2 col-md-3">
 
-                                    <a href="{{ asset(env('THUMBNAIL').$product->image) }}" data-gal="prettyPhoto">
-                                        <img class="img-responsive" src="{{ asset(env('LARGE').$product->image) }}"
+                                    <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
+                                        <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$product->image) }}"
                                              alt=""{{ $product->name }}/>
                                     </a>
                                 </div>
                                 @foreach($product->gallery->images as $img)
                                     <div class="col-xs-2 col-sm-2 col-md-3">
                                         <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
-                                            <img class="img-responsive" src="{{ asset(env('LARGE').$img->path) }}"
+                                            <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$img->path) }}"
                                                  alt=""{{ $img->path}}/>
                                         </a>
                                     </div>
