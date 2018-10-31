@@ -39,7 +39,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                    href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto"><i
                                             class="fa fa-plus"></i></a>
                                 <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
-                                    <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$product->image) }}"
+                                    <img class="img-responsive" src="{{ asset(env('MEDIUM').$product->image) }}"
                                          alt=""{{ $product->name }}/>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                             <i class="fa fa-plus"></i>
                                         </a>
                                         <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
-                                            <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$img->path) }}"
+                                            <img class="img-responsive" src="{{ asset(env('MEDIUM').$img->path) }}"
                                                  alt="{{ $img->caption }}"/>
                                         </a>
                                     </div>
@@ -64,14 +64,14 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 <div class="col-xs-2 col-sm-2 col-md-3">
 
                                     <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
-                                        <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$product->image) }}"
+                                        <img class="img-responsive" src="{{ asset(env('MEDIUM').$product->image) }}"
                                              alt=""{{ $product->name }}/>
                                     </a>
                                 </div>
                                 @foreach($product->gallery->images as $img)
                                     <div class="col-xs-2 col-sm-2 col-md-3">
                                         <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
-                                            <img class="img-responsive" src="{{ asset(env('THUMBNAIL').$img->path) }}"
+                                            <img class="img-responsive" src="{{ asset(env('MEDIUM').$img->path) }}"
                                                  alt=""{{ $img->path}}/>
                                         </a>
                                     </div>
