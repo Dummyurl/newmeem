@@ -127,6 +127,8 @@
                                                    @desktop
                                                    data-gal="prettyPhoto"
                                                    href="{{ asset(env('LARGE').$element->image) }}"
+                                                   @elsedesktop
+                                                   href="{{ route('frontend.product.show',$element->id) }}"
                                                    @enddesktop
                                                 >
                                                     <img src="{{ asset(env('THUMBNAIL').$element->image) }}"
