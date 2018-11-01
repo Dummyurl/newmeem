@@ -3,7 +3,7 @@
 @section('head')
     @parent
 @section('title')
-    <title>{{ $product->name_ar .' ' . $product->name_en .' '. $product->description_ar . '' . $production->description_en }}</title>
+    <title>{{ $product->name_ar .' ' . $product->name_en .' '. $product->description_ar . '' . $product->description_en }}</title>
 @endsection
 <meta name="description" content="{!! $product->description_ar .' '. $product->description_en !!}">
 <meta name="keywords" content="{{ $product->notes . config('app.name')  }}"/>
