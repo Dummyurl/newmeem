@@ -4,7 +4,7 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ route('home') }}"><img class="img-sm" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->name }}"/></a>
+                <a href="{{ route('home') }}"><img class="img-sm" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->company_ar . $settings->company_en }}"/></a>
             </div>
             <!-- /Logo -->
             <!-- Header search -->

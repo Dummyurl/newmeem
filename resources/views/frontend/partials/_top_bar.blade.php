@@ -4,10 +4,10 @@
         <div class="top-bar-left">
             <ul class="list-inline">
                 @guest
-                    <li class="icon-user"><a href="{{ route('login') }}"><img src="assets/img/icon-1.png" alt=""/>
-                            <span>Login</span></a></li>
-                    <li class="icon-form"><a href="{{ route('register') }}"><img src="assets/img/icon-2.png" alt=""/>
-                            <span>Not a Member? <span class="colored">{{ trans('general.register') }}</span></span></a>
+                    <li class="icon-user"><a href="{{ route('login') }}"><img src="assets/img/icon-1.png" alt="login"/>
+                            <span>{{ trans("general.login") }}</span></a></li>
+                    <li class="icon-form"><a href="{{ route('register') }}"><img src="assets/img/icon-2.png" alt="register"/>
+                            <span>{{ trans('general.not_a_member') }} <span class="colored">{{ trans('general.register') }}</span></span></a>
                     </li>
                 @endguest
                 @auth
