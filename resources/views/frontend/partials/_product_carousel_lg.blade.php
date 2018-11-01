@@ -6,8 +6,12 @@
                 @foreach($elements as $element)
                     <div class="thumbnail bordered no-padding">
                         <div class="media">
-                            <a class="media-link" data-gal="prettyPhoto"
-                               href="{{ asset(env('LARGE').$element->image) }}">
+                            <a class="media-link"
+                               @desktop
+                               data-gal="prettyPhoto"
+                               href="{{ asset(env('LARGE').$element->image) }}"
+                               @enddesktop
+                            >
                                 <img src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="{{ $element->name }}"/>
                                 <span class="icon-view">
                                     <strong><i class="fa fa-eye"></i></strong>

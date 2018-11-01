@@ -36,9 +36,18 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <div class="owl-carousel img-carousel">
                             <div class="item">
                                 <a class="btn btn-theme btn-theme-transparent btn-zoom"
-                                   href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto"><i
+                                   @desktop
+                                   data-gal="prettyPhoto"
+                                   href="{{ asset(env('LARGE').$product->image) }}"
+                                   @enddesktop
+                                ><i
                                             class="fa fa-plus"></i></a>
-                                <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
+                                <a
+                                        @desktop
+                                        data-gal="prettyPhoto"
+                                        href="{{ asset(env('LARGE').$product->image) }}"
+                                        @enddesktop
+                                >
                                     <img class="img-responsive" src="{{ asset(env('MEDIUM').$product->image) }}"
                                          alt=""{{ $product->name }}/>
                                 </a>
@@ -47,10 +56,19 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 @foreach($product->gallery->images as $img)
                                     <div class="item">
                                         <a class="btn btn-theme btn-theme-transparent btn-zoom"
-                                           href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
+                                           @desktop
+                                           data-gal="prettyPhoto"
+                                           href="{{ asset(env('LARGE').$img->path) }}"
+                                           @enddesktop
+                                        >
                                             <i class="fa fa-plus"></i>
                                         </a>
-                                        <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
+                                        <a
+                                                @desktop
+                                                data-gal="prettyPhoto"
+                                                href="{{ asset(env('LARGE').$img->path) }}"
+                                                @enddesktop
+                                        >
                                             <img class="img-responsive" src="{{ asset(env('MEDIUM').$img->path) }}"
                                                  alt="{{ $img->caption }}"/>
                                         </a>
@@ -63,14 +81,24 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             <div class="row product-thumbnails">
                                 <div class="col-xs-2 col-sm-2 col-md-3">
 
-                                    <a href="{{ asset(env('LARGE').$product->image) }}" data-gal="prettyPhoto">
+                                    <a
+                                            @desktop
+                                            data-gal="prettyPhoto"
+                                            href="{{ asset(env('LARGE').$product->image) }}"
+                                            @enddesktop
+                                    >
                                         <img class="img-responsive" src="{{ asset(env('MEDIUM').$product->image) }}"
                                              alt=""{{ $product->name }}/>
                                     </a>
                                 </div>
                                 @foreach($product->gallery->images as $img)
                                     <div class="col-xs-2 col-sm-2 col-md-3">
-                                        <a href="{{ asset(env('LARGE').$img->path) }}" data-gal="prettyPhoto">
+                                        <a
+                                                @desktop
+                                                data-gal="prettyPhoto"
+                                                href="{{ asset(env('LARGE').$img->path) }}"
+                                                @enddesktop
+                                        >
                                             <img class="img-responsive" src="{{ asset(env('MEDIUM').$img->path) }}"
                                                  alt=""{{ $img->path}}/>
                                         </a>
