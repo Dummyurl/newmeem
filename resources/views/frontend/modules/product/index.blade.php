@@ -1,4 +1,11 @@
 @extends('frontend.layouts.app')
+@section('title')
+    @if($currentCategory)
+        <title>{{ $currentCategory->name_ar . ' ' . $currentCategory->name_en . ' ' . $currentCategory->desription_ar .' ' . $currentCategory->description_en }}</title>
+    @else
+        <title>{{ trans('general.search') . config('app.name')}}</title>
+    @endif
+@endsection
 
 @section('body')
     <!-- CONTENT AREA -->
@@ -7,7 +14,7 @@
         <section class="page-section breadcrumbs">
             <div class="container">
                 <div class="page-header">
-                    <h1>{{ request()->has('category_id') && $categoriesList->where('id',request('category_id'))->first() ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results') }}</h1>
+                    <h1>{{ $currentCategory ? $currentCategory->name : trans('general.products_search_results') }}</h1>
                 </div>
                 @include('frontend.partials._breadcrumbs',['name' => request()->has('category_id')  && $categoriesList->where('id',request('category_id'))->first() ? $categoriesList->where('id',request('category_id'))->first()->name : trans('general.products_search_results')])
             </div>
@@ -39,8 +46,8 @@
                             </div>
                         </div>
                         <!-- widget shop categories -->
-                        @include('frontend.partials._product_index_categories')
-                        <!-- /widget shop categories -->
+                    @include('frontend.partials._product_index_categories')
+                    <!-- /widget shop categories -->
                     @if(!$colors->isEmpty())
                         <!-- widget product color -->
                             <div class="widget widget-colors">
@@ -127,7 +134,8 @@
                                             </div>
                                             <div class="caption text-center">
                                                 <h4 class="caption-title"><a
-                                                            href="{{ route('frontend.product.show', $element->id) }}">{{ $element->name }}</a></h4>
+                                                            href="{{ route('frontend.product.show', $element->id) }}">{{ $element->name }}</a>
+                                                </h4>
                                                 <div class="price">
                                                     @if($element->isOnSale)
                                                         <ins>{{ $element->convertedSalePrice}}

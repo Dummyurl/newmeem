@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="block-title"><span>Login</span></h3>
+                    <h3 class="block-title"><span>{{ trans('general.login') }}</span></h3>
                     <form method="POST" action="{{ route('login') }}" class="form-login">
                         @csrf
                         <div class="row">

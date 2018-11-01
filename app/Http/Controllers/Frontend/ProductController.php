@@ -42,7 +42,8 @@ class ProductController extends Controller
         $brands = $elements->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         if (!$elements->isEmpty()) {
-            return view('frontend.modules.product.index', compact('elements', 'tags', 'colors', 'sizes', 'categoriesList','brands'));
+            $currentCategory =  request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
+            return view('frontend.modules.product.index', compact('elements', 'tags', 'colors', 'sizes', 'categoriesList','brands','currentCategory'));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
         }
