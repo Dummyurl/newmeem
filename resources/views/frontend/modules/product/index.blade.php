@@ -123,8 +123,12 @@
                                     <div class="col-md-4 col-sm-6">
                                         <div class="thumbnail no-border no-padding">
                                             <div class="media">
-                                                <a class="media-link" data-gal="prettyPhoto"
-                                                   href="{{ asset(env('LARGE').$element->image) }}">
+                                                <a class="media-link"
+                                                   @desktop
+                                                   data-gal="prettyPhoto"
+                                                   href="{{ asset(env('LARGE').$element->image) }}"
+                                                   @enddesktop
+                                                >
                                                     <img src="{{ asset(env('THUMBNAIL').$element->image) }}"
                                                          alt="{{ $element->name }}"/>
                                                     <span class="icon-view">
