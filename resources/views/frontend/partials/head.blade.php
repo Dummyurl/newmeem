@@ -1,7 +1,7 @@
 @section('title')
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') .' '. $settings->company_ar .' '. $settings->company_en }}</title>
 @show
-<meta name="description" content="{{ trans('general.meta_description') }}">
+<meta name="description" content="{{ trans('general.meta_description') . $settings->company_ar . $settings->company_en . trans('general.app_keywords')}}">
 <meta name="keywords" content="{{ trans('general.app_keywords') }}"/>
 <meta name="author" content="{{ trans('general.app_author') }}">
 <meta name="country" content="{{ $settings->country }}">

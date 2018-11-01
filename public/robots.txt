@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: http://meemonoon.com/sitemap.xml
