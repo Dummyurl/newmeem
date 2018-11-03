@@ -244,10 +244,10 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                            href="{{ route("frontend.favorite.add", $product->id) }}"><span
                                                     class="fa fa-fw fa-heart"></span></a>
                                     @endif
-                                    <a class="btn btn-theme btn-compare" href="#" data-toggle="modal"
-                                       data-target="#imagemodal"
-                                       title="{{ trans('general.sizes') }}"
-                                    ><i class="fa fa-fw fa-tags"></i> &nbsp; {{ trans('general.size_chart') }}</a>
+                                    <a class="btn btn-theme btn-cart btn-icon-left" type="submit"
+                                            href="#" data-toggle="modal"
+                                            data-target="#imagemodal"></i>{{ trans('general.size_chart') }}
+                                    </a>
                                 </div>
                             </div>
                         </form>
