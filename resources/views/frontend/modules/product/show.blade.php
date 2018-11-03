@@ -246,7 +246,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     @endif
                                     <a class="btn btn-theme btn-cart btn-icon-left" type="submit"
                                             href="#" data-toggle="modal"
-                                            data-target="#imagemodal"></i>{{ trans('general.size_chart') }}
+                                            data-target="#imagemodal"></i>{{ trans('general.size_charts') }}
                                     </a>
                                 </div>
                             </div>
