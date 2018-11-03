@@ -247,7 +247,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     <a class="btn btn-theme btn-compare" href="#" data-toggle="modal"
                                        data-target="#imagemodal"
                                        title="{{ trans('general.sizes') }}"
-                                    ><i class="fa fa-fw fa-tags"></i></a>
+                                    ><i class="fa fa-fw fa-tags"></i> &nbsp; {{ trans('general.size_chart') }}</a>
                                 </div>
                             </div>
                         </form>
