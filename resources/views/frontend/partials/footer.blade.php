@@ -77,8 +77,16 @@
                 <div class="col-md-3">
                     <div class="widget widget-tag-cloud">
                         <h4 class="widget-title">{{ $settings->company }}</h4>
-                        <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" class="img-sm center-block"
-                             alt="{{ $settings->company_ar .' '. $settings->company_en}}">
+                        <div class="center-block text-center">
+                            <a href="">
+                                <img src="{{ asset('images/apple.png') }}" style="max-width: 100px; margin: 10px"
+                                     alt="{{ $settings->company_ar .' '. $settings->company_en}}">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.meemonoonapp">
+                                <img src="{{ asset('images/google.png') }}" style="max-width: 100px; margin: 10px;"
+                                     alt="{{ $settings->company_ar .' '. $settings->company_en}}">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
