@@ -26,7 +26,8 @@
                                                 class="fa fa-fw fa-instagram"></i></a></li>
                             @endif
                             @if($settings->whatsapp)
-                                <li><a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}"
+                                <li>
+                                    <a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}"
                                        class="instagram">
                                         <img
                                                 class="img-grey img-xxs"
@@ -42,21 +43,36 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="widget widget-categories">
+                    <div class="widget">
                         <h4 class="widget-title">{{ trans('general.information') }}</h4>
                         <ul>
                             @if($settings->phone)
-                                <li><i class="fa fa-phone"></i> &nbsp; {{ $settings->phone }}</li>
+                                <li><i class="fa fa-phone-square"></i> &nbsp;
+                                    <a href="tel:{{ $settings->phone }}" class="hidden-md">{{ $settings->phone }}</a>
+                                    <span class="visible-md">{{ $settings->phone }}</span>
+                                </li>
                             @endif
                             @if($settings->email)
-                                <li><i class="fa fa-inbox"></i> &nbsp; {{ $settings->email }}</li>
+                                <li><i class="fa fa-inbox"></i> &nbsp;
+                                    <a href="mailto:{{ $settings->email }}"
+                                       class="hidden-md">{{ $settings->email }}</a>
+                                    <span class="visible-md">{{ $settings->email }}</span>
+                                </li>
                             @endif
                             @if($settings->mobile)
-                                <li><i class="fa fa-mobile-phone"></i> &nbsp; {{ $settings->mobile }}</li>
+                                <li><i class="fa fa-mobile-phone"></i> &nbsp;
+                                    <a href="tel:{{ $settings->mobile }}" class="hidden-md">{{ $settings->mobile }}</a>
+                                    <span class="visible-md">{{ $settings->mobile }}</span>
+                                </li>
                             @endif
                             @if($settings->whatsapp)
-                                <li><img class="img-grey img-xxs" src="{{ asset('images/whatsapp.png') }}"/>
-                                    &nbsp; {{ $settings->whatsapp }}</li>
+                                <li>
+                                    <a href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}"
+                                       class="instagram">
+                                        <img class="img-grey img-xxs" src="{{ asset('images/whatsapp.png') }}"/>
+                                        &nbsp; {{ $settings->whatsapp }}
+                                    </a>
+                                </li>
                             @endif
                             @if($settings->address)
                                 <li><i class="fa fa-location-arrow"></i> &nbsp; {{ $settings->address }}</li>
