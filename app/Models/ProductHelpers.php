@@ -35,7 +35,7 @@ trait ProductHelpers
 
     public function getFinalPriceAttribute()
     {
-        return $this->on_sale ? $this->sale_price : $this->price;
+        return $this->isOnSale ? $this->sale_price : $this->price;
     }
 
     public function getConvertedFinalPriceAttribute()
