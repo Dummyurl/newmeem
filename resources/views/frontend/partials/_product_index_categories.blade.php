@@ -39,6 +39,17 @@
                                             <a href="{!! request()->fullUrlWithQuery(['category_id' => $sub->id]) !!}">{{ $sub->name }}
                                                 <span class="count">{{ $sub->products->unique('id')->count() }}</span>
                                             </a>
+                                            @if($sub->children->isNotEmpty())
+                                                <ul class="children active">
+                                                    @foreach($sub->children as $child)
+                                                        <li>
+                                                            <a href="{!! request()->fullUrlWithQuery(['category_id' => $child->id]) !!}">{{ $child->name }}
+                                                                <span class="count">{{ $child->products->unique('id')->count() }}</span>
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
                                         </li>
                                     @endforeach
                                 </ul>
@@ -48,6 +59,5 @@
                 @endif
             @endif
         </ul>
-
     </div>
 </div>
