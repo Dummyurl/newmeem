@@ -35,7 +35,7 @@ class ProductController extends Controller
         }
         $elements = $this->product->active()->hasProductAttribute()->hasGallery()->filters($filters)->with('brands',
             'product_attributes.color', 'product_attributes.size', 'tags', 'gallery.images',
-            'favorites', 'categories.products')->orderBy('id', 'desc')->paginate(20);
+            'favorites', 'categories.children')->orderBy('id', 'desc')->paginate(20);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
