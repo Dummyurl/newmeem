@@ -12,7 +12,7 @@
                                 <span class="count">{{ $parent->children->pluck('products')->flatten()->unique()->count() }}</span>
                             </a>
                             @if(!$parent->children->isEmpty())
-                                <ul class="children">
+                                <ul class="children active">
                                     @foreach($parent->children as $child)
                                         <li>
                                             <a href="{!! request()->fullUrlWithQuery(['category_id' => $child->id]) !!}">{{ $child->name }}
@@ -33,7 +33,7 @@
                                 <span class="count">{{ $cat->products->unique('id')->count() }}</span>
                             </a>
                             @if(!$cat->children->isEmpty())
-                                <ul class="children">
+                                <ul class="children active">
                                     @foreach($cat->children as $sub)
                                         <li>
                                             <a href="{!! request()->fullUrlWithQuery(['category_id' => $sub->id]) !!}">{{ $sub->name }}
