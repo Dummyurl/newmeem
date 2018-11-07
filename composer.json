@@ -8,6 +8,7 @@
         "php": "^7.1.3",
         "barryvdh/laravel-translation-manager": "^0.4.2",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
+        "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.5",
         "guzzlehttp/guzzle": "^6.3",

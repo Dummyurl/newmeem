@@ -139,8 +139,8 @@
                                                 </a>
                                             </div>
                                             <div class="caption text-center">
-                                                <h4 class="caption-title"><a
-                                                            href="{{ route('frontend.product.show', $element->id) }}">{{ $element->name }}</a>
+                                                <h4 class="caption-title">
+                                                    <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,25,'') }}</a>
                                                 </h4>
                                                 <div class="price">
                                                     @if($element->isOnSale)

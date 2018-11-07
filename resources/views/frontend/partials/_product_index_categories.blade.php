@@ -2,7 +2,7 @@
     <h4 class="widget-title">{{ trans('general.categories') }}</h4>
     <div class="widget-content">
         <ul>
-            @if(!$categoriesList->isEmpty())
+            @if($categoriesList->isNotEmpty())
                 @if(request()->has('category_id') && $categoriesList->where('id',request('category_id'))->isNotEmpty())
                     @foreach($categoriesList->where('id',request('category_id')) as $parent)
                         <li>
