@@ -76,7 +76,6 @@ class ViewComposers
             }, '>', 0)
             ->onlyParent()
             ->with('children.children')
-            ->orderBy('order', 'desc')
             ->get();
         return $view->with(compact('categories'));
     }

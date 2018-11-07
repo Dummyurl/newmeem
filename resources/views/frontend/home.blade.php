@@ -17,7 +17,7 @@
     <section class="page-section">
         <div class="container">
             <div class="row">
-                @foreach($categories->where('parent_id',0)->where('is_home', true)->take(3) as $parent)
+                @foreach($categories->where('parent_id',0)->where('is_home', true)->sortBy('order')->take(3) as $parent)
                     <div class="col-md-6">
                         @if($loop->first)
                             <div class="thumbnail no-border no-padding thumbnail-banner size-3x3">
