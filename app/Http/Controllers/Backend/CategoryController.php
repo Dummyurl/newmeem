@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $element = Category::create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
-                $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false);
+                $this->saveMimes($element, $request, ['image'], ['525', '540'], true);
             }
             return redirect()->route('backend.category.index')->with('success', 'category created.');
         }
@@ -82,7 +82,7 @@ class CategoryController extends Controller
         $updated = $element->update($request->request->all());
         if ($updated) {
             if ($request->hasFile('image')) {
-                $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false);
+                $this->saveMimes($element, $request, ['image'], ['525', '540'], true);
             }
             return redirect()->route('backend.category.index')->with('success', 'category created.');
         }
