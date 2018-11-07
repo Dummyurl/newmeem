@@ -23,7 +23,11 @@
                             <div class="thumbnail no-border no-padding thumbnail-banner size-3x3">
                                 <div class="media">
                                     <a class="media-link"
-                                       style="background-image: url({{ asset(env('LARGE').$parent->image) }});"
+                                       style="background-image: url({{ asset(env('LARGE').$parent->image) }});
+                                               background-position: center; /* Center the image */
+                                               background-repeat: no-repeat; /* Do not repeat the image */
+                                               background-size: cover; /* Resize the background image to cover the entire container */
+                                               "
                                        href="{{ route('frontend.product.search', ['category_id' => $parent->id]) }}">
                                         {{--<div class="img-bg"></div>--}}
                                         <div class="caption">
@@ -45,7 +49,11 @@
                             <div class="thumbnail no-border no-padding thumbnail-banner size-2x3">
                                 <div class="media">
                                     <a class="media-link"
-                                       style="background-image: url({{ asset(env('LARGE').$parent->image) }});"
+                                       style="background-image: url({{ asset(env('LARGE').$parent->image) }});
+                                               background-position: center; /* Center the image */
+                                               background-repeat: no-repeat; /* Do not repeat the image */
+                                               background-size: cover; /* Resize the background image to cover the entire container */
+                                               "
                                        href="{{ route('frontend.product.search', ['category_id' => $parent->id]) }}">
                                         {{--<div class="img-bg"></div>--}}
                                         <div class="caption">
