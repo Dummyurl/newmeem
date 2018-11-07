@@ -1,0 +1,11 @@
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('fonts/Neuton/Neuton-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html , body, div, a, span, table, p, form, input, h1, h2, h3, h4 , input , tr , td , ul , li {
+    font-family: 'Neuton', 'sans-serif' !important;
+}

@@ -5,9 +5,13 @@
     font-style: normal;
 }
 
+
+
 /*body, div, a, span, table, p, form, input, h1, h2, h3, h4 , input , tr , td , ul , li {*/
 /*font-family: 'Tajawal', 'sans-serif' !important;*/
 /*}*/
+
+
 
 .main-menu4 nav ul li a {
     color: white;
@@ -216,18 +220,6 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 
 .logo {
     min-height: 120px; !important;
-}
-
-.footer {
-    border-top : solid 1px black !important;
-}
-
-.header {
-    border-bottom : 1px solid black !important;
-}
-
-.header .navigation-wrapper {
-    border-top : 1px solid black !important;
 }
 
 .logo {

@@ -96,7 +96,7 @@
                                 <input type="file" class="form-control" name="image" placeholder="image">
                                 <label for="form_control_1">Main Image</label>
                                 <div class="help-block text-left">
-                                    W * H - Best fit 1024 x 350 pixels
+                                    W * H - Best fit 525 x 540 pixels
                                 </div>
                             </div>
                         </div>
