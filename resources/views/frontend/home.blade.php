@@ -17,9 +17,9 @@
     <section class="page-section">
         <div class="container">
             <div class="row">
-                @foreach($categories->where('parent_id',0)->where('is_home', true)->sortBy('order')->take(3) as $parent)
+                @foreach($categories->where('parent_id',0)->where('is_home', true)->sortBy('order')->take(6) as $parent)
                     <div class="col-md-6">
-                        @if($loop->first)
+                        @if($loop->first || $loop->remaining === 2)
                             <div class="thumbnail no-border no-padding thumbnail-banner size-3x3">
                                 <div class="media">
                                     <a class="media-link"
@@ -35,9 +35,11 @@
                                                 <div class="caption-inner div-cell">
                                                     <h2 class="caption-title"><span>{{ $parent->name }}</span>
                                                     </h2>
-                                                    <h3 class="caption-sub-title">
-                                                        <span>{{ $parent->description }}</span>
-                                                    </h3>
+                                                    @if($parent->description)
+                                                        <h3 class="caption-sub-title">
+                                                            <span>{{ $parent->description }}</span>
+                                                        </h3>
+                                                    @endif
                                                     <span class="btn btn-theme btn-theme-sm">{{ trans('general.shop_now') }}</span>
                                                 </div>
                                             </div>
@@ -61,9 +63,11 @@
                                                 <div class="caption-inner div-cell">
                                                     <h2 class="caption-title"><span>{{ $parent->name }}</span>
                                                     </h2>
-                                                    <h3 class="caption-sub-title">
-                                                        <span>{{ $parent->description }}</span>
-                                                    </h3>
+                                                    @if($parent->description)
+                                                        <h3 class="caption-sub-title">
+                                                            <span>{{ $parent->description }}</span>
+                                                        </h3>
+                                                    @endif
                                                     <span class="btn btn-theme btn-theme-sm">{{ trans('general.shop_now') }}</span>
                                                 </div>
                                             </div>
@@ -80,25 +84,25 @@
     <!-- /PAGE -->
 
     <!-- Newest -->
-    @if($newArrivals->isNotEmpty())
-        @include('frontend.partials._product_carousel_lg', ['elements' => $newArrivals, 'title' => trans('general.new_arrival')])
-    @endif
+    {{--@if($newArrivals->isNotEmpty())--}}
+        {{--@include('frontend.partials._product_carousel_lg', ['elements' => $newArrivals, 'title' => trans('general.new_arrival')])--}}
+    {{--@endif--}}
     <!-- /PAGE -->
 
     <!-- On Sales  -->
-    @if($onSaleProducts->isNotEmpty())
-        @include('frontend.partials._product_carousel_lg', ['elements' => $onSaleProducts , 'title' => trans('general.on_sale_products')])
-    @endif
+    {{--@if($onSaleProducts->isNotEmpty())--}}
+        {{--@include('frontend.partials._product_carousel_lg', ['elements' => $onSaleProducts , 'title' => trans('general.on_sale_products')])--}}
+    {{--@endif--}}
     <!-- /PAGE -->
 
     <!-- Best Sales  -->
-    @if($bestSalesProducts->isNotEmpty())
-        @include('frontend.partials._product_carousel_lg',['elements' => $bestSalesProducts, 'title' => trans('general.best_sale_products')])
-    @endif
+    {{--@if($bestSalesProducts->isNotEmpty())--}}
+        {{--@include('frontend.partials._product_carousel_lg',['elements' => $bestSalesProducts, 'title' => trans('general.best_sale_products')])--}}
+    {{--@endif--}}
 
-    @if($brands->isNotEmpty())
-        @include('frontend.partials._brands_carousel',['bands' => $brands])
-    @endif
+    {{--@if($brands->isNotEmpty())--}}
+        {{--@include('frontend.partials._brands_carousel',['bands' => $brands])--}}
+    {{--@endif--}}
     <!-- /PAGE -->
     <!-- PAGE -->
     {{--<section class="page-section">--}}
