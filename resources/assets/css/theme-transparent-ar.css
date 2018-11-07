@@ -1,0 +1,352 @@
+/**Theme Color CSS**/
+.spinner > div {
+    background-color: black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+}
+a {
+    color: black;
+}
+.footer a:hover,
+.footer a:active,
+.footer a:focus {
+    color: black;
+}
+.block-title.alt .fa.color {
+    background-color: black;
+}
+.text-color {
+    color: black;
+}
+.drop-cap {
+    color: black;
+}
+blockquote {
+    background-color: black;
+}
+
+
+.btn-theme {
+    background-color: black;
+    border-color: black;
+}
+.btn-theme-transparent, .btn-theme-transparent:focus, .btn-theme-transparent:active, .btn-title-more{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
+}
+
+.btn-theme-dark, .btn-theme-dark:focus, .btn-theme-dark:active {
+    background-color: #232323;
+    border-color: black;
+}
+.btn-theme-dark:hover {
+    background-color: black;
+    border-color: black;
+}
+.btn-play {
+    background-color: black;
+}
+.btn-play:before {
+    border: solid 10px black;
+}
+a:hover .btn-play,
+.btn-play:hover {
+    color: black;
+}
+
+.top-bar ul a:hover .fa {
+    color: black;
+}
+.top-bar ul a span.colored {
+    color: black;
+}
+
+.header {
+    border-bottom: solid 1px transparent !important;
+}
+.coming-soon .header {
+    border-bottom-color: black !important;
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+    border-top-color: transparent !important;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+    border-left-color: transparent !important;
+}
+.sf-menu li.megamenu ul a:hover {
+    color: black;
+}
+.sf-menu li.sale a {
+    background-color: black;
+}
+@media (max-width: 991px) {
+    .sf-menu > li > a:hover {
+        color: black;
+    }
+}
+.footer {
+    border-top: solid 10px transparent !important;
+}
+.main-slider .caption-subtitle {
+    color: black;
+}
+.main-slider .btn-theme:hover {
+    border-color: transparent !important;
+    background-color: black;
+}
+.main-slider .dark .caption-text .btn-theme:hover {
+    background-color: transparent !important;
+    border-color: black;
+}
+.coming-soon .main-slider .page .countdown-amount {
+    color: black;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    border-color: transparent !important;
+    background-color: black;
+}
+.message-box {
+    background-color: black;
+}
+.content-tabs .nav-tabs > li.active > a {
+    color: black;
+}
+.post-title a:hover {
+    color: black;
+}
+.post-meta a:hover {
+    color: black;
+}
+.about-the-author .media-heading a:hover {
+    color: black;
+}
+.post-wrap blockquote {
+    border-top: solid 6px black;
+}
+.recent-post .media-category {
+    color: black;
+}
+.recent-post .media-heading a:hover {
+    color: black;
+}
+.widget .recent-post .media-meta a:hover {
+    color: black;
+}
+.comment-author a:hover {
+    color: black;
+}
+.comment-date .fa {
+    color: black;
+}
+.thumbnail.hover,
+.thumbnail:hover {
+    border: solid 1px black;
+}
+.caption-title a:hover {
+    color: black;
+}
+.thumbnail.thumbnail-banner .btn-theme, .btn-theme:hover {
+    background-color: transparent;
+    border-color: transparent !important;
+}
+.recent-post .media-link:after{
+    background-color: transparent;
+}
+.recent-post .media-link:hover:after {
+    background-color: transparent;
+}
+.thumbnail-banner .caption {
+    background-color: transparent;
+}
+.thumbnail-banner.hover .caption,
+.thumbnail-banner:hover .caption {
+    background-color: transparent;
+}
+.thumbnail .price ins {
+    color: black;
+}
+.product-single .reviews:hover,
+.product-single .add-review:hover {
+    color: black;
+}
+.product-single .product-availability strong {
+    color: black;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    background-color: black;
+}
+.products.list .thumbnail .reviews:hover {
+    color: black;
+}
+.products.list .thumbnail .availability strong {
+    color: black;
+}
+.thumbnails.portfolio .thumbnail .caption.hovered {
+    background-color: black;
+}
+.widget.widget-shop-deals .countdown-amount {
+    color: black;
+}
+.widget.widget-tabs .nav-justified > li.active > a,
+.widget.widget-tabs .nav-justified > li > a:hover,
+.widget.widget-tabs .nav-justified > li > a:focus {
+    border-color: transparent !important;
+    background-color: black;
+}
+@media (min-width: 768px) {
+    .widget.widget-tabs.alt .nav-justified > li.active > a:before {
+        border-top: solid 5px black;
+    }
+}
+.widget.shop-categories ul a:hover {
+    color: black;
+}
+.widget-flickr-feed ul a:hover {
+    border-color: transparent !important;
+}
+.widget-flickr-feed ul a:hover:before {
+    background-color: black;
+}
+.recent-tweets .media .fa {
+    color: black;
+}
+.product-list .price ins {
+    color: black;
+}
+.product-list .media-link:after {
+    background-color: black;
+}
+.product-list .media-link:hover:after {
+    background-color: black;
+}
+.shop-sorting .col-sm-4 .btn-theme:hover {
+    background-color: black;
+}
+.orders td.description h4 a:hover {
+    color: black;
+}
+.orders td.total a:hover {
+    color: black;
+}
+.orders .media-link:after {
+    background-color: black;
+}
+.orders .media-link:hover:after {
+    background-color: black;
+}
+.wishlist td.description h4 a:hover {
+    color: black;
+}
+.wishlist td.total a:hover {
+    color: black;
+}
+.wishlist .media-link:after {
+    background-color: transparent;
+}
+.wishlist .media-link:hover:after {
+    background-color: transparent;
+}
+.compare-products .product .media-link:after {
+    background-color: transparent;
+}
+.compare-products .product .media-link:hover:after {
+    background-color: transparent;
+}
+.compare-products .product h4:hover,
+.compare-products .product h4 a:hover {
+    color: black;
+}
+#contact-form .alert {
+    border-color: transparent !important;
+    background-color: black;
+}
+.to-top {
+    background-color: transparent;
+    border: solid 1px transparent !important;
+}
+.to-top:hover {
+    border-color: black;
+    color: black;
+}
+.header-nav-1 .sf-arrows > li > .sf-with-ul:focus::after,
+.header-nav-1 .sf-arrows > li:hover > .sf-with-ul::after,
+.header-nav-1 .sf-arrows > li.active > .sf-with-ul::after,
+.header-nav-1 .sf-arrows > .sfHover > .sf-with-ul::after {
+    border-top-color: transparent !important;
+}
+.header-nav-5 .sf-menu > li:hover,
+.header-nav-5 .sf-menu li.active > a,
+.header-nav-5 .sf-menu a:hover,
+.header-nav-5 .sf-menu li.active,
+.header-nav-5 .sf-menu > li.active.sfHover > a,
+.header-nav-5 .sf-menu ul a:hover,
+.sf-menu li:hover,
+.header-nav-5 .sf-menu li.sfHover,
+.header-nav-5 .sf-menu li.sfHover > a {
+    color: black;
+}
+.header-nav-2 .sf-menu > li:hover,
+.header-nav-2 .sf-menu > li:hover > a,
+.header-nav-2 .sf-menu li.active,
+.header-nav-2 .sf-menu > li.sfHover,
+.header-nav-2 .sf-menu > li.sfHover > a {
+    background-color: black;
+}
+.header-nav-2 .sf-menu ul a:hover {
+    background-color: black;
+}
+.header-nav-3 .sf-menu > li:hover,
+.header-nav-3 .sf-menu > li:hover > a,
+.header-nav-3 .sf-menu li.active,
+.header-nav-3 .sf-menu > li.sfHover,
+.header-nav-3 .sf-menu > li.sfHover > a {
+    background-color: black;
+}
+.header-nav-3 .sf-menu ul a:hover {
+    background-color: black;
+}
+.information-title {
+    border-bottom: 3px solid black;
+}
+.widget.account-details .widget-title {
+    border-bottom: 1px solid transparent !important;
+}
+.widget.account-details li.active a {
+    color: black;
+}
+.widget.account-details li a:hover,
+.widget.account-details li a:focus,
+.details-box > ul li a:hover,
+.details-box > ul li a:focus {
+    color: black;
+}
+.social-icons a:hover {
+    color: black;
+}
+.header .navigation-wrapper {
+    background-color: transparent !important;
+    border-top: 1px solid transparent !important;
+}
+.btn-view-more-block {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.section-title span {
+    position: unset;
+}

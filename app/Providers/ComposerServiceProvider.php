@@ -51,6 +51,8 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getBranches');
 
         view()->composer([
+            'frontend.home'], 'App\Services\ViewComposers@getCategories');
+        view()->composer([
             'frontend.home',
             'frontend.partials.footer',
             'frontend.modules.order.index',
