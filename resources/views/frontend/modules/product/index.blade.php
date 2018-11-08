@@ -80,32 +80,32 @@
                         @endif
 
                     <!-- widget tag cloud -->
-                        @if(!$tags->isEmpty())
-                            <div class="widget widget-tag-cloud">
-                                <h4 class="widget-title"><span>{{ trans('general.tags') }}</span></h4>
-                                <ul>
-                                    @foreach($tags as $tag)
-                                        <li style="background-color:{{ request()->has('tag_id') && request('tag_id') == $tag->id ? 'darkgoldenrod' : null}} ">
-                                            <a href="{!! request()->fullUrlWithQuery(['tag_id' => $tag->id]) !!}">{{ $tag->slug }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                        {{--@if(!$tags->isEmpty())--}}
+                            {{--<div class="widget widget-tag-cloud">--}}
+                                {{--<h4 class="widget-title"><span>{{ trans('general.tags') }}</span></h4>--}}
+                                {{--<ul>--}}
+                                    {{--@foreach($tags as $tag)--}}
+                                        {{--<li style="background-color:{{ request()->has('tag_id') && request('tag_id') == $tag->id ? 'darkgoldenrod' : null}} ">--}}
+                                            {{--<a href="{!! request()->fullUrlWithQuery(['tag_id' => $tag->id]) !!}">{{ $tag->slug }}</a>--}}
+                                        {{--</li>--}}
+                                    {{--@endforeach--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
 
                     <!-- widget brands cloud -->
-                        @if(!$brands->isEmpty())
-                            <div class="widget widget-tag-cloud">
-                                <h4 class="widget-title"><span>{{ trans('general.brands') }}</span></h4>
-                                <ul>
-                                    @foreach($brands as $brand)
-                                        <li style="background-color:{{ request()->has('brand_id') && request('brand_id') == $brand->id ? 'darkgoldenrod' : null}} ">
-                                            <a href="{!! request()->fullUrlWithQuery(['brand_id' => $brand->id]) !!}">{{ $brand->slug }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                        {{--@if(!$brands->isEmpty())--}}
+                            {{--<div class="widget widget-tag-cloud">--}}
+                                {{--<h4 class="widget-title"><span>{{ trans('general.brands') }}</span></h4>--}}
+                                {{--<ul>--}}
+                                    {{--@foreach($brands as $brand)--}}
+                                        {{--<li style="background-color:{{ request()->has('brand_id') && request('brand_id') == $brand->id ? 'darkgoldenrod' : null}} ">--}}
+                                            {{--<a href="{!! request()->fullUrlWithQuery(['brand_id' => $brand->id]) !!}">{{ $brand->slug }}</a>--}}
+                                        {{--</li>--}}
+                                    {{--@endforeach--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
 
 
                     </aside>
