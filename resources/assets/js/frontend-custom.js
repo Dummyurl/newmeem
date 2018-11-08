@@ -55,7 +55,7 @@ $(document).ready(function() {
             }
         }).then(r => {
             $('#qty').attr('maxlength', r.data);
-            $('#qty').attr('value', 0);
+            $('#qty').attr('value', 1);
         }).catch(e => console.log(e));
     });
     $('.qty-increase').on('click', function(e) {

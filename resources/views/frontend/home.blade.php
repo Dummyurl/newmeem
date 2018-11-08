@@ -5,11 +5,11 @@
 @section('body')
 
     <!-- PAGE -->
-    <section class="page-section no-padding slider">
-        <div class="container full-width">
-            @include('frontend.partials.slider')
-        </div>
-    </section>
+    {{--<section class="page-section no-padding slider">--}}
+        {{--<div class="container full-width">--}}
+            {{--@include('frontend.partials.slider')--}}
+        {{--</div>--}}
+    {{--</section>--}}
     <!-- /PAGE -->
 
 

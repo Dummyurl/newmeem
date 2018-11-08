@@ -125,6 +125,48 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             @endif
                         </div>
                         <h2 class="product-title">{{ $product->name }}</h2>
+                        <table>
+                            <tr>
+                                <td class="title">{{ trans('general.categories') }}:</td>
+                                <td>
+                                    @foreach($product->categories as $cat)
+                                        <a href="{{ route('frontend.product.search',['category_id' => $cat->id]) }}">
+                                            {{ $cat->name }},
+                                        </a>
+                                    @endforeach
+                                </td>
+                            </tr>
+                            @if($product->sku)
+                                <tr>
+                                    <td class="title">{{ trans('general.sku') }}:</td>
+                                    <td>{{ $product->sku }}</td>
+                                </tr>
+                            @endif
+                            @if(!$product->tags->isEmpty())
+                                <tr>
+                                    <td class="title">{{ trans("general.tags") }}:</td>
+                                    <td>
+                                        @foreach($product->tags as $tag)
+                                            <a href="{{ route('frontend.product.search',['tag_id' => $tag->id]) }}">
+                                                {{ $tag->slug }},
+                                            </a>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endif
+                            @if(!$product->brands->isEmpty())
+                                <tr>
+                                    <td class="title">{{ trans("general.brands") }}:</td>
+                                    <td>
+                                        @foreach($product->brands as $brand)
+                                            <a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
+                                                {{ $brand->slug }},
+                                            </a>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
                         <hr class="page-divider"/>
                         <div class="product-availability">{{ trans('general.status') }}:
                             <strong>{{ $product->totalQty > 0 ? trans('general.in_stock')  : trans('general.out_of_stock') }}</strong> {{ $product->totalQty }} {{ trans('general.items') }}
@@ -252,49 +294,6 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             </div>
                         </form>
 
-                        <hr class="page-divider small"/>
-                        <table>
-                            <tr>
-                                <td class="title">{{ trans('general.categories') }}:</td>
-                                <td>
-                                    @foreach($product->categories as $cat)
-                                        <a href="{{ route('frontend.product.search',['category_id' => $cat->id]) }}">
-                                            {{ $cat->name }},
-                                        </a>
-                                    @endforeach
-                                </td>
-                            </tr>
-                            @if($product->sku)
-                                <tr>
-                                    <td class="title">{{ trans('general.sku') }}:</td>
-                                    <td>{{ $product->sku }}</td>
-                                </tr>
-                            @endif
-                            @if(!$product->tags->isEmpty())
-                                <tr>
-                                    <td class="title">{{ trans("general.tags") }}:</td>
-                                    <td>
-                                        @foreach($product->tags as $tag)
-                                            <a href="{{ route('frontend.product.search',['tag_id' => $tag->id]) }}">
-                                                {{ $tag->slug }},
-                                            </a>
-                                        @endforeach
-                                    </td>
-                                </tr>
-                            @endif
-                            @if(!$product->brands->isEmpty())
-                                <tr>
-                                    <td class="title">{{ trans("general.brands") }}:</td>
-                                    <td>
-                                        @foreach($product->brands as $brand)
-                                            <a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
-                                                {{ $brand->slug }},
-                                            </a>
-                                        @endforeach
-                                    </td>
-                                </tr>
-                            @endif
-                        </table>
                         <hr class="page-divider small"/>
                         @include('frontend.partials._social_btns')
 

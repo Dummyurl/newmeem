@@ -94,6 +94,10 @@
                     <div class="widget widget-tag-cloud">
                         <h4 class="widget-title">{{ $settings->company }}</h4>
                         <div class="center-block text-center">
+                            <li>
+                                <img class="img-sm" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                                     alt="{{ $settings->company }}">
+                            </li>
                             <a href="">
                                 <img src="{{ asset('images/apple.png') }}" style="max-width: 100px; margin: 10px"
                                      alt="{{ $settings->company_ar .' '. $settings->company_en}}">
