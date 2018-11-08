@@ -1,6 +1,6 @@
 /**Theme Color CSS**/
 .spinner > div {
-    background-color: black;
+    background-color: transparent;
 }
 h1,
 h2,
@@ -19,7 +19,7 @@ a {
     color: black;
 }
 .block-title.alt .fa.color {
-    background-color: black;
+    background-color: transparent;
 }
 .text-color {
     color: black;
@@ -28,29 +28,29 @@ a {
     color: black;
 }
 blockquote {
-    background-color: black;
+    background-color: transparent;
 }
 .btn-theme {
-    background-color: black;
-    border-color: transparent !important;
+    background-color: transparent;
+    border-color: transparent;
 }
 .btn-theme-transparent, .btn-theme-transparent:focus, .btn-theme-transparent:active, .btn-title-more{
     background-color: rgba(0, 0, 0, 0);
-    border-color: #transparent !important;
+    border-color: #e9e9e9;
 }
 .btn-theme-dark, .btn-theme-dark:focus, .btn-theme-dark:active {
     background-color: #232323;
-    border-color: transparent !important;
+    border-color: #232323;
 }
 .btn-theme-dark:hover {
     background-color: black;
-    border-color: transparent !important;
+    border-color: transparent;
 }
 .btn-play {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0.85);
 }
 .btn-play:before {
-    border: solid 10px transparent;
+    border: solid 10px rgba(137, 193, 68, 0.35);
 }
 a:hover .btn-play,
 .btn-play:hover {
@@ -68,7 +68,7 @@ a:hover .btn-play,
     border-bottom: solid 3px transparent;
 }
 .coming-soon .header {
-    border-bottom-color: transparent !important;
+    border-bottom-color: rgba(137, 193, 68, 0.5) !important;
 }
 .sf-arrows > li > .sf-with-ul:focus:after,
 .sf-arrows > li:hover > .sf-with-ul:after,
@@ -84,7 +84,7 @@ a:hover .btn-play,
     color: black;
 }
 .sf-menu li.sale a {
-    background-color: black;
+    background-color: transparent;
 }
 @media (max-width: 991px) {
     .sf-menu > li > a:hover {
@@ -95,28 +95,28 @@ a:hover .btn-play,
     border-top: solid 10px transparent;
 }
 .main-slider .caption-subtitle {
-    color: black;
+    color: transparent;
 }
 .main-slider .btn-theme:hover {
-    border-color: transparent !important;
-    background-color: black;
+    border-color: transparent;
+    background-color: transparent;
 }
 .main-slider .dark .caption-text .btn-theme:hover {
-    background-color: black;
-    border-color: transparent !important;
+    background-color: transparent;
+    border-color: transparent;
 }
 .coming-soon .main-slider .page .countdown-amount {
-    color: black;
+    color: transparent;
 }
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-    border-color: transparent !important;
-    background-color: black;
+    border-color: transparent;
+    background-color: transparent;
 }
 .message-box {
-    background-color: black;
+    background-color: transparent;
 }
 .content-tabs .nav-tabs > li.active > a {
     color: black;
@@ -153,24 +153,24 @@ a:hover .btn-play,
     border: solid 1px transparent;
 }
 .caption-title a:hover {
-    color: black;
+    color: transparent;
 }
-.thumbnail.thumbnail-banner .btn-theme, .btn-theme:hover {
-    background-color: transparent;
-    border-color: transparent !important;
+.thumbnail.thumbnail-banner .btn-theme:hover {
+    background-color: black;
+    border-color: transparent;
 }
 .recent-post .media-link:after{
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0);
 }
 .recent-post .media-link:hover:after {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .thumbnail-banner .caption {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0);
 }
 .thumbnail-banner.hover .caption,
 .thumbnail-banner:hover .caption {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0.3);
 }
 .thumbnail .price ins {
     color: black;
@@ -188,22 +188,22 @@ a:hover .btn-play,
     background-color: black;
 }
 .products.list .thumbnail .reviews:hover {
-    color: black;
+    color: transparent;
 }
 .products.list .thumbnail .availability strong {
-    color: black;
+    color: transparent;
 }
 .thumbnails.portfolio .thumbnail .caption.hovered {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0.5);
 }
 .widget.widget-shop-deals .countdown-amount {
-    color: black;
+    color: transparent;
 }
 .widget.widget-tabs .nav-justified > li.active > a,
 .widget.widget-tabs .nav-justified > li > a:hover,
 .widget.widget-tabs .nav-justified > li > a:focus {
-    border-color: transparent !important;
-    background-color: black;
+    border-color: transparent;
+    background-color: transparent;
 }
 @media (min-width: 768px) {
     .widget.widget-tabs.alt .nav-justified > li.active > a:before {
@@ -211,74 +211,74 @@ a:hover .btn-play,
     }
 }
 .widget.shop-categories ul a:hover {
-    color: black;
+    color: transparent;
 }
 .widget-flickr-feed ul a:hover {
-    border-color: transparent !important;
+    border-color: transparent;
 }
 .widget-flickr-feed ul a:hover:before {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .recent-tweets .media .fa {
-    color: black;
+    color: transparent;
 }
 .product-list .price ins {
-    color: black;
+    color: transparent;
 }
 .product-list .media-link:after {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0);
 }
 .product-list .media-link:hover:after {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .shop-sorting .col-sm-4 .btn-theme:hover {
-    background-color: black;
+    background-color: transparent;
 }
 .orders td.description h4 a:hover {
-    color: black;
+    color: transparent;
 }
 .orders td.total a:hover {
-    color: black;
+    color: transparent;
 }
 .orders .media-link:after {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0);
 }
 .orders .media-link:hover:after {
-    background-color: black;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .wishlist td.description h4 a:hover {
-    color: black;
+    color: transparent;
 }
 .wishlist td.total a:hover {
-    color: black;
+    color: transparent;
 }
 .wishlist .media-link:after {
     background-color: rgba(137, 193, 68, 0);
 }
 .wishlist .media-link:hover:after {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .compare-products .product .media-link:after {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0);
 }
 .compare-products .product .media-link:hover:after {
-    background-color:transparent;
+    background-color: rgba(137, 193, 68, 0.7);
 }
 .compare-products .product h4:hover,
 .compare-products .product h4 a:hover {
-    color: black;
+    color: transparent;
 }
 #contact-form .alert {
-    border-color: transparent !important;
-    background-color: black;
+    border-color: transparent;
+    background-color: transparent;
 }
 .to-top {
-    background-color: transparent;
+    background-color: rgba(137, 193, 68, 0.5);
     border: solid 2px transparent;
 }
 .to-top:hover {
-    border-color: transparent !important;
-    color: black;
+    border-color: transparent;
+    color: transparent;
 }
 .header-nav-1 .sf-arrows > li > .sf-with-ul:focus::after,
 .header-nav-1 .sf-arrows > li:hover > .sf-with-ul::after,
@@ -295,27 +295,27 @@ a:hover .btn-play,
 .sf-menu li:hover,
 .header-nav-5 .sf-menu li.sfHover,
 .header-nav-5 .sf-menu li.sfHover > a {
-    color: black;
+    color: transparent;
 }
 .header-nav-2 .sf-menu > li:hover,
 .header-nav-2 .sf-menu > li:hover > a,
 .header-nav-2 .sf-menu li.active,
 .header-nav-2 .sf-menu > li.sfHover,
 .header-nav-2 .sf-menu > li.sfHover > a {
-    background-color: black;
+    background-color: transparent;
 }
 .header-nav-2 .sf-menu ul a:hover {
-    background-color: black;
+    background-color: transparent;
 }
 .header-nav-3 .sf-menu > li:hover,
 .header-nav-3 .sf-menu > li:hover > a,
 .header-nav-3 .sf-menu li.active,
 .header-nav-3 .sf-menu > li.sfHover,
 .header-nav-3 .sf-menu > li.sfHover > a {
-    background-color: black;
+    background-color: transparent;
 }
 .header-nav-3 .sf-menu ul a:hover {
-    background-color: black;
+    background-color: transparent;
 }
 .information-title {
     border-bottom: 3px solid transparent;
@@ -324,26 +324,22 @@ a:hover .btn-play,
     border-bottom: 3px solid transparent;
 }
 .widget.account-details li.active a {
-    color: black;
+    color: transparent;
 }
 .widget.account-details li a:hover,
 .widget.account-details li a:focus,
 .details-box > ul li a:hover,
 .details-box > ul li a:focus {
-    color: black;
+    color: transparent;
 }
 .social-icons a:hover {
-    color: black;
+    color: #ffffff;
 }
 .header .navigation-wrapper {
-    background-color: transparent;
-    border-top: 1px solid transparent;
+    background-color: #f5f6f7;
+    border-top: 1px solid #d3d5d7;
 }
 .btn-view-more-block {
     background-color: #a5abb7;
-    border-color: transparent !important;
-}
-
-.section-title span {
-    position: unset;
+    border-color: #a5abb7;
 }

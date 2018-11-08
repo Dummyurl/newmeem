@@ -18,6 +18,7 @@
 <body id="home" class="wide">
 {{--<body id="home" class="wide header-style-5">--}}
 @include('frontend.partials._preloader')
+
 <div class="wrapper">
 @section('header')
     @include('frontend.partials._top_bar')

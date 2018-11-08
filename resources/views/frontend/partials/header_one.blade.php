@@ -5,12 +5,12 @@
 
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ route('home') }}"><img style="max-height: 31px;" class="img-sm center-block" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->name }}"/></a>
+                <a href="{{ route('home') }}"><img style="max-height : 80px;" class="img-sm center-block" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->name }}"/></a>
             </div>
             <!-- /Logo -->
 
             <!-- Header search -->
-            <div class="header-search">
+            <div class="header-search" style="margin-top: 20px;">
                 {{--<input class="form-control" type="text" placeholder="What are you looking?"/>--}}
                 {{--<button><i class="fa fa-search"></i></button>--}}
                 <Form method="get" action="{{ route('frontend.product.search') }}">
@@ -21,7 +21,7 @@
             <!-- /Header search -->
 
             <!-- Header shopping cart -->
-            <div class="header-cart">
+            <div class="header-cart" style="margin-top: 20px;">
                 <div class="cart-wrapper">
                     <a href="{{ route('frontend.favorite.index') }}" class="btn btn-theme-transparent hidden-xs hidden-sm"><i class="fa fa-heart"></i></a>
                     {{--<a href="compare-products.html" class="btn btn-theme-transparent hidden-xs hidden-sm"><i class="fa fa-exchange"></i></a>--}}

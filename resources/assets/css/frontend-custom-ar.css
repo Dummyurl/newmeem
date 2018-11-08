@@ -11,34 +11,49 @@
 /*body, div, a, span, table, p, form, input, h1, h2, h3, h4, input, tr, td, ul, li {*/
     /*font-family: 'GE SS Unique', 'sans-serif' !important;*/
 /*}*/
-.main-menu nav ul li a::after {
-    display: none;
+
+@font-face {
+font-family: 'Tajawal';
+src: url('fonts/Tajawal-Medium.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
 }
 
 
-.simpleLens-big-image-container, .simpleLens-lens-image{
-    direction: ltr;
-    /*float: right;*/
-}
-div.simpleLens-lens-element {
-    left: -112%;
+
+body, div, a, span, table, p, form, input, h1, h2, h3, h4 , input , tr , td , ul , li {
+font-family: 'Tajawal', 'sans-serif' !important;
 }
 
-.button-plus {
-    display: inline-block;
-    position: relative;
-    left: 92px;
-    bottom: 7px;
-}
 
-.button-minus {
-    display: inline-block;
-    position: relative;
-    left: 109px;
-    bottom: 7px;
-}
+/*.main-menu nav ul li a::after {*/
+    /*display: none;*/
+/*}*/
 
-.label {
-    color : #b7af15;
-    font-size: large;
-}
+
+/*.simpleLens-big-image-container, .simpleLens-lens-image{*/
+    /*direction: ltr;*/
+    /*!*float: right;*!*/
+/*}*/
+/*div.simpleLens-lens-element {*/
+    /*left: -112%;*/
+/*}*/
+
+/*.button-plus {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*left: 92px;*/
+    /*bottom: 7px;*/
+/*}*/
+
+/*.button-minus {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*left: 109px;*/
+    /*bottom: 7px;*/
+/*}*/
+
+/*.label {*/
+    /*color : #b7af15;*/
+    /*font-size: large;*/
+/*}*/
