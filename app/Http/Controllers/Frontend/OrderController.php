@@ -24,9 +24,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where(['user_id' => auth()->user()->id,'status' => 'success'])->with('order_metas.product')->get();
+        $orders = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product')->get();
         $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
-        $elements = Product::whereIn('id',$ids)->paginate(12);
+        $elements = Product::whereIn('id', $ids)->paginate(12);
         return view('frontend.modules.order.index', compact('elements', 'orders'));
     }
 
@@ -48,23 +48,42 @@ class OrderController extends Controller
      */
     public function store(OrderStore $request)
     {
-        $user = auth()->user();
-        $user->update([
+        if (auth()->check()) {
+            $user = auth()->user();
+            $user->update([
 //            'email' => $request->email,
-            'country' => $request->country,
-            'mobile' => $request->mobile,
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'area' => $request->area,
-            'block' => $request->block,
-            'building' => $request->building,
-            'street' => $request->street,
-            'floor' => $request->floor,
-            'apartment' => $request->apartment,
-        ]);
+                'country' => $request->country,
+                'mobile' => $request->mobile,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'area' => $request->area,
+                'block' => $request->block,
+                'building' => $request->building,
+                'street' => $request->street,
+                'floor' => $request->floor,
+                'apartment' => $request->apartment,
+            ]);
+        } else {
+            $user = User::create([
+                'name' => $request->email,
+                'email' => $request->email,
+                'password' => bcrypt($request->mobile),
+                'country' => $request->country,
+                'mobile' => $request->mobile,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'area' => $request->area,
+                'block' => $request->block,
+                'building' => $request->building,
+                'street' => $request->street,
+                'floor' => $request->floor,
+                'apartment' => $request->apartment,
+            ]);
+        }
         if ($user) {
             $shipment = session('shipment');
             $coupon = session('coupon');
+            auth()->login($user);
             $order = Order::create([
                 'shipping_cost' => $shipment['charge'],
                 'price' => $shipment['grandTotal'],
@@ -75,7 +94,7 @@ class OrderController extends Controller
                 'country' => $request->country,
                 'email' => $request->email,
                 'address' => $request->address,
-                'user_id' => auth()->user()->id,
+                'user_id' => $user->id,
                 'receive_on_branch' => isset($shipment['free_shipment']) && $shipment['free_shipment'] ? $shipment['free_shipment'] : false,
                 'branch_id' => isset($shipment['branch']) ? $shipment['branch'] : null,
                 'payment_method' => $request->payment_method,
@@ -106,7 +125,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::whereId($id)->with('order_metas.product', 'order_metas.product_attribute.color','order_metas.product_attribute.size')->first();
+        $order = Order::whereId($id)->with('order_metas.product', 'order_metas.product_attribute.color', 'order_metas.product_attribute.size')->first();
         $coupon = session('coupon') ? session('coupon') : null;
         return view('frontend.modules.order.show', compact('order', 'coupon'));
     }
