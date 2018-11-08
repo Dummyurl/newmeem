@@ -63,14 +63,14 @@
                             <label for="mobile">{{ trans('general.mobile') }}*</label>
                             <div class="form-group"><input required name="mobile" value="{{ auth()->check() ? auth()->user()->mobile : null }}"
                                                            class="form-control" type="text"
-                                                           placeholder="{{ trans('general.email') }}">
+                                                           placeholder="{{ trans('general.mobile') }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="phone">{{ trans('general.phone') }}</label>
                             <div class="form-group"><input name="phone" value="{{ auth()->check() ? auth()->user()->phone : null }}"
                                                            class="form-control" type="text"
-                                                           placeholder="{{ trans('general.full_name') }}">
+                                                           placeholder="{{ trans('general.phone') }}">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -83,7 +83,7 @@
                             <label for="area">{{ trans('general.area') }}</label>
                             <div class="form-group"><input name="area" value="{{ auth()->check() ? auth()->user()->area : null }}"
                                                            class="form-control" type="text"
-                                                           placeholder="{{ trans('general.email') }}">
+                                                           placeholder="{{ trans('general.area') }}">
                             </div>
                         </div>
                         <div class="col-md-6">
