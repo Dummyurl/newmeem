@@ -152,7 +152,7 @@
                                     </tfoot>
                                 </table>
                                 {{--cart--}}
-                                @auth
+                                {{--@auth--}}
                                     <div>
                                         <input type="hidden" name="charge" class="charge" value="">
                                         <input type="hidden" name="grandTotal" class="grandTotal"
@@ -163,7 +163,7 @@
                                     <button type="submit" id="forward" disabled="disabled"
                                             class="btn btn-theme btn-theme-dark btn-view-more-block"
                                             href="#">{{ trans('cart.proceed_to_checkout') }}</button>
-                                @endauth
+                                {{--@endauth--}}
                             </form>
                         </div>
                     </div>
