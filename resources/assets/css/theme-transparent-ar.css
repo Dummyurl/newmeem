@@ -99,10 +99,10 @@ a:hover .btn-play,
 }
 .main-slider .btn-theme:hover {
     border-color: transparent;
-    background-color: transparent;
+    background-color: black;
 }
 .main-slider .dark .caption-text .btn-theme:hover {
-    background-color: transparent;
+    background-color: black;
     border-color: transparent;
 }
 .coming-soon .main-slider .page .countdown-amount {
@@ -113,7 +113,7 @@ a:hover .btn-play,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
     border-color: transparent;
-    background-color: transparent;
+    background-color: black;
 }
 .message-box {
     background-color: transparent;
@@ -153,7 +153,7 @@ a:hover .btn-play,
     border: solid 1px transparent;
 }
 .caption-title a:hover {
-    color: transparent;
+    color: black;
 }
 .thumbnail.thumbnail-banner .btn-theme:hover {
     background-color: black;
@@ -188,7 +188,7 @@ a:hover .btn-play,
     background-color: black;
 }
 .products.list .thumbnail .reviews:hover {
-    color: transparent;
+    color: black;
 }
 .products.list .thumbnail .availability strong {
     color: transparent;
@@ -211,7 +211,7 @@ a:hover .btn-play,
     }
 }
 .widget.shop-categories ul a:hover {
-    color: transparent;
+    color: black;
 }
 .widget-flickr-feed ul a:hover {
     border-color: transparent;
@@ -235,10 +235,10 @@ a:hover .btn-play,
     background-color: transparent;
 }
 .orders td.description h4 a:hover {
-    color: transparent;
+    color: black;
 }
 .orders td.total a:hover {
-    color: transparent;
+    color: black;
 }
 .orders .media-link:after {
     background-color: rgba(137, 193, 68, 0);
@@ -247,10 +247,10 @@ a:hover .btn-play,
     background-color: rgba(137, 193, 68, 0.7);
 }
 .wishlist td.description h4 a:hover {
-    color: transparent;
+    color: black;
 }
 .wishlist td.total a:hover {
-    color: transparent;
+    color: black;
 }
 .wishlist .media-link:after {
     background-color: rgba(137, 193, 68, 0);
@@ -266,7 +266,7 @@ a:hover .btn-play,
 }
 .compare-products .product h4:hover,
 .compare-products .product h4 a:hover {
-    color: transparent;
+    color: black;
 }
 #contact-form .alert {
     border-color: transparent;
@@ -278,7 +278,7 @@ a:hover .btn-play,
 }
 .to-top:hover {
     border-color: transparent;
-    color: transparent;
+    color: black;
 }
 .header-nav-1 .sf-arrows > li > .sf-with-ul:focus::after,
 .header-nav-1 .sf-arrows > li:hover > .sf-with-ul::after,
@@ -295,7 +295,7 @@ a:hover .btn-play,
 .sf-menu li:hover,
 .header-nav-5 .sf-menu li.sfHover,
 .header-nav-5 .sf-menu li.sfHover > a {
-    color: transparent;
+    color: black;
 }
 .header-nav-2 .sf-menu > li:hover,
 .header-nav-2 .sf-menu > li:hover > a,
@@ -324,13 +324,13 @@ a:hover .btn-play,
     border-bottom: 3px solid transparent;
 }
 .widget.account-details li.active a {
-    color: transparent;
+    color: black;
 }
 .widget.account-details li a:hover,
 .widget.account-details li a:focus,
 .details-box > ul li a:hover,
 .details-box > ul li a:focus {
-    color: transparent;
+    color: black;
 }
 .social-icons a:hover {
     color: #ffffff;
