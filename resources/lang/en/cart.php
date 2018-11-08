@@ -19,4 +19,7 @@ return array (
   'enter_ur_destination' => 'Enter your distination',
   'proceed_to_checkout' => 'proceed to checkout',
   'clear_shopping_cart' => 'clear cart',
+  'color' => 'Color',
+  'delivery_charge_cost' => 'delivery Charge Cost',
+  'size' => 'Size',
 );
