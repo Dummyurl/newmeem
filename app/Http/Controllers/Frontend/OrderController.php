@@ -7,6 +7,7 @@ use App\Http\Requests\Frontend\OrderStore;
 use App\Models\Order;
 use App\Models\OrderMeta;
 use App\Models\Product;
+use App\Models\User;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 
@@ -64,21 +65,39 @@ class OrderController extends Controller
                 'apartment' => $request->apartment,
             ]);
         } else {
-            $user = User::create([
-                'name' => $request->email,
-                'email' => $request->email,
-                'password' => bcrypt($request->mobile),
-                'country' => $request->country,
-                'mobile' => $request->mobile,
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'area' => $request->area,
-                'block' => $request->block,
-                'building' => $request->building,
-                'street' => $request->street,
-                'floor' => $request->floor,
-                'apartment' => $request->apartment,
-            ]);
+            $user = User::where('email', $request->email)->first();
+            if ($user) {
+                $user->update([
+//            'email' => $request->email,
+                    'country' => $request->country,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'area' => $request->area,
+                    'block' => $request->block,
+                    'building' => $request->building,
+                    'street' => $request->street,
+                    'floor' => $request->floor,
+                    'apartment' => $request->apartment,
+                ]);
+            } else {
+                $user = User::create([
+                    'name' => $request->email,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->mobile),
+                    'country' => $request->country,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'area' => $request->area,
+                    'block' => $request->block,
+                    'building' => $request->building,
+                    'street' => $request->street,
+                    'floor' => $request->floor,
+                    'apartment' => $request->apartment,
+                ]);
+            }
+
         }
         if ($user) {
             $shipment = session('shipment');
