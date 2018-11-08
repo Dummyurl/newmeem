@@ -26,7 +26,7 @@ class OrderStore extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|string|email|max:255|unique:users,email,',
+            'email' => 'required|string|email|max:255',
             'mobile' => 'required|numeric',
             'phone' => 'numeric|nullable',
             'address' => 'required|min:5',
