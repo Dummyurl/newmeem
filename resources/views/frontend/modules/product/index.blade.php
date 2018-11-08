@@ -144,11 +144,11 @@
                                                 <h4 class="caption-title">
                                                     <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,20,'') }}</a>
                                                 </h4>
-                                                @if($element->brands->first())
-                                                    <h4 class="caption-title">
+                                                <h4 class="caption-title">
+                                                    @if($element->brands->first())
                                                         <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->brands->first()->name,20,'') }}</a>
-                                                    </h4>
-                                                @endif
+                                                    @endif
+                                                </h4>
                                                 <div class="price">
                                                     @if($element->isOnSale)
                                                         <ins>{{ $element->convertedSalePrice}}
