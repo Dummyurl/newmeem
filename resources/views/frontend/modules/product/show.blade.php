@@ -279,12 +279,12 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     </button>
                                     @if($product->isFavorited)
                                         <a class="btn btn-theme btn-wish-list btn-outline-danger"
-                                           href="{{ route("frontend.favorite.remove", $product->id) }}"><span
-                                                    class="fa fa-fw fa-heart"></span></a>
+                                           href="{{ route("frontend.favorite.remove", $product->id) }}"><i
+                                                    class="fa fa-fw fa-heart"></i></a>
                                     @else
                                         <a class="btn btn-theme btn-wish-list"
-                                           href="{{ route("frontend.favorite.add", $product->id) }}"><span
-                                                    class="fa fa-fw fa-heart"></span></a>
+                                           href="{{ route("frontend.favorite.add", $product->id) }}"><i
+                                                    class="fa fa-fw fa-heart"></i></a>
                                     @endif
                                     <a class="btn btn-theme btn-cart btn-icon-left" type="submit"
                                             href="#" data-toggle="modal"
