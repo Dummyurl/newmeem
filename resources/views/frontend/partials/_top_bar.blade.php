@@ -55,8 +55,8 @@
         </div>
         <div class="top-bar-right">
             <ul class="list-inline">
-                <li class="hidden-xs">
-                    <a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>
+                {{--<li class="hidden-xs">--}}
+                    {{--<a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>--}}
                 <li class="hidden-xs">
                     <a href="{{ route('frontend.cart.index') }}">{{ trans('general.shopping_cart') }}</a></li>
                 <li class="hidden-xs">
