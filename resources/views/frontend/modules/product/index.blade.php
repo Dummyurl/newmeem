@@ -142,11 +142,11 @@
                                             </div>
                                             <div class="caption text-center">
                                                 <h4 class="caption-title">
-                                                    <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,25,'') }}</a>
+                                                    <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,20,'') }}</a>
                                                 </h4>
                                                 @if($element->brands->first())
                                                     <h4 class="caption-title">
-                                                        <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->brands->first()->name,25,'') }}</a>
+                                                        <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->brands->first()->name,20,'') }}</a>
                                                     </h4>
                                                 @endif
                                                 <div class="price">
