@@ -59,6 +59,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
     Route::post('cart/store', 'CartController@checkout')->name('cart.store');
     // checkout.review is order.show
+    Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');
     Route::resource('page', 'PageController')->only(['show']);
     Route::resource('user', 'UserController');
@@ -68,7 +69,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth']], function () {
-    Route::resource('order', 'OrderController');
+
     Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
     Route::get('favorite/add/{id}', 'FavoriteController@add')->name('favorite.add');
     Route::get('favorite/remove/{id}', 'FavoriteController@remove')->name('favorite.remove');
