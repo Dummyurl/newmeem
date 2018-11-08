@@ -28,17 +28,17 @@
                     <!-- SIDEBAR -->
                     <aside class="col-md-3 sidebar" id="sidebar">
                         <!-- widget search -->
-                        {{--<div class="widget">--}}
-                            {{--<div class="widget-search">--}}
-                                {{--<Form method="get" action="{{ route('frontend.product.search') }}">--}}
-                                    {{--@csrf--}}
-                                    {{--<input class="form-control" type="text" name="search"--}}
-                                           {{--placeholder="{{ trans('general.search') }}">--}}
-                                    {{--<button><i class="fa fa-search"></i></button>--}}
-                                {{--</Form>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        <!-- /widget search -->
+                    {{--<div class="widget">--}}
+                    {{--<div class="widget-search">--}}
+                    {{--<Form method="get" action="{{ route('frontend.product.search') }}">--}}
+                    {{--@csrf--}}
+                    {{--<input class="form-control" type="text" name="search"--}}
+                    {{--placeholder="{{ trans('general.search') }}">--}}
+                    {{--<button><i class="fa fa-search"></i></button>--}}
+                    {{--</Form>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    <!-- /widget search -->
                         <div class="widget widget-colors">
                             <div class="widget-content">
                                 <a class="btn btn-theme-sm"
@@ -144,6 +144,11 @@
                                                 <h4 class="caption-title">
                                                     <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,25,'') }}</a>
                                                 </h4>
+                                                @if($element->brands->first())
+                                                    <h4 class="caption-title">
+                                                        <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->brands->first()->name,25,'') }}</a>
+                                                    </h4>
+                                                @endif
                                                 <div class="price">
                                                     @if($element->isOnSale)
                                                         <ins>{{ $element->convertedSalePrice}}
