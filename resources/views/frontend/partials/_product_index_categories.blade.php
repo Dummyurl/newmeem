@@ -9,9 +9,9 @@
                             <span class="arrow"><i class="fa fa-angle-down"></i></span>
                             <a href="{!! request()->fullUrlWithQuery(['category_id' => $parent->id]) !!}">
                                 {{ $parent->name }}
-                                <span class="count">{{ $parent->children->pluck('products')->flatten()->unique()->count() }}</span>
+                                <span class="count">{{ $parent->products->unique('id')->count() }}</span>
                             </a>
-                            @if(!$parent->children->isEmpty())
+                            @if($parent->children->isNotEmpty())
                                 <ul class="children active">
                                     @foreach($parent->children as $child)
                                         <li>
