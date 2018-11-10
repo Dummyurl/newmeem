@@ -6,20 +6,23 @@
             <ul class="nav sf-menu">
                 <li><a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>
                 @if(!$categories->isEmpty())
-                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)
+                    {{--                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)--}}
+                    @foreach($categories as $category)
                         <li class="megamenu">
                             <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">{{ $category->name }}</a>
                             @if(!$category->children->where('is_home', true)->isEmpty())
                                 <ul>
                                     <li class="row">
-                                        @foreach($category->children->where('is_home',true)->sortBy('order') as $child)
+                                        {{--                                        @foreach($category->children->where('is_home',true)->sortBy('order') as $child)--}}
+                                        @foreach($category->children as $child)
                                             <div class="col-md-2">
                                                 <h4 class="block-title"><span><a
                                                                 href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}"><strong>{{ $child->name }}</strong></a></span>
                                                 </h4>
                                                 @if(!$child->children->where('is_home', true)->isEmpty())
                                                     <ul>
-                                                        @foreach($child->children->where('is_home', true) as $subChild)
+                                                        {{--                                                        @foreach($child->children->where('is_home', true) as $subChild)--}}
+                                                        @foreach($child->children as $subChild)
                                                             <li>
                                                                 <a href="{{ route('frontend.product.search', ['category_id' => $subChild->id]) }}">{{ $subChild->name }}</a>
                                                             </li>
