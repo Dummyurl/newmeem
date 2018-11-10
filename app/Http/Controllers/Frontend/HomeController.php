@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Currency;
 use App\Models\Image;
 use App\Models\Product;
@@ -42,11 +43,13 @@ class HomeController extends Controller
         $onSaleProducts = $this->product->hasProductAttribute()->hasGallery()->active()->onSaleOnHomePage()->with('gallery.images','favorites')->take(self::take)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->hasProductAttribute()->hasGallery()->active()->bestSalesProducts())->with('gallery.images','favorites')->get();
         $brands = Brand::active()->where('is_home', true)->has('products', '>', 0)->take(12)->get();
+        $categoriesMain = Category::where(['is_home' => true])->take(4)->orderBy('order')->get();
         return view('frontend.home', compact(
             'newArrivals',
             'onSaleProducts',
             'bestSalesProducts',
-            'brands'
+            'brands',
+            'categoriesMain'
         ));
     }
 
