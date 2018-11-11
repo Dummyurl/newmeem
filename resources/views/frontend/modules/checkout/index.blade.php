@@ -202,7 +202,7 @@
                 </div>
                 <div class="overflowed">
                     <a class="btn btn-theme btn-theme-dark"
-                       href="{{ route('frontend.cart.clear') }}">{{ trans('general.clear_cart') }}</a>
+                       {{--href="{{ route('frontend.cart.clear') }}">{{ trans('general.clear_cart') }}</a>--}}
                     <button class="btn btn-theme" type="submit">{{ trans('general.place_order') }}</button>
                 </div>
             </form>
