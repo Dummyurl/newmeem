@@ -127,6 +127,18 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <h2 class="product-title">{{ $product->name }}</h2>
                         <table>
                             <tr>
+                            @if($product->brands->isNotEmpty())
+                                <tr>
+                                    <td class="title">{{ trans("general.brands") }}:</td>
+                                    <td>
+                                        @foreach($product->brands as $brand)
+                                            <a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
+                                                {{ $brand->slug }},
+                                            </a>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endif
                                 <td class="title">{{ trans('general.categories') }}:</td>
                                 <td>
                                     @foreach($product->categories as $cat)
@@ -149,18 +161,6 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         @foreach($product->tags as $tag)
                                             <a href="{{ route('frontend.product.search',['tag_id' => $tag->id]) }}">
                                                 {{ $tag->slug }},
-                                            </a>
-                                        @endforeach
-                                    </td>
-                                </tr>
-                            @endif
-                            @if($product->brands->isNotEmpty())
-                                <tr>
-                                    <td class="title">{{ trans("general.brands") }}:</td>
-                                    <td>
-                                        @foreach($product->brands as $brand)
-                                            <a href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
-                                                {{ $brand->slug }},
                                             </a>
                                         @endforeach
                                     </td>
