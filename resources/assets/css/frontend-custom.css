@@ -227,3 +227,7 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 .thumbnail.thumbnail-banner .btn-theme {
     background-color : white;
 }
+
+.thumbnail.no-padding {
+    min-height: 492px;
+}
