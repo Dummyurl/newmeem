@@ -66,6 +66,7 @@ return array (
   'approximately' => 'تقريبا',
   'approx' => 'تقريبا',
   'meta_description' => ' الكويت ميم ونون    روعة التصميم',
+  'app_keywords' => 'ميم أو نون ميم نون ﻣﻴﻢ أ و نون ﻣﺎرﻛﺖ الكويت محجبات ملابس احذية أحذية اكسسورات إكسسوارات دول مجلس التعاون الخليجي',
   'app_author' => 'ميم ونون',
   'sizes' => 'المقاسات',
   'kd' => 'د.ك',
@@ -261,4 +262,5 @@ return array (
   'remember_me' => 'تذكرني!',
   'create_new_account' => 'صنع حساب جديد',
   'welcome_message' => 'أهلا بك!',
+  'show_all_search_results' => 'أظهار الكل',
 );
