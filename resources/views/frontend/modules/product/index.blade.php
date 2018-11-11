@@ -123,7 +123,7 @@
                             @if(!$elements->isEmpty())
                                 @foreach($elements as $element)
                                     <div class="col-md-4 col-sm-6">
-                                        <div class="thumbnail no-border no-padding">
+                                        <div class="thumbnail no-border no-padding product-thumbnail-widget">
                                             <div class="media">
                                                 <a class="media-link"
                                                    @desktop

@@ -228,6 +228,6 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
     background-color : white;
 }
 
-.thumbnail.no-padding {
+.product-thumbnail-widget {
     min-height: 492px;
 }
