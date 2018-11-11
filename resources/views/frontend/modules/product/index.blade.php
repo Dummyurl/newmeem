@@ -119,7 +119,7 @@
                     <!-- /shop-sorting -->
 
                         <!-- Products grid -->
-                        <div class="row products grid">
+                        <div class="products grid">
                             @if(!$elements->isEmpty())
                                 @foreach($elements as $element)
                                     <div class="col-md-4 col-sm-6">
