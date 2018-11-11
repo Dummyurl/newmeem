@@ -45,7 +45,7 @@
                 @endif
                 <hr class="nav-divider">
                 @csrf
-                <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ trans('general.information') }}</h3>
+                <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ trans('general.purchase_without_register') }}</h3>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
                         <label for="name">{{ trans('general.full_name') }}</label>
