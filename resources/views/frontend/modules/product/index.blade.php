@@ -144,9 +144,13 @@
                                                 <h4 class="caption-title">
                                                     <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->name,25,'') }}</a>
                                                 </h4>
-                                                @if($element->brands->first())
+                                                @if($element->brands->isNotEmpty())
                                                     <h4 class="caption-title">
                                                         <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->brands->first()->name,25,'') }}</a>
+                                                    </h4>
+                                                @elseif($element->tags->isNotEmpty())
+                                                    <h4 class="caption-title">
+                                                        <a href="{{ route('frontend.product.show', $element->id) }}">{{ str_limit($element->tags->first()->slug,25,'') }}</a>
                                                     </h4>
                                                 @endif
                                                 <div class="price">
