@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-md-push-2 col-sm-12">
-                        <h3 class="block-title"><span>{{ trans("general.shopping_cart") }}</span></h3>
+                        <h3 class="block-title"><span>{{ trans('general.select_shipment_package') }}</span></h3>
                         <div class="shopping-cart">
                             <form action="{{ route('frontend.cart.checkout') }}" method="post">
                                 @csrf
