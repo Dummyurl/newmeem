@@ -42,7 +42,7 @@
                         <div class="widget widget-colors">
                             <div class="widget-content">
                                 <a class="btn btn-theme-sm"
-                                   href="{{ route('frontend.product.search') }}">{{ trans('general.remove') }}</a>
+                                   href="{{ route('frontend.product.search') }}">{{ trans('general.show_all_search_results') }}</a>
                             </div>
                         </div>
                         <!-- widget shop categories -->
