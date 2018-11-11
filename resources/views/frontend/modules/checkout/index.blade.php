@@ -191,7 +191,7 @@
                                 @endif
                                 <tfoot>
                                 <tr>
-                                    <td>Total:</td>
+                                    <td>{{ trans("general.total") }}:</td>
                                     <td id="grossTotal"><b>{{ $shipment['grossTotal'] }}</b></td>
                                     <td>{{ trans('general.kwd') }}</td>
                                 </tr>
@@ -201,7 +201,7 @@
                     </div>
                 </div>
                 <div class="overflowed">
-                    <a class="btn btn-theme btn-theme-dark"
+                    {{--<a class="btn btn-theme btn-theme-dark"--}}
                        {{--href="{{ route('frontend.cart.clear') }}">{{ trans('general.clear_cart') }}</a>--}}
                     <button class="btn btn-theme" type="submit">{{ trans('general.place_order') }}</button>
                 </div>
