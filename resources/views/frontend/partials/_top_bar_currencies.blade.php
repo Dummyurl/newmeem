@@ -3,7 +3,7 @@
         <img class="img-flag" src="{{ asset(env('THUMBNAIL').session('currency')->country->flag) }}" alt=""/>
         {{ session('currency')->name }}
         <i class="fa fa-angle-down"></i></a>
-    <ul role="menu" class="dropdown-menu">
+    <ul role="menu" class="dropdown-menu" style="list-style: none;">
         @foreach($currencies as $currency)
             <li>
                 <a href="{{ route('frontend.currency.change',['currency' => strtolower($currency->currency_symbol_en)]) }}">

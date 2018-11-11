@@ -52,7 +52,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                          alt=""{{ $product->name }}/>
                                 </a>
                             </div>
-                            @if(!$product->gallery->images->isEmpty())
+                            @if($product->gallery->images->isNotEmpty())
                                 @foreach($product->gallery->images as $img)
                                     <div class="item">
                                         <a class="btn btn-theme btn-theme-transparent btn-zoom"
@@ -77,7 +77,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             @endif
                         </div>
 
-                        @if(!$product->gallery->images->isEmpty())
+                        @if($product->gallery->images->isNotEmpty())
                             <div class="row product-thumbnails">
                                 <div class="col-xs-2 col-sm-2 col-md-3">
 
@@ -113,7 +113,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 <i class="fa fa-angle-{{ app()->isLocale('ar') ? 'left' : 'right' }}"></i> {{ trans('general.back_to') }}
                                 <a href="{{ route('home') }}">{{ trans('general.home') }}</a>
                             </span>
-                            @if(!$products->isEmpty())
+                            @if($products->isNotEmpty())
                                 <div class="{{ app()->isLocale('ar') ? 'pull-left' : 'pull-right' }}">
                                     <a class="btn btn-theme btn-theme-transparent btn-previous"
                                        href="{{ route('frontend.product.show',$products->first()->id) }}"><i
@@ -142,7 +142,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     <td>{{ $product->sku }}</td>
                                 </tr>
                             @endif
-                            @if(!$product->tags->isEmpty())
+                            @if($product->tags->isNotEmpty())
                                 <tr>
                                     <td class="title">{{ trans("general.tags") }}:</td>
                                     <td>
@@ -154,7 +154,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     </td>
                                 </tr>
                             @endif
-                            @if(!$product->brands->isEmpty())
+                            @if($product->brands->isNotEmpty())
                                 <tr>
                                     <td class="title">{{ trans("general.brands") }}:</td>
                                     <td>
@@ -167,21 +167,17 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 </tr>
                             @endif
                         </table>
-                        <hr class="page-divider"/>
+                        <hr class="dropdown-divider"/>
                         <div class="product-availability">{{ trans('general.status') }}:
                             <strong>{{ $product->totalQty > 0 ? trans('general.in_stock')  : trans('general.out_of_stock') }}</strong> {{ $product->totalQty }} {{ trans('general.items') }}
                         </div>
 
-                        <hr class="page-divider"/>
+                        <hr class="dropdown-divider"/>
 
                         <div class="product-text">
                             <h4>{{ trans('general.price') }}</h4>
                         </div>
-                        @if($currency->symbol_en != 'kwd')
-                            <div class="pull-{{ app()->isLocale('ar') ? 'left' : 'right' }} hidden-xs">
-                                @include('frontend.partials._top_bar_currencies')
-                            </div>
-                        @endif
+                        <hr class="dropdown-divider"/>
                         <table>
                             <tr>
                                 <td>
@@ -215,8 +211,15 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     </td>
                                 </tr>
                             @endif
+                            <tr>
+                                @if($currency->symbol_en != 'kwd')
+                                    <div class="product-text pull-{{ app()->isLocale('ar') ? 'left' : 'right' }} hidden-xs" style="min-width: 130px; list-style: none">
+                                            @include('frontend.partials._top_bar_currencies')
+                                    </div>
+                                @endif
+                            </tr>
                         </table>
-                        <hr class="page-divider"/>
+                        <hr class="dropdown-divider"/>
 
                         <div class="product-text">
                             @if($product->description)
@@ -228,7 +231,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 <p>{{ $product->notes }}
                             @endif
                         </div>
-                        <hr class="page-divider"/>
+                        <hr class="dropdown-divider"/>
 
 
                         <form class="row variable" method="post" class="cart"
@@ -287,14 +290,14 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                                     class="fa fa-fw fa-heart"></i></a>
                                     @endif
                                     <a class="btn btn-theme btn-cart btn-icon-left" type="submit"
-                                            href="#" data-toggle="modal"
-                                            data-target="#imagemodal"></i>{{ trans('general.size_charts') }}
+                                       href="#" data-toggle="modal"
+                                       data-target="#imagemodal"></i>{{ trans('general.size_charts') }}
                                     </a>
                                 </div>
                             </div>
                         </form>
 
-                        <hr class="page-divider small"/>
+                        <hr class="dropdown-divider small"/>
                         @include('frontend.partials._social_btns')
 
                     </div>
