@@ -1,6 +1,4 @@
 
-
-
 .main-menu4 nav ul li a {
     color: white;
 }
@@ -77,7 +75,7 @@
 }
 
 .img-xxs {
-    width : 12px;
+    width: 12px;
 }
 
 .img-xs-visa {
@@ -207,17 +205,19 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 }
 
 .logo {
-    min-height: 120px; !important;
+    min-height: 120px;
+!important;
 }
 
 .logo {
-    min-height: 120px; !important;
+    min-height: 120px;
+!important;
 }
 
-.social-icons a, .social-icons a:hover, .social-icons > li > a  {
-    border : 1px solid transparent !important;
-    color : transparent !important;
-    background-color : transparent !important;
+.social-icons a, .social-icons a:hover, .social-icons > li > a {
+    border: 1px solid transparent !important;
+    color: transparent !important;
+    background-color: transparent !important;
 }
 
 #preloader {
@@ -225,9 +225,14 @@ nav > ul > li > a:hover, .mega-menu mega-menu3 > a:hover {
 }
 
 .thumbnail.thumbnail-banner .btn-theme {
-    background-color : white;
+    background-color: white;
 }
 
 .product-thumbnail-widget {
     min-height: 492px;
+}
+
+.img-flag {
+    width: 17px;
+    height: 12px;
 }
