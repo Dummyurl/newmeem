@@ -44,18 +44,13 @@
                                                                             <span class="header-sm">{{ trans('general.mobile') }}</span><br/>
                                                                             {{ $element->mobile}}<br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.payment_method') }}</span>
+                                                                            <span class="header-sm">{{ trans('general.payment_method') }}</span> : {{ $element->payment_method }}
                                                                             <br/>
-                                                                            {{ $element->payment_method }}
-                                                                            <span class="header-sm">{{ trans('general.price') }}</span>
+                                                                            <span class="header-sm">{{ trans('general.price') }}</span> :{{ $element->price }}
                                                                             <br/>
-                                                                            {{ $element->price }}
-                                                                            <span class="header-sm">{{ trans('general.discount') }}</span>
+                                                                            <span class="header-sm">{{ trans('general.discount') }} : {{ $element->discount }}</span>
                                                                             <br/>
-                                                                            {{ $element->discount }}
-                                                                            <span class="header-sm">{{ trans('general.net_price') }}</span>
-                                                                            <br/>
-                                                                            {{ $element->net_price }}
+                                                                            <span class="header-sm">{{ trans('general.net_price') }}</span> : {{ $element->net_price }}
                                                                         </td>
                                                                     </tr>
                                                                 </table>
