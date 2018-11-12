@@ -31,7 +31,7 @@
                                                             <td class="mini-block-padding">
                                                                 <table cellspacing="0" cellpadding="0"
                                                                        width="100%"
-                                                                       style="border-collapse:separate !important;">
+                                                                       style="border-collapse:separate !important; margin: 20px;">
                                                                     <tr>
                                                                         <td class="mini-block"
                                                                             style="height: 170px;">
@@ -47,6 +47,15 @@
                                                                             <span class="header-sm">{{ trans('general.payment_method') }}</span>
                                                                             <br/>
                                                                             {{ $element->payment_method }}
+                                                                            <span class="header-sm">{{ trans('general.price') }}</span>
+                                                                            <br/>
+                                                                            {{ $element->price }}
+                                                                            <span class="header-sm">{{ trans('general.discount') }}</span>
+                                                                            <br/>
+                                                                            {{ $element->discount }}
+                                                                            <span class="header-sm">{{ trans('general.net_price') }}</span>
+                                                                            <br/>
+                                                                            {{ $element->net_price }}
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -112,44 +121,45 @@
                         <tbody>
 
                         @foreach($element->order_metas as $item)
-                            <tr>
-                                <td class="product-thumbnail hidden">
-                                    <a href="{{ route('frontend.product.show',$item->product_id) }}">
-                                        <img src="{{ asset('storage/uploads/images/thumbnail/'.$item->product->image) }}"
-                                             width="100" height="100" alt="" class="img-rounded img-thumbnail"/>
-                                    </a>
-                                </td>
+                            @if($item->product)
+                                <tr>
+                                    <td class="product-thumbnail hidden">
+                                        <a href="{{ route('frontend.product.show',$item->product_id) }}">
+                                            <img src="{{ asset('storage/uploads/images/thumbnail/'.$item->product->image) }}"
+                                                 width="100" height="100" alt="" class="img-rounded img-thumbnail"/>
+                                        </a>
+                                    </td>
 
-                                <td class="product-thumbnail">{{ $item->product_attribute->colorName }}</td>
-                                </td>
+                                    <td class="product-thumbnail">{{ $item->product_attribute->colorName }}</td>
+                                    </td>
 
-                                <td class="product-thumbnail">
-                                    {{ $item->product_attribute->sizeName }}
-                                </td>
+                                    <td class="product-thumbnail">
+                                        {{ $item->product_attribute->sizeName }}
+                                    </td>
 
-                                <td class="product-name">
-                                    <a href="{{ route('frontend.product.show',$item->product_id) }}">{{ $item->product->name }}</a>
-                                </td>
+                                    <td class="product-name">
+                                        <a href="{{ route('frontend.product.show',$item->product_id) }}">{{ $item->product->name }}</a>
+                                    </td>
 
-                                <td class="real-product-price">
-                                    <span class="price">{{$item->price}} {{ trans('general.kd') }} </span>
-                                    {{--<span class="amounte">{{ $item->options->product->sale_price }} KD </span>--}}
-                                </td>
+                                    <td class="real-product-price">
+                                        <span class="price">{{$item->price}} {{ trans('general.kd') }} </span>
+                                        {{--<span class="amounte">{{ $item->options->product->sale_price }} KD </span>--}}
+                                    </td>
 
-                                <td class="product-quantity">
-                                    {{--<input type="number" name="quantity_{{$item->options->product->id}}" disabled="disabled"--}}
-                                    {{--value="{{ $item->qty }}"/>--}}
-                                    {{ $item->qty }}
-                                </td>
-
-                                <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }} {{ trans('general.kd') }}</td>
-                            </tr>
+                                    <td class="product-quantity">
+                                        {{--<input type="number" name="quantity_{{$item->options->product->id}}" disabled="disabled"--}}
+                                        {{--value="{{ $item->qty }}"/>--}}
+                                        {{ $item->qty }}
+                                    </td>
+                                    <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }} {{ trans('general.kd') }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
-                </div>
             </div>
         </div>
+    </div>
 
     </div>
 @endsection
