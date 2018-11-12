@@ -1,7 +1,7 @@
 <!-- PRELOADER -->
 <div id="preloader">
     <div id="preloader-status">
-        <div id="preloader-title"><img class="img-sm" src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->company_ar . $settings->company_en }}"/></div>
+        <div id="preloader-title"><img style="width: 60px;" src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="{{ $settings->company_ar . $settings->company_en }}"/></div>
         <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
