@@ -4,7 +4,7 @@
     <script src="{{ mix('js/frontend.js') }}"></script>
 @endif
 <script src="{{ mix('js/app.js') }}"></script>
-{{--<script src="{{ mix('js/jquery.prettyPhoto.min.js') }}"></script>--}}
+<script src="{{ mix('js/jquery.prettyPhoto.min.js') }}"></script>
 @if(app()->environment('production'))
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113550846-1"></script>
