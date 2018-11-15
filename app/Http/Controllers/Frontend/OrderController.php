@@ -193,7 +193,7 @@ class OrderController extends Controller
 
     public function postReturn(Request $request) {
         $settings = Setting::first();
-        Mail::to($settings->email)->cc($request->email)->send(new sendReturnOrder($request, User::first()));
+        Mail::to($settings->email)->cc($request->email)->send(new sendReturnOrder($request));
         $markdown = new Markdown(view(), config('mail.markdown'));
         return $markdown->render('emails.order-return', [
             'name' => $request->name,
