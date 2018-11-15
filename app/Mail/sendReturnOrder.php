@@ -35,7 +35,6 @@ class sendReturnOrder extends Mailable
             'mobile' => $this->request['mobile'],
             'order_no' => $this->request['order_no'],
             'purchase_date' => $this->request['purchase_date'],
-            'mobile' => $this->request['mobile'],
             'address' => $this->request['address'],
             'notes' => $this->request['notes'],
         ])->subject('Order Return Request');

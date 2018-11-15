@@ -12,6 +12,7 @@ use App\Models\Setting;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
@@ -192,8 +193,16 @@ class OrderController extends Controller
 
     public function postReturn(Request $request) {
         $settings = Setting::first();
-        return Mail::to($settings->email)->cc($request->email)->send(new sendReturnOrder($request, User::first()));
+        Mail::to($settings->email)->cc($request->email)->send(new sendReturnOrder($request, User::first()));
         $markdown = new Markdown(view(), config('mail.markdown'));
-        return $markdown->render('emails.order-return', ['request' => $request]);
+        return $markdown->render('emails.order-return', [
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'order_no' => $request->order_no,
+            'purchase_date' => $request->purchase_date,
+            'address' => $request->address,
+            'notes' => $request->notes,
+        ]);
     }
 }
