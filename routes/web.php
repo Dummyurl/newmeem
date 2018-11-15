@@ -69,10 +69,11 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth']], function () {
-
     Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
     Route::get('favorite/add/{id}', 'FavoriteController@add')->name('favorite.add');
     Route::get('favorite/remove/{id}', 'FavoriteController@remove')->name('favorite.remove');
+    Route::get('return/order', 'OrderController@getReturn')->name('order.return');
+    Route::post('return/order', 'OrderController@postReturn')->name('order.return');
 });
 Route::get('/', 'Frontend\HomeController@index')->name('home');
 Auth::routes();

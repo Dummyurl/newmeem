@@ -6,7 +6,7 @@
             <div class="page-header">
                 <h1>{{ trans('general.order_history') }}</h1>
             </div>
-            @include('frontend.partials._breadcrumbs',['name' => trans('general.general.order_history')])
+            @include('frontend.partials._breadcrumbs',['name' => trans('general.order_history')])
         </div>
     </section>
     <!-- /BREADCRUMBS -->

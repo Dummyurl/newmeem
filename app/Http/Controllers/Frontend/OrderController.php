@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\OrderStore;
+use App\Mail\sendReturnOrder;
 use App\Models\Order;
 use App\Models\OrderMeta;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -181,5 +184,16 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getReturn() {
+        return view('frontend.modules.order.return');
+    }
+
+    public function postReturn(Request $request) {
+        $settings = Setting::first();
+        return Mail::to($settings->email)->cc($request->email)->send(new sendReturnOrder($request, User::first()));
+        $markdown = new Markdown(view(), config('mail.markdown'));
+        return $markdown->render('emails.order-return', ['request' => $request]);
     }
 }
