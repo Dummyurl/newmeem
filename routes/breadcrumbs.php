@@ -93,6 +93,11 @@ Breadcrumbs::for('backend.order.show', function ($trail, $element) {
     $trail->push('order details', route('backend.order.show', $element));
 });
 
+Breadcrumbs::for('backend.order.return', function ($trail, $element) {
+    $trail->parent('backend.order.index');
+    $trail->push('order return', route('backend.order.return', $element));
+});
+
 Breadcrumbs::for('backend.page.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('page', route('backend.page.index'));
