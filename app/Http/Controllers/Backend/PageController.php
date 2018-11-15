@@ -44,8 +44,8 @@ class PageController extends Controller
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'url' => 'required|url',
-            'content_ar' => 'required|min:100',
-            'content_en' => 'required|min:100',
+            'content_ar' => 'nullable',
+            'content_en' => 'nullable',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput(Input::all());
@@ -98,8 +98,8 @@ class PageController extends Controller
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'url' => 'required',
-            'content_ar' => 'required|min:100',
-            'content_en' => 'required|min:100',
+            'content_ar' => 'nullable',
+            'content_en' => 'nullable',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);
