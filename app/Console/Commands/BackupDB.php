@@ -39,15 +39,15 @@ class BackupDB extends Command
      */
     public function handle()
     {
-        $username = env('DB_USERNAME');
+        $username = env('DB_USERNAME_ROOT');
 
-        $password = env('DB_PASSWORD');
+        $password = env('DB_PASSWORD_ROOT');
 
         $dbName = env('DB_DATABASE');
 
         $extention = storage_path('app/public/');
 
-        $fileName = $extention . '3almazad-' . Carbon::now()->format('d-m-Y');
+        $fileName = $extention . env('APP_NAME').'-' . Carbon::now()->format('d-m-Y');
 
 
         $command = "mysqldump -e -f -u$username -p$password $dbName > $fileName.sql";
