@@ -44,7 +44,7 @@
                             @if($element->brands->isNotEmpty())
                                 <div class="price">
                                         <a href="{{ route('frontend.product.search',['brand_id' => $element->brands->first()->id]) }}">
-                                            {{ trans('general.brand') }} : {{ $element->brands->first()->slug }}
+                                            {{ $element->brands->first()->slug }}
                                         </a>
                                 </div>
                             @else
