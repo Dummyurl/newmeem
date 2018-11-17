@@ -24,4 +24,6 @@ return array (
   'we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service' => 'We received your order and it shall be reviewed. Thank you for choosing our service!',
   'you_are_logged_in_as' => 'You are logged in as',
   'cart_destroyed' => 'Cart deleted!',
+  'aboutus_message' => 'follow us in our social media',
+  'payment_url_error' => 'sorry for error  maybe some thing wrog',
 );

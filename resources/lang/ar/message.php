@@ -1,6 +1,7 @@
 <?php
 
 return array (
+  'payment_url_error' => 'نعتذر عن خطا في استكمال عمليه الدفع',
   'we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service' => 'تلقينا طلبك وسيتم مراجعته شكرا لك لاختيار خدماتنا',
   'register' => 'التسجيل',
   'have_coupon_message' => 'ادخل الكوبون',
@@ -10,6 +11,7 @@ return array (
   'register_with_us' => 'سجل معنا',
   'register_and_save_time' => 'سجل ووفر الوقت',
   'loading' => 'جاري التحميل ...',
+  'aboutus_message' => 'للتواصل معنا  على حسابات التواصل الإجتماعي',
   'no_products' => 'لا يوجد منتجات',
   'search_not_correct' => 'البحث غير صحيح',
   'item_added_to_cart' => 'تم اضافة الى عربة التسوق',
