@@ -67,7 +67,7 @@
                                                     <div class="btn-group">
                                                         <button type="button"
                                                                 class="btn {{ $child->active ? 'green' : 'red' }}  dropdown-toggle"
-                                                                data-toggle="dropdown"> {{ $child->name }}
+                                                                data-toggle="dropdown"> {{ $child->id }} - {{ $child->name }}
                                                             <i class="fa fa-angle-down"></i>
                                                         </button>
                                                         <ul class="dropdown-menu pull-right" role="menu">
@@ -111,7 +111,7 @@
                                                                 <div class="btn-group">
                                                                     <button type="button"
                                                                             class="btn {{ $sub->active ? 'green' : 'red' }} btn-outline dropdown-toggle"
-                                                                            data-toggle="dropdown"> {{ $sub->name }}
+                                                                            data-toggle="dropdown"> {{ $sub->id }}  - {{ $sub->name }}
                                                                         <i class="fa fa-angle-down"></i>
                                                                     </button>
                                                                     <ul class="dropdown-menu pull-right" role="menu">
