@@ -30,20 +30,20 @@
                                                "
                                        href="{{ route('frontend.product.search', ['category_id' => $parent->id]) }}">
                                         {{--<div class="img-bg"></div>--}}
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <h2 class="caption-title"><span>{{ $parent->name }}</span>
-                                                    </h2>
-                                                    @if($parent->description)
-                                                        <h3 class="caption-sub-title">
-                                                            <span>{{ $parent->description }}</span>
-                                                        </h3>
-                                                    @endif
-                                                    <span class="btn btn-theme btn-theme-sm">{{ trans('general.shop_now') }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {{--<div class="caption">--}}
+                                            {{--<div class="caption-wrapper div-table">--}}
+                                                {{--<div class="caption-inner div-cell">--}}
+                                                    {{--<h2 class="caption-title"><span>{{ $parent->name }}</span>--}}
+                                                    {{--</h2>--}}
+                                                    {{--@if($parent->description)--}}
+                                                        {{--<h3 class="caption-sub-title">--}}
+                                                            {{--<span>{{ $parent->description }}</span>--}}
+                                                        {{--</h3>--}}
+                                                    {{--@endif--}}
+                                                    {{--<span class="btn btn-theme btn-theme-sm">{{ trans('general.shop_now') }}</span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                     </a>
                                 </div>
                             </div>
