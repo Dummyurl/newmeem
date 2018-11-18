@@ -23,7 +23,7 @@
                             <div class="thumbnail no-border no-padding thumbnail-banner size-2x3">
                                 <div class="media">
                                     <a class="media-link"
-                                       style="background-image: url({{ asset(env('LARGE').$parent->image) }});
+                                       style="background-image: url({{ asset(env('MEDIUM').$parent->image) }});
                                                background-position: center; /* Center the image */
                                                background-repeat: no-repeat; /* Do not repeat the image */
                                                background-size: cover; /* Resize the background image to cover the entire container */
