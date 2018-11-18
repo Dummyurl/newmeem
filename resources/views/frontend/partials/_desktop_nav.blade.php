@@ -5,12 +5,12 @@
             <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
             <ul class="nav sf-menu">
                 <li><a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>
-                @if(!$categories->isEmpty())
+                @if($categories->isNotEmpty())
                     {{--                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)--}}
                     @foreach($categories as $category)
                         <li class="megamenu">
                             <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">{{ $category->name }}</a>
-                            @if(!$category->children->where('is_home', true)->isEmpty())
+                            @if($category->children->isNotEmpty())
                                 <ul>
                                     <li class="row">
                                         {{--                                        @foreach($category->children->where('is_home',true)->sortBy('order') as $child)--}}
@@ -19,7 +19,7 @@
                                                 <h4 class="block-title"><span><a
                                                                 href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}"><strong>{{ $child->name }}</strong></a></span>
                                                 </h4>
-                                                @if(!$child->children->where('is_home', true)->isEmpty())
+                                                @if($child->children->isNotEmpty())
                                                     <ul>
                                                         {{--                                                        @foreach($child->children->where('is_home', true) as $subChild)--}}
                                                         @foreach($child->children as $subChild)
