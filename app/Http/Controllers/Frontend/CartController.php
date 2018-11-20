@@ -87,7 +87,12 @@ class CartController extends Controller
         return redirect()->home()->with('success', trans('message.cart_destroyed'));
     }
 
-    public function checkout(Request $request)
+    public function getCheckout()
+    {
+        return redirect()->route('frontend.cart.index');
+    }
+
+    public function postCheckout(Request $request)
     {
         $validate = validator($request->all(), [
             'grossTotal' => 'required|numeric',
