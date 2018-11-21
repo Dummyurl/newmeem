@@ -35,6 +35,9 @@
                                                                     <tr>
                                                                         <td class="mini-block"
                                                                             style="height: 170px;">
+                                                                            <span class="header-sm">{{ trans('general.order_number') }}</span><br/>
+                                                                            {{ $element->id }}<br/>
+                                                                            <br/>
                                                                             <span class="header-sm">{{ trans('general.shipping_address') }}</span><br/>
                                                                             {{ $element->address}}<br/>
                                                                             <br/>
@@ -52,6 +55,9 @@
                                                                             <br/>
                                                                             <span class="header-sm">{{ trans('general.discount') }}
                                                                                 : {{ $element->discount }}</span>
+                                                                            <br/>
+                                                                            <span class="header-sm">{{ trans('general.shipment') }}
+                                                                                : {{ $element->shipping_cost }}</span>
                                                                             <br/>
                                                                             <span class="header-sm">{{ trans('general.net_price') }}</span>
                                                                             : {{ $element->net_price }}
