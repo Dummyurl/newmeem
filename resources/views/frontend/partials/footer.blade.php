@@ -98,7 +98,7 @@
                                 <img class="img-sm" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
                                      alt="{{ $settings->company }}">
                             </li>
-                            <a href="">
+                            <a href="https://itunes.apple.com/us/app/ميم-أو-نون/id1444722683?ls=1&mt=8">
                                 <img src="{{ asset('images/apple.png') }}" style="max-width: 100px; margin: 10px"
                                      alt="{{ $settings->company_ar .' '. $settings->company_en}}">
                             </a>
