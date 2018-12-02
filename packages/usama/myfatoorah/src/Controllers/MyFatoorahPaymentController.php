@@ -35,7 +35,7 @@ class MyFatoorahPaymentController extends Controller
         <merchant_username>' . env('MYFATOORAH_USERNAME') . '</merchant_username>
         <merchant_password>' . env('MYFATOORAH_PASSWORD') . '</merchant_password>
         <merchant_ReferenceID>' . env('MYFATOORAH_MERCHANT_ID') . '</merchant_ReferenceID>
-        <ReturnURL>' . env('MYFATOORAH_PAYMENT_URL') . '</ReturnURL>
+        <ReturnURL>' . env('MYFATOORAH_RETURN_URL') . '</ReturnURL>
         <merchant_error_url>' . env('MYFATOORAH_ERROR_URL') . '</merchant_error_url>
     </MerchantDC>
         ';
