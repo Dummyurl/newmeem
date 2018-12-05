@@ -84,6 +84,7 @@
                         <div class="form-group"><input required name="address"
                                                        value="{{ auth()->check() ? auth()->user()->address : null }}"
                                                        class="form-control" type="text"
+                                                       minlength="5"
                                                        placeholder="{{ trans("general.full_address") }}"></div>
                     </div>
                     <div class="col-md-6">
