@@ -13,7 +13,7 @@
     <!-- /PAGE -->
 
 
-    @include('frontend.partials._categories_on_home_page')
+    {{--@include('frontend.partials._categories_on_home_page')--}}
 
     <!-- Newest -->
     @if($newArrivals->isNotEmpty())
