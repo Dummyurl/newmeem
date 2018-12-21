@@ -42,7 +42,7 @@
                                                                             {{ $element->address}}<br/>
                                                                             <br/>
                                                                             <span class="header-sm"> area</span><br/>
-                                                                            {{ $element->area}}<br/>
+                                                                            {{ $element->area ? $element->area : $element->user->area }}<br/>
                                                                             <br/>
                                                                             <span class="header-sm"> country</span><br/>
                                                                             {{ $element->country }}<br/>
