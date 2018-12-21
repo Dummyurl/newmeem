@@ -18,7 +18,7 @@
                             <table cellspacing="0" cellpadding="0" width="100%" class="w320">
                                 <tr>
                                     <td class="header-lg">
-                                        {{ trans('general.order_details') }}
+                                         <h3>order details</h3>
                                     </td>
                                 </tr>
                                 <tr>
@@ -35,31 +35,34 @@
                                                                     <tr>
                                                                         <td class="mini-block"
                                                                             style="height: 170px;">
-                                                                            <span class="header-sm">{{ trans('general.order_number') }}</span><br/>
+                                                                            <span class="header-sm"> order_number</span><br/>
                                                                             {{ $element->id }}<br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.shipping_address') }}</span><br/>
+                                                                            <span class="header-sm"> shipping_address</span><br/>
                                                                             {{ $element->address}}<br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.country') }}</span><br/>
+                                                                            <span class="header-sm"> area</span><br/>
+                                                                            {{ $element->area}}<br/>
+                                                                            <br/>
+                                                                            <span class="header-sm"> country</span><br/>
                                                                             {{ $element->country }}<br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.mobile') }}</span><br/>
+                                                                            <span class="header-sm"> mobile</span><br/>
                                                                             {{ $element->mobile}}<br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.payment_method') }}</span>
+                                                                            <span class="header-sm"> payment_method</span>
                                                                             : {{ $element->payment_method }}
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.price') }}</span>
+                                                                            <span class="header-sm"> price</span>
                                                                             :{{ $element->price }}
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.discount') }}
+                                                                            <span class="header-sm"> discount
                                                                                 : {{ $element->discount }}</span>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.shipment') }}
+                                                                            <span class="header-sm"> shipment
                                                                                 : {{ $element->shipping_cost }}</span>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.net_price') }}</span>
+                                                                            <span class="header-sm"> net_price</span>
                                                                             : {{ $element->net_price }}
                                                                         </td>
                                                                     </tr>
@@ -78,18 +81,18 @@
                                                                     <tr>
                                                                         <td class="mini-block"
                                                                             style="height: 170px;">
-                                                                            <span class="header-sm">{{ trans('general.name') }}</span><br/>
+                                                                            <span class="header-sm"> name</span><br/>
                                                                             {{ auth()->user()->name  }} <br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.email') }}</span><br/>
+                                                                            <span class="header-sm"> email</span><br/>
                                                                             {{ auth()->user()->email  }} <br/>
                                                                             <br/>
-                                                                            <span class="header-sm">{{ trans('general.order_date') }}</span><br/>
+                                                                            <span class="header-sm"> order_date</span><br/>
                                                                             {{Carbon\Carbon::now()->format('F j, Y')}}
                                                                             <br/>
                                                                             <br/>
                                                                             @if(isset($coupon))
-                                                                                <span class="header-sm">{{ trans('general.coupon') }}</span>
+                                                                                <span class="header-sm"> coupon</span>
                                                                                 <br/>
                                                                                 {{ $coupon->value }}
                                                                             @endif
@@ -149,7 +152,7 @@
                             </td>
 
                             <td class="real-product-price">
-                                <span class="price">{{$item->price}} {{ trans('general.kd') }} </span>
+                                <span class="price">{{$item->price}}  kd</span>
                                 {{--<span class="amounte">{{ $item->options->product->sale_price }} KD </span>--}}
                             </td>
 
@@ -158,7 +161,7 @@
                                 {{--value="{{ $item->qty }}"/>--}}
                                 {{ $item->qty }}
                             </td>
-                            <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }} {{ trans('general.kd') }}</td>
+                            <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }}  kd</td>
                         </tr>
                     @endif
                 @endforeach

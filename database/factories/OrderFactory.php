@@ -25,6 +25,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'branch_id' => Branch::all()->random()->id,
         'payment_method' => $faker->randomElement(['cash', 'visa', 'mastercard']),
         'country' => Country::all()->random()->name,
+        'area' => $faker->country,
         'coupon_id' => Coupon::all()->random()->id
     ];
 });

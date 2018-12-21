@@ -117,6 +117,7 @@ class OrderController extends Controller
                 'country' => $request->country,
                 'email' => $request->email,
                 'address' => $request->address,
+                'area' => $request->area,
                 'user_id' => $user->id,
                 'receive_on_branch' => isset($shipment['free_shipment']) && $shipment['free_shipment'] ? $shipment['free_shipment'] : false,
                 'branch_id' => isset($shipment['branch']) ? $shipment['branch'] : null,
