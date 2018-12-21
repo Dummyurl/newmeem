@@ -18,7 +18,7 @@
                             <table cellspacing="0" cellpadding="0" width="100%" class="w320">
                                 <tr>
                                     <td class="header-lg">
-                                         <h3>order details</h3>
+                                        <h3>order details</h3>
                                     </td>
                                 </tr>
                                 <tr>
@@ -81,12 +81,16 @@
                                                                     <tr>
                                                                         <td class="mini-block"
                                                                             style="height: 170px;">
-                                                                            <span class="header-sm"> name</span><br/>
-                                                                            {{ auth()->user()->name  }} <br/>
-                                                                            <br/>
-                                                                            <span class="header-sm"> email</span><br/>
-                                                                            {{ auth()->user()->email  }} <br/>
-                                                                            <br/>
+                                                                            @if($element->user)
+                                                                                <span class="header-sm"> name</span>
+                                                                                <br/>
+                                                                                {{ $element->user->name  }} <br/>
+                                                                                <br/>
+                                                                                <span class="header-sm"> email</span>
+                                                                                <br/>
+                                                                                {{ $element->user->email  }} <br/>
+                                                                                <br/>
+                                                                            @endif
                                                                             <span class="header-sm"> order_date</span><br/>
                                                                             {{Carbon\Carbon::now()->format('F j, Y')}}
                                                                             <br/>
@@ -152,7 +156,7 @@
                             </td>
 
                             <td class="real-product-price">
-                                <span class="price">{{$item->price}}  kd</span>
+                                <span class="price">{{$item->price}} kd</span>
                                 {{--<span class="amounte">{{ $item->options->product->sale_price }} KD </span>--}}
                             </td>
 
@@ -161,7 +165,8 @@
                                 {{--value="{{ $item->qty }}"/>--}}
                                 {{ $item->qty }}
                             </td>
-                            <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }}  kd</td>
+                            <td class="product-subtotal">{{ number_format($item->price * $item->qty,'2','.',',') }}kd
+                            </td>
                         </tr>
                     @endif
                 @endforeach
