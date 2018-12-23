@@ -26,7 +26,7 @@
                                 <th>discount</th>
                                 <th>price</th>
                                 <th>reference_id</th>
-                                <th>status</th>
+                                <th>payment status</th>
                                 <th>address</th>
                                 <th>mobile</th>
                                 <th>created_at</th>
@@ -40,7 +40,7 @@
                                 <th>discount</th>
                                 <th>price</th>
                                 <th>reference_id</th>
-                                <th>status</th>
+                                <th>payment status</th>
                                 <th>address</th>
                                 <th>mobile</th>
                                 <th>created_at</th>
