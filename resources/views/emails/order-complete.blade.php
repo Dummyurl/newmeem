@@ -28,7 +28,7 @@
 {{--@endcomponent--}}
 <hr>
 
-@component('mail::panel')z
+@component('mail::panel')
 <div style="font-size: large; font-weight: bold; direction: rtl !important;">
     {{ trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service') }}
 </div>
