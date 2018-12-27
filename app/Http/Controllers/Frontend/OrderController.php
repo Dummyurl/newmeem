@@ -194,7 +194,7 @@ class OrderController extends Controller
 
     public function postReturn(Request $request) {
         $settings = Setting::first();
-        Mail::to($settings->email)->cc('support@meemonoon.com')->cc($request->email)->send(new sendReturnOrder($request));
+        Mail::to($settings->email)->cc('info@meemonoon.com')->cc($request->email)->send(new sendReturnOrder($request));
         $markdown = new Markdown(view(), config('mail.markdown'));
         return $markdown->render('emails.order-return', [
             'name' => $request->name,
