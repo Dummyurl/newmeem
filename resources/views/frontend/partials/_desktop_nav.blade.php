@@ -4,7 +4,7 @@
         <nav class="navigation closed clearfix">
             <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
             <ul class="nav sf-menu">
-                <li><a href="{{ route('frontend.home') }}">{{ trans('general.home') }}</a></li>
+                <li><a href="{{ route('frontend.home') }}"><h4>{{ trans('general.home') }}</h4></a></li>
                 @if($categories->isNotEmpty())
                     {{--                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)--}}
                     @foreach($categories as $category)
