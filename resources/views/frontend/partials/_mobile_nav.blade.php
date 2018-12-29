@@ -8,7 +8,7 @@
                         @if(!$categories->isEmpty())
                             @foreach($categories->sortBy('order') as $category)
                                 <li>
-                                    <a href="{{ route('frontend.product.search',['category_id' => $category->id]) }}">{{ $category->name }}</a>
+                                    <a style="color : darkgoldenrod;" href="{{ route('frontend.product.search',['category_id' => $category->id]) }}">{{ $category->name }}</a>
                                     <!-- mega menu start -->
                                     @if(count($category->children) > 0)
                                         <ul>

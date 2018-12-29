@@ -9,15 +9,20 @@
                     {{--                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)--}}
                     @foreach($categories as $category)
                         <li class="megamenu">
-                            <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">{{ $category->name }}</a>
+                            <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">
+                                <h4 style="color: goldenrod;">
+                                {{ $category->name }}
+                                </h4>
+                            </a>
                             @if($category->children->isNotEmpty())
                                 <ul>
                                     <li class="row">
                                         {{--                                        @foreach($category->children->where('is_home',true)->sortBy('order') as $child)--}}
                                         @foreach($category->children as $child)
                                             <div class="col-md-2">
-                                                <h4 class="block-title"><span><a
-                                                                href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}"><strong>{{ $child->name }}</strong></a></span>
+                                                {{--<h4 class="block-title"><span><a--}}
+                                                <h4><span><a
+                                                                href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}">{{ $child->name }}</a></span>
                                                 </h4>
                                                 @if($child->children->isNotEmpty())
                                                     <ul>
