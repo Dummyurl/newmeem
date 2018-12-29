@@ -4,14 +4,14 @@
         <nav class="navigation closed clearfix">
             <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
             <ul class="nav sf-menu">
-                <li><a href="{{ route('frontend.home') }}"><h4>{{ trans('general.home') }}</h4></a></li>
+                <li><a href="{{ route('frontend.home') }}"><h4 style="color: goldenrod;">{{ trans('general.home') }}</h4></a></li>
                 @if($categories->isNotEmpty())
                     {{--                    @foreach($categories->where('is_home', true)->sortBy('order') as $category)--}}
                     @foreach($categories as $category)
                         <li class="megamenu">
                             <a href="{{ route('frontend.product.search',['category_id' => $category->id ]) }}">
                                 <h4 style="color: goldenrod;">
-                                {{ $category->name }}
+                                    {{ $category->name }}
                                 </h4>
                             </a>
                             @if($category->children->isNotEmpty())
@@ -21,8 +21,10 @@
                                         @foreach($category->children as $child)
                                             <div class="col-md-2">
                                                 {{--<h4 class="block-title"><span><a--}}
-                                                <h4><span><a
-                                                                href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}">{{ $child->name }}</a></span>
+                                                <h4><span>
+                                                        <a href="{{ route('frontend.product.search', ['category_id' => $child->id]) }}">{{ $child->name }}
+                                                        </a>
+                                                    </span>
                                                 </h4>
                                                 @if($child->children->isNotEmpty())
                                                     <ul>
